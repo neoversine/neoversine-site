@@ -107,11 +107,11 @@ const AboutUsPage = () => {
 
 
                         <div className='flex flex-col py-10 '>
-                            <p className='text-sm text-[#eae9e7]'>
+                            <p className='max-md:hidden text-sm text-[#eae9e7]'>
                                 Neoversine, founded in Jan 2025, empowers startups with AI-driven automation. We build smart agents and workflows to simplify, scale, and supercharge business operations.
                             </p>
 
-                            <p className='text-sm text-[#eae9e7]'
+                            <p className='md:hidden text-sm text-[#eae9e7]'
                                 data-aos="fade-up"
                                 data-aos-anchor-placement="center-bottom">
                                 Neoversine, founded in Jan 2025, empowers startups with AI-driven automation. We build smart agents and workflows to simplify, scale, and supercharge business operations.

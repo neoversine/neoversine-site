@@ -110,3 +110,12 @@ input:-webkit-autofill {
 .floating-text {
   animation: float 4s ease-in-out infinite;
 }
+
+
+.animate-spin-slow {
+  animation: spin 15s linear infinite
+}
+
+.neo-bot {
+  animation: spin 15s linear infinite reverse;
+}

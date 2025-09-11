@@ -5,17 +5,21 @@ import SpecialButton2 from '../components/basic/SpecialButton/SpecialButton2';
 // import OurLatestWorks from '../components/our-works/OurLatestWorks'
 
 import SiteFooter from '../components/basic/SiteFooter'
+import WorkHeroSection from '../components/our-works/WorkHeroSection';
 
 const OurWorks = () => {
     // const [chatOpen, setChatOpen] = useState(false);
     // const [loading, setLoading] = useState(false);
-    const [start, setStart] = useState(false);
+    // const [start, setStart] = useState(false);
 
 
     return (
-        <div className='relative w-full bg-primary min-h-screen overflow-hidden'>
+        <div className='relative w-full bg-black min-h-screen overflow-hidden'>
             <SiteNavbar />
-            <div className='min-h-screen md:h-screen pt-28'>
+
+            <WorkHeroSection />
+
+            {/* <div className='min-h-screen md:h-screen pt-28'>
                 <div className='max-w-6xl grid max-md:gap-8 grid-cols-1 md:grid-cols-2 mx-auto h-fit md:h-[500px] '>
                     <div className='h-[55vh] md:h-[70vh] flex md:p-6 px-4'>
                         <CatbotSection start={start} setStart={setStart} />
@@ -39,7 +43,7 @@ const OurWorks = () => {
                     </div>
 
                 </div>
-            </div>
+            </div> */}
 
             {/* <div className='mt-10'>
                 <OurLatestWorks />

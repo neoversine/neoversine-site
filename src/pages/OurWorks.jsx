@@ -6,6 +6,7 @@ import SpecialButton2 from '../components/basic/SpecialButton/SpecialButton2';
 
 import SiteFooter from '../components/basic/SiteFooter'
 import WorkHeroSection from '../components/our-works/WorkHeroSection';
+import ProjectsSection from '../components/our-works/ProjectsSection';
 
 const OurWorks = () => {
     // const [chatOpen, setChatOpen] = useState(false);
@@ -48,6 +49,7 @@ const OurWorks = () => {
             {/* <div className='mt-10'>
                 <OurLatestWorks />
             </div> */}
+            <ProjectsSection />
 
             <SiteFooter />
         </div>

@@ -8,35 +8,35 @@ const posts = [
         name: "Neo Post",
         desp: "Turn one prompt into powerful posters — elevate your brand visibility effortlessly.",
         imgSrc: "/works/neopost2.png",
-        positionClassname: "left-[50%] top-[0%] -translate-[80px]",
+        positionClassname: "left-[50%] top-[0%] -translate-[48px] md:-translate-[80px]",
         baseAngle: 0
     },
     {
         name: "Neo Crawl",
         desp: "Ultimate scrapper — gather data and insights effortlessly.",
         imgSrc: "/works/neocrawl.png",
-        positionClassname: "left-[97.53%] top-[34.55%] -translate-[80px]",
+        positionClassname: "left-[97.53%] top-[34.55%] -translate-[48px] md:-translate-[80px]",
         baseAngle: 72
     },
     {
         name: "Neo Bot",
         desp: "Ultimate WhatsApp ordering bot that takes your orders from WhatsApp.",
         imgSrc: "/works/neobot.png",
-        positionClassname: "left-[79.39%] top-[90.45%] -translate-[80px]",
+        positionClassname: "left-[79.39%] top-[90.45%] -translate-[48px] md:-translate-[80px]",
         baseAngle: 144
     },
     {
         name: "Neo Geo",
         desp: "Scrape all restaurants in your location — fast and automated.",
         imgSrc: "/works/neogeo.png",
-        positionClassname: "left-[20.61%] top-[90.45%] -translate-[80px]",
+        positionClassname: "left-[20.61%] top-[90.45%] -translate-[48px] md:-translate-[80px]",
         baseAngle: 216
     },
     {
         name: "Neo Content",
         desp: "Automated content generation — save time and stay consistent.",
         imgSrc: "/works/neocontent.png",
-        positionClassname: "left-[2.45%] top-[34.55%] -translate-[80px]",
+        positionClassname: "left-[2.45%] top-[34.55%] -translate-[48px] md:-translate-[80px]",
         baseAngle: 288
     },
 ];
@@ -105,9 +105,9 @@ function NeoBot({ post, parentRotation }) {
                     transition={{ duration: 0.3, ease: "easeOut" }}
                 /> */}
 
-                <div className="relative h-40 w-40 bg-black/40 backdrop-blur-xs border border-white/40 shadow shadow-black p-2 rounded-full bg-[url('/works/Group10.png')] bg-cover bg-no-repeat bg-top">
+                <div className="relative h-24 w-24 md:h-40 md:w-40 bg-black/40 backdrop-blur-xs border border-white/40 shadow shadow-black p-2 rounded-full bg-[url('/works/Group10.png')] bg-cover bg-no-repeat bg-top">
 
-                    <div class="flex justify-center items-center text-6xl h-full w-full rounded-full border border-white/70 
+                    <div className="flex justify-center items-center text-6xl h-full w-full rounded-full border border-white/70 
             text-white font-bold italic
             shadow-[0_0_3px_rgba(99,102,241,0.8),0_0_6px_rgba(99,102,241,0.6),0_0_12px_rgba(99,102,241,0.4),0_0_24px_rgba(99,102,241,0.2)] z-10 ">
                         {/* {post.name.split(" ")[0].split("")[0]}{post.name.split(" ")[1].split("")[0]} */}
@@ -137,7 +137,7 @@ const WorkHeroSection = () => {
 
     return (
         <div className="relative flex justify-center items-center h-[120vh] max-h-[750px] overflow-hidden">
-            <div className="circle absolute top-[50%] left-[50%] -translate-x-1/2 h-[900px] w-[900px] rounded-full border border-white animate-spin-slow
+            <div className="circle absolute top-[50%] left-[50%] -translate-x-1/2 h-[600px] w-[600px] md:h-[900px] md:w-[900px] rounded-full border border-white animate-spin-slow
                 shadow-[0_0_30px_rgba(99,102,241,0.6),0_0_60px_rgba(79,70,229,0.4),0_0_90px_rgba(67,56,202,0.2)]
 
                 ">

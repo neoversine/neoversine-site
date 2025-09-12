@@ -7,6 +7,7 @@ import SpecialButton2 from '../components/basic/SpecialButton/SpecialButton2';
 import SiteFooter from '../components/basic/SiteFooter'
 import WorkHeroSection from '../components/our-works/WorkHeroSection';
 import ProjectsSection from '../components/our-works/ProjectsSection';
+import FallingText from '../components/our-works/FallingText';
 
 const OurWorks = () => {
     // const [chatOpen, setChatOpen] = useState(false);
@@ -50,7 +51,19 @@ const OurWorks = () => {
                 <OurLatestWorks />
             </div> */}
             <ProjectsSection />
-
+            {/* <div className='h-screen bg-white'>
+                <FallingText
+                    text={`React Bits is a library of animated and interactive React components designed to streamline UI development and simplify your workflow.`}
+                    highlightWords={["React", "Bits", "animated", "components", "simplify"]}
+                    highlightClass="highlighted"
+                    trigger="hover"
+                    backgroundColor="transparent"
+                    wireframes={false}
+                    gravity={0.56}
+                    fontSize="2rem"
+                    mouseConstraintStiffness={0.9}
+                />
+            </div> */}
             <SiteFooter />
         </div>
     )

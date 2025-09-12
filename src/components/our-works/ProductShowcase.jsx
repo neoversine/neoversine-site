@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
@@ -32,7 +33,7 @@ const products = [
 export default function ProductShowcase() {
     return (
         <section className="py-20">
-            <div className="max-w-lg mx-auto px-6">
+            <div className="max-w-[330px] md:max-w-lg mx-auto px-6">
                 <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
                     {products.map((p, i) => {
                         const isEven = i % 2 === 0;
@@ -50,27 +51,7 @@ export default function ProductShowcase() {
 function HoverCard({ product: p, isEven, index }) {
     const [hovered, setHovered] = useState(false);
 
-    // Motion variants for floating info boxes
-    const floatVariants = {
-        hidden: (i) => ({
-            opacity: 0,
-            x: isEven ? 0 : 50, // enter from left/right depending on position
-            rotate: isEven ? 90 : -90,
-            transition: { duration: 0.5, delay: i * 0.1 }
-        }),
-        visible: (i) => ({
-            opacity: 1,
-            x: isEven ? 240 + i * 20 : 120 + i * 20,
-            rotate: 0,
-            transition: { duration: 0.6, delay: i * 0.15 }
-        }),
-        exit: (i) => ({
-            opacity: 0,
-            x: isEven ? 0 : 50,
-            rotate: isEven ? -90 : 90,
-            transition: { duration: 0.5, delay: i * 0.05 }
-        })
-    };
+
 
     return (
         <motion.div
@@ -83,7 +64,7 @@ function HoverCard({ product: p, isEven, index }) {
             className={`relative group cursor-pointer ${isEven ? "origin-left" : "origin-right"}`}
         >
             <div className="relative shadow-2xl flex flex-col h-full transition-transform duration-500">
-                <div className="relative bg-white/10 border border-white/10 backdrop-blur-sm p-6 rounded-3xl group-hover:shadow-[0_0_25px_rgba(99,102,241,0.5)] z-10">
+                <div className="relative bg-white/10 border border-white/10 backdrop-blur-sm p-4 md:p-6 rounded-3xl group-hover:shadow-[0_0_25px_rgba(99,102,241,0.5)] z-10">
                     {/* Glow behind image */}
                     <div className="absolute -inset-2 bg-gradient-to-r from-indigo-500/30 via-purple-500/30 to-sky-500/30 opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500"></div>
 
@@ -236,70 +217,137 @@ function HoverCard({ product: p, isEven, index }) {
                     )}
                 </AnimatePresence> */}
 
+                <div className="max-md:hidden">
+                    <AnimatePresence>
+                        {hovered && (
+                            <>
+                                {p.imagesDesc.map((ele, i) => {
+                                    // Decide side & direction based on index
+                                    const positions = [
+                                        { side: "left-0", y: -140, x: -180 },  // top-left
+                                        { side: "left-0", y: 100, x: -180 },  // bottom-left
+                                        { side: "right-0", y: -140, x: 180 },  // top-right
+                                        { side: "right-0", y: 100, x: 180 },  // bottom-right
+                                    ];
+                                    const pos = positions[i] || positions[0]; // fallback
 
-                <AnimatePresence>
-                    {hovered && (
-                        <>
-                            {p.imagesDesc.map((ele, i) => {
-                                // Decide side & direction based on index
-                                const positions = [
-                                    { side: "left-0", y: -140, x: -180 },  // top-left
-                                    { side: "left-0", y: 100, x: -180 },  // bottom-left
-                                    { side: "right-0", y: -140, x: 180 },  // top-right
-                                    { side: "right-0", y: 100, x: 180 },  // bottom-right
-                                ];
-                                const pos = positions[i] || positions[0]; // fallback
-
-                                return (
-                                    <div
-                                        key={i}
-                                        className={`absolute top-1/2 ${pos.side} flex flex-col gap-3 -translate-y-1/2 z-0`}
-                                    >
-                                        <motion.div
-                                            custom={i}
-                                            variants={{
-                                                hidden: {
-                                                    opacity: 0,
-                                                    x: 0,
-                                                    y: 0,
-                                                    rotate: 90,
-                                                },
-                                                visible: {
-                                                    opacity: 1,
-                                                    x: pos.x,
-                                                    y: pos.y,
-                                                    rotate: i == 0 || i == 3 ? 10 : -10,
-                                                    transition: { duration: 0.6, delay: 0.15 }
-                                                },
-                                                exit: {
-                                                    opacity: 0,
-                                                    x: 0,
-                                                    y: 0,
-                                                    rotate: -90,
-                                                    transition: { duration: 0.4, delay: i * 0.05 }
-                                                }
-                                            }}
-                                            initial="hidden"
-                                            animate="visible"
-                                            exit="exit"
-                                            className="h-40 w-40 p-3 bg-white/10 rounded-3xl
+                                    return (
+                                        <div
+                                            key={i}
+                                            className={`absolute top-1/2 ${pos.side} flex flex-col gap-3 -translate-y-1/2 z-0`}
+                                        >
+                                            <motion.div
+                                                custom={i}
+                                                variants={{
+                                                    hidden: {
+                                                        opacity: 0,
+                                                        x: 0,
+                                                        y: 0,
+                                                        rotate: 90,
+                                                    },
+                                                    visible: {
+                                                        opacity: 1,
+                                                        x: pos.x,
+                                                        y: pos.y,
+                                                        rotate: i == 0 || i == 3 ? 10 : -10,
+                                                        transition: { duration: 0.6, delay: 0.15 }
+                                                    },
+                                                    exit: {
+                                                        opacity: 0,
+                                                        x: 0,
+                                                        y: 0,
+                                                        rotate: -90,
+                                                        transition: { duration: 0.4, delay: i * 0.05 }
+                                                    }
+                                                }}
+                                                initial="hidden"
+                                                animate="visible"
+                                                exit="exit"
+                                                className="h-40 w-40 p-3 bg-white/10 rounded-3xl
                                             shadow-[0_0_3px_rgba(99,102,241,0.4),0_0_6px_rgba(99,102,241,0.3),0_0_12px_rgba(99,102,241,0.2),0_0_24px_rgba(99,102,241,0.1)]
                                             "
-                                        >
-                                            <div className="h-full w-full rounded-2xl flex flex-col justify-between
+                                            >
+                                                <div className="h-full w-full rounded-2xl flex flex-col justify-between
               ">
-                                                <div className="flex flex-col justify-evenly h-full rounded-2xl">
-                                                    <img src={ele.url} alt="" className="rounded-2xl object-cover" />
+                                                    <div className="flex flex-col justify-evenly h-full rounded-2xl">
+                                                        <img src={ele.url} alt="" className="rounded-2xl object-cover" />
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </motion.div>
-                                    </div>
-                                );
-                            })}
-                        </>
-                    )}
+                                            </motion.div>
+                                        </div>
+                                    );
+                                })}
+                            </>
+                        )}
 
-                </AnimatePresence>
+                    </AnimatePresence>
+                </div>
+
+                <div className="md:hidden">
+                    <AnimatePresence>
+                        {hovered && (
+                            <>
+                                {p.imagesDesc.map((ele, i) => {
+                                    // Decide side & direction based on index
+                                    const positions = [
+                                        { side: "left-0", y: -100, x: -70 },  // top-left
+                                        { side: "left-0", y: 50, x: -70 },  // bottom-left
+                                        { side: "right-0", y: -100, x: 70 },  // top-right
+                                        { side: "right-0", y: 50, x: 70 },  // bottom-right
+                                    ];
+                                    const pos = positions[i] || positions[0]; // fallback
+
+                                    return (
+                                        <div
+                                            key={i}
+                                            className={`absolute top-1/2 ${pos.side} flex flex-col gap-3 -translate-y-1/2 z-0`}
+                                        >
+                                            <motion.div
+                                                custom={i}
+                                                variants={{
+                                                    hidden: {
+                                                        opacity: 0,
+                                                        x: 0,
+                                                        y: 0,
+                                                        rotate: 90,
+                                                    },
+                                                    visible: {
+                                                        opacity: 1,
+                                                        x: pos.x,
+                                                        y: pos.y,
+                                                        rotate: i == 0 || i == 3 ? 10 : -10,
+                                                        transition: { duration: 0.6, delay: 0.15 }
+                                                    },
+                                                    exit: {
+                                                        opacity: 0,
+                                                        x: 0,
+                                                        y: 0,
+                                                        rotate: -90,
+                                                        transition: { duration: 0.4, delay: i * 0.05 }
+                                                    }
+                                                }}
+                                                initial="hidden"
+                                                animate="visible"
+                                                exit="exit"
+                                                className="h-20 w-20 p-[6px] bg-white/10 rounded-3xl
+                                            shadow-[0_0_3px_rgba(99,102,241,0.4),0_0_6px_rgba(99,102,241,0.3),0_0_12px_rgba(99,102,241,0.2),0_0_24px_rgba(99,102,241,0.1)]
+                                            "
+                                            >
+                                                <div className="h-full w-full rounded-2xl flex flex-col justify-between
+              ">
+                                                    <div className="flex flex-col justify-evenly h-full rounded-2xl">
+                                                        <img src={ele.url} alt="" className="rounded-2xl object-cover" />
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        </div>
+                                    );
+                                })}
+                            </>
+                        )}
+
+                    </AnimatePresence>
+                </div>
 
             </div>
         </motion.div >

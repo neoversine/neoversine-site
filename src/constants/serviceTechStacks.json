@@ -1,0 +1,57 @@
+{
+  "website-development": {
+    "Frontend": ["React", "Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
+    "Backend": ["Node.js", "Express", "MongoDB", "PostgreSQL", "GraphQL"],
+    "Tools": ["Vercel", "Docker", "GitHub", "Figma", "Google Analytics", "Lighthouse"]
+  },
+  "app-development": {
+    "Frontend": ["React Native", "Flutter", "Expo", "Tailwind CSS"],
+    "Backend": ["Node.js", "NestJS", "Express", "MongoDB", "PostgreSQL"],
+    "Tools": ["GitHub", "Docker", "Firebase", "Supabase", "Figma", "Jest"]
+  },
+  "branding-design": {
+    "DesignTools": ["Figma", "Adobe XD", "Photoshop", "Illustrator"],
+    "AI_Tools": ["Midjourney", "ChatGPT", "Canva AI"],
+    "WorkflowTools": ["Notion", "Miro", "Slack"]
+  },
+  "chatbots-ai-assistants": {
+    "Frameworks": ["LangChain", "OpenAI API", "Dialogflow", "Rasa"],
+    "Integration": ["Telegram", "WhatsApp", "Web Widgets", "Slack"],
+    "Tools": ["Node.js", "Supabase", "n8n", "Docker", "Figma"]
+  },
+  "ai-automation": {
+    "Automation": ["n8n", "Zapier", "Make.com", "LangChain"],
+    "Backend": ["Node.js", "Python", "Supabase", "MongoDB"],
+    "Tools": ["Docker", "GitHub", "Google Workspace", "Slack", "Figma"]
+  },
+  "ai-integrated-software": {
+    "AI": ["OpenAI API", "Gemini", "LangChain", "PyTorch", "TensorFlow"],
+    "Backend": ["Node.js", "Python", "Django", "Supabase", "MongoDB"],
+    "Frontend": ["React", "Next.js", "Tailwind CSS"],
+    "Tools": ["Docker", "GitHub", "Figma", "Postman", "n8n"]
+  },
+  "ecommerce-solutions": {
+    "Frontend": ["React", "Next.js", "Tailwind CSS", "Redux"],
+    "Backend": ["Node.js", "Express", "MongoDB", "PostgreSQL"],
+    "Platforms": ["Shopify", "WooCommerce", "Magento", "Snipcart"],
+    "Tools": ["Docker", "GitHub", "Stripe API", "Figma", "Vercel"]
+  },
+  "saas-product-development": {
+    "Frontend": ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+    "Backend": ["Node.js", "NestJS", "PostgreSQL", "Redis"],
+    "Infrastructure": ["Docker", "Kubernetes", "AWS", "GCP", "Supabase"],
+    "Tools": ["GitHub", "Figma", "Postman", "Jira"]
+  },
+  "digital-marketing-automation": {
+    "Automation": ["n8n", "Zapier", "Make.com"],
+    "MarketingTools": ["HubSpot", "Mailchimp", "Google Ads", "Meta Ads Manager"],
+    "AI": ["OpenAI API", "LangChain", "GPT models"],
+    "Analytics": ["Google Analytics", "Hotjar", "Mixpanel"]
+  },
+  "cloud-infrastructure": {
+    "Cloud": ["AWS", "GCP", "Azure", "Supabase", "Vercel"],
+    "DevOps": ["Docker", "Kubernetes", "Terraform", "GitHub Actions", "CI/CD Pipelines"],
+    "Monitoring": ["Prometheus", "Grafana", "New Relic"],
+    "Security": ["OWASP best practices", "SSL/TLS", "IAM Policies"]
+  }
+}

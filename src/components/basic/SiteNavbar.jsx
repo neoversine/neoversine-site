@@ -13,10 +13,14 @@ import {
 import { useState } from "react";
 import SpecialButton from "./SpecialButton/SpecialButton";
 import SpecialButton2 from "./SpecialButton/SpecialButton2";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export function SiteNavbar() {
     const navItems = [
+        {
+            name: "Services",
+            link: "/services",
+        },
         {
             name: "Our Works",
             link: "/our-works",
@@ -32,7 +36,6 @@ export function SiteNavbar() {
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const navigate = useNavigate();
     return (
         <Navbar>
             {/* Desktop Navigation */}

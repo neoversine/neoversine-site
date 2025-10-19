@@ -12,6 +12,7 @@ import NeoversineShowcase from '../components/home/NeoversineShowcase'
 import WaveTop from '../components/home/WaveTop'
 import TopProducts from '../components/home/TopProducts'
 import TechStack from '../components/home/TechStack'
+import IndustriesWeServe from '../components/home/IndustriesWeServe'
 
 const HomePage = () => {
     useEffect(() => {
@@ -31,6 +32,8 @@ const HomePage = () => {
             <TopProducts />
 
             <WhyNeoversine />
+
+            <IndustriesWeServe />
 
             {/* <ClientTestimonial /> */}
 

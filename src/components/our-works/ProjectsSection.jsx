@@ -1,6 +1,7 @@
 import React from 'react'
 import BentoGrid from './BentoGrid'
 import ProductShowcase from './ProductShowcase'
+import PortfolioSection from './PortfolioSection'
 
 const ProjectsSection = () => {
     return (
@@ -20,6 +21,8 @@ const ProjectsSection = () => {
                     </div>
 
                     <ProductShowcase />
+                    {/* New Projects / Portfolio section inserted below Products */}
+                    <PortfolioSection />
                     {/* <BentoGrid /> */}
                 </div>
             </div>

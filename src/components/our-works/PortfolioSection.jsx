@@ -324,21 +324,7 @@ const BemoModal = ({ project, onClose }) => {
                         {project.longDesc}
                     </p>
                     
-                    {/* Credits Section at bottom of description */}
-                    <div className="mt-16 pt-8 border-t border-neutral-800/50 grid grid-cols-2 md:grid-cols-4 gap-8">
-                        <div>
-                             <h4 className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2">Lead Engineer</h4>
-                             <p className="text-sm font-mono text-white">Alex C.</p>
-                        </div>
-                        <div>
-                             <h4 className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2">AI Architect</h4>
-                             <p className="text-sm font-mono text-white">Dr. R. Singh</p>
-                        </div>
-                        <div>
-                             <h4 className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2">Infrastructure</h4>
-                             <p className="text-sm font-mono text-white">Neoversine Core Ops</p>
-                        </div>
-                    </div>
+                    
                 </div>
                 
                 {/* Right Sidebar for Deliverables / Links */}

@@ -1,11 +1,11 @@
 /* eslint-disable no-constant-condition */
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import GooeyNav from '../react-bits/GooeyNav';
-import { Card } from './Card';
-import ShuffleLoader2 from '../basic/SpecialLoader/ShuffleLoader2';
-import { SparklesText } from '../magic-ui/SparklesText';
-import { thoughtLeadershipPosts } from '../../constants/blogData';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import GooeyNav from "../react-bits/GooeyNav";
+import { Card } from "./Card";
+import ShuffleLoader2 from "../basic/SpecialLoader/ShuffleLoader2";
+import { SparklesText } from "../magic-ui/SparklesText";
+import { thoughtLeadershipPosts } from "../../constants/blogData";
 
 const API_URL = `https://api.airtable.com/v0/${import.meta.env.VITE_AIRTABLE_BASE_ID}`;
 
@@ -15,11 +15,11 @@ const config = {
     },
 };
 
-const sectionKeys = ['aiExperiment', 'llm', 'research'];
+const sectionKeys = ["aiExperiment", "llm", "research"];
 const categoryMap = {
-    aiExperiment: 'ai-experiments',
-    llm: 'llm',
-    research: 'research',
+    aiExperiment: "ai-experiments",
+    llm: "llm",
+    research: "research",
 };
 
 const defaultArticles = {
@@ -126,15 +126,15 @@ const OurBlogs = () => {
     }, [activeIndex]);
 
     return (
-        <div className='mt-20'>
-            <div className="flex mb-10 mx-auto">
-                <div className="flex items-end justify-center gap-2 md:gap-4 text-xl md:text-4xl font-semibold text-white text-center mx-auto mb-10">
-                    Thought<SparklesText>LEADERSHIP</SparklesText>
+        <section className="py-[clamp(48px,6vw,96px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto w-full">
+            <div className="flex mb-8 mx-auto">
+                <div className="flex items-end justify-center gap-2 md:gap-4 text-2xl sm:text-3xl md:text-5xl font-bold text-white text-center mx-auto">
+                    Thought <SparklesText>LEADERSHIP</SparklesText>
                 </div>
             </div>
 
-            {/* section tabs  */}
-            <div className="w-full max-w-[290px] sm:max-w-xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl mx-auto max-md:h-[40px] h-[70px]" style={{ position: 'relative' }}>
+            {/* Section tabs */}
+            <div className="w-full max-w-[290px] sm:max-w-xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto max-md:h-[40px] h-[70px] mb-8" style={{ position: "relative" }}>
                 <GooeyNav
                     items={sectionKeys}
                     particleCount={15}
@@ -150,15 +150,15 @@ const OurBlogs = () => {
             </div>
 
             {/* Section content */}
-            <div className="w-full max-w-7xl mx-auto min-h-[300px] mb-20">
+            <div className="w-full min-h-[300px]">
                 {isLoading ? (
-                    <div className='h-[300px] w-full flex justify-center items-center'>
+                    <div className="h-[300px] w-full flex justify-center items-center">
                         <ShuffleLoader2 />
                     </div>
                 ) : (
-                    <div className='w-full max-w-7xl mx-auto'>
+                    <div className="w-full">
                         {sections[activeKey]?.data?.length > 0 ? (
-                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-6'>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {sections[activeKey].data.map((item, idx) => (
                                     <React.Fragment key={idx}>
                                         <Card item={item} />
@@ -171,7 +171,7 @@ const OurBlogs = () => {
                     </div>
                 )}
             </div>
-        </div>
+        </section>
     );
 };
 

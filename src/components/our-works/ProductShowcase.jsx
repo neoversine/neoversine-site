@@ -1,156 +1,190 @@
 /* eslint-disable no-unused-vars */
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
+import {
+    IconArrowUpRight,
+    IconCircleCheck,
+    IconCpu,
+    IconTerminal2,
+    IconDeviceDesktopAnalytics,
+    IconTransform,
+    IconBolt,
+    IconUsersGroup,
+    IconBroadcast,
+    IconShieldCheck,
+    IconLayersLinked
+} from "@tabler/icons-react";
 
 const products = [
     {
-        title: "ARC Network",
-        tagline: "Lead CRM + Outreach Engine with Collaboration Intelligence",
-        stat: "+40% Conversion",
+        title: "Agent-OS (Hermes)",
+        tagline: "Our Core Foundation",
+        stat: "Live",
+        badge: "Core OS",
+        clientBadge: "Foundational Architecture",
         desc: {
-            "Core Capability": [
-                "Agents dynamically adjust sequencing based on real-time engagement signals and intent data."
-            ],
-            "Human Handoff": [
-                "Triggers sales follow-ups only when meaningful buyer engagement occurs."
-            ],
-            "Data Hygiene": [
-                "Zero manual updates: records enrich autonomously from public signals."
+            "Core Promise": [
+                "Self-improving memory runtime that dynamically creates execution skills and delegates parallel tasks."
             ],
             "Architecture": [
-                "Hermes Agent-OS parallel delegation with intent-scoring decision trees."
+                "Cross-task persistent memory graph with autonomous skill compilation."
             ]
         },
         img: "/works/neobot.png",
-        gradient: "from-cyan-500 via-indigo-500 to-purple-500",
-        imagesDesc: [
-            { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" },
-        ]
     },
     {
-        title: "NeoCrawl Scraping API",
-        tagline: "Adaptive Vision-Guided Web Scraping Layer",
-        stat: "Zero Brittle Selectors",
+        title: "vLLM Inference Engine",
+        tagline: "Cost-Per-Token Economics Stack",
+        stat: "Live",
+        badge: "80% Savings",
+        clientBadge: "vRAM: 92GB → <10GB",
         desc: {
-            "Core Capability": [
-                "Vision-guided scrapers that adapt dynamically to DOM shifts, anti-bot walls, and dynamic SPAs."
-            ],
-            "Reliability": [
-                "Eliminates dependency on third-party proxy subscriptions and brittle CSS selectors."
-            ],
-            "Output": [
-                "Streams clean, validated JSON schemas straight into downstream agent loops."
+            "Core Promise": [
+                "PagedAttention, KV-cache reuse, and speculative decoding to slash multi-agent serving costs."
             ],
             "Architecture": [
-                "ScrapeGraphAI foundation with dynamic skill creation for unexpected layouts."
+                "Custom hardware-level continuous batching serving cluster."
             ]
         },
-        img: "/works/neocrawl.png",
-        gradient: "from-purple-500 via-pink-400 to-red-400",
-        imagesDesc: [
-            { url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80" },
-        ]
+        img: "/works/neobot.png",
     },
     {
-        title: "Pocket Control Deck",
-        tagline: "MIT-Licensed Phone-First AI Runtime Surface",
-        stat: "100% Self-Hosted",
+        title: "Multi-Agent Orchestration",
+        tagline: "Concurrent Specialist Swarms",
+        stat: "Live",
+        badge: "Swarm Intelligence",
+        clientBadge: "10x Concurrency",
         desc: {
-            "Core Capability": [
-                "Real-time event streaming allowing operators to watch agents reason and step through tasks."
-            ],
-            "Intervention": [
-                "Inject live steering prompts and modify runtime hyperparameters without redeploying."
-            ],
-            "Licensing": [
-                "MIT-licensed open core — no SaaS seat tax, no vendor telemetry lock-in."
+            "Core Promise": [
+                "Parallel subagents that deliberate, execute, and verify complex technical and analytical workflows."
             ],
             "Architecture": [
-                "WebSocket event dispatcher with responsive mobile-optimized UI."
+                "Hermes subagent dispatching with self-correcting validation loops."
+            ]
+        },
+        img: "/works/neobot.png",
+    },
+    {
+        title: "Control Deck",
+        tagline: "MIT-Licensed Phone-First Runtime Control",
+        stat: "Live",
+        badge: "MIT Open Source",
+        clientBadge: "0 Lock-In",
+        desc: {
+            "Core Promise": [
+                "Event-driven mobile dashboard to monitor live reasoning steps and inject runtime steering prompts."
+            ],
+            "Architecture": [
+                "WebSocket streaming runtime surface without third-party vendor lock-in."
             ]
         },
         img: "/works/neopost2.png",
-        gradient: "from-blue-500 via-cyan-400 to-teal-400",
-        imagesDesc: [
-            { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" },
-        ]
     },
     {
-        title: "D8alytics Synthetic Vision",
-        tagline: "Computer Vision Domain Randomization Pipeline",
-        stat: "mAP50 0.96",
+        title: "NeoCrawl & Data Infrastructure",
+        tagline: "Adaptive Scraping Layer",
+        stat: "Live",
+        badge: "0 Selectors",
+        clientBadge: "Postproxy-style API",
         desc: {
-            "Core Capability": [
-                "Generates 700 YOLO-formatted images in <1 hour for custom detection tasks."
-            ],
-            "Performance": [
-                "Achieves mAP50 0.96 trained entirely on synthetic data with zero real images required."
-            ],
-            "Speed": [
-                "Reduces dataset preparation from weeks of manual labeling to under 60 minutes."
+            "Core Promise": [
+                "Vision-guided scrapers that survive anti-bot walls, dynamic JS, and site layout mutations."
             ],
             "Architecture": [
-                "Generative 3D domain randomization + automated bounding box synthesis."
+                "ScrapeGraphAI foundation with dynamic skill creation for unexpected DOMs."
             ]
         },
-        img: "/works/neogeo.png",
-        gradient: "from-amber-500 via-orange-400 to-rose-400",
-        imagesDesc: [
-            { url: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80" },
-        ]
+        img: "/works/neocrawl.png",
     },
     {
-        title: "NeopostGen SaaS",
-        tagline: "Automated Multi-Format Creative Generation Engine",
-        stat: "10x Faster Creation",
+        title: "ARC Network",
+        tagline: "Lead CRM + Outreach Engine",
+        stat: "Live",
+        badge: "+40% Conversion",
+        clientBadge: "Crisp-style Suite",
         desc: {
-            "Core Capability": [
+            "Core Promise": [
+                "Collaboration-intelligence CRM where agents dynamically adapt sequencing based on intent signals."
+            ],
+            "Architecture": [
+                "Dynamic intent scoring decision trees with autonomous data hygiene."
+            ]
+        },
+        img: "/works/neobot.png",
+    },
+    {
+        title: "NeopostGen",
+        tagline: "Brand-Consistent Content Automation",
+        stat: "Live",
+        badge: "10x Speed",
+        clientBadge: "Blotato-style Publishing",
+        desc: {
+            "Core Promise": [
                 "Transforms brief inputs into brand-consistent social posts, ad creatives, and layouts."
-            ],
-            "Automation": [
-                "Eliminates manual Figma/Photoshop overhead for high-velocity growth teams."
-            ],
-            "Consistency": [
-                "Enforces typography, color tokens, and messaging constraints deterministically."
             ],
             "Architecture": [
                 "Multi-agent layout planner with vector asset composition."
             ]
         },
         img: "/works/neocontent.png",
-        gradient: "from-emerald-500 via-teal-400 to-cyan-400",
-        imagesDesc: [
-            { url: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" },
-            { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80" },
-        ]
+    },
+    {
+        title: "D8alytics",
+        tagline: "Computer Vision Synthetic Pipeline",
+        stat: "Live",
+        badge: "mAP50 0.96",
+        clientBadge: "700 imgs/1h",
+        desc: {
+            "Core Promise": [
+                "Generates 700 YOLO-formatted images in <1 hour achieving mAP50 0.96 with zero real-world photos."
+            ],
+            "Architecture": [
+                "Generative 3D domain randomization + automated bounding box synthesis."
+            ]
+        },
+        img: "/works/neogeo.png",
+    },
+    {
+        title: "Agentic CRM / ERP / B2B Work",
+        tagline: "Headcount Replacement Agents",
+        stat: "Live / In build",
+        badge: "Headcount Core",
+        clientBadge: "Enterprise Operations",
+        desc: {
+            "Core Promise": [
+                "Specialized agents dedicated to invoice validation, regulatory compliance audits, and customer triage."
+            ],
+            "Architecture": [
+                "Deterministic rule validation with automated database synchronization."
+            ]
+        },
+        img: "/works/neobot.png",
+    },
+    {
+        title: "Digital Twin Simulators & ARC",
+        tagline: "Simulation & Reasoning Models",
+        stat: "Concept",
+        badge: "Frontier Labs",
+        clientBadge: "Research Core",
+        desc: {
+            "Core Promise": [
+                "Agent-based simulation engines for physical systems and reasoning-under-constraint solvers."
+            ],
+            "Architecture": [
+                "Discrete-event agent models with inductive program synthesis."
+            ]
+        },
+        img: "/works/neogeo.png",
     }
 ];
 
 export default function ProductShowcase() {
     return (
-        <section className="py-12">
-            <div className="max-w-6xl mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {products.map((p, i) => {
-                        return (
-                            <ProductCard key={i} product={p} index={i} />
-                        );
-                    })}
-                </div>
+        <section className="py-[clamp(48px,6vw,96px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {products.map((p, i) => (
+                    <ProductCard key={i} product={p} index={i} />
+                ))}
             </div>
         </section>
     );
@@ -159,23 +193,22 @@ export default function ProductShowcase() {
 function ProductCard({ product: p, index }) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
             viewport={{ once: true }}
-            className="relative flex flex-col bg-[#131313] border border-white/10 hover:border-cyan-500/50 rounded-2xl p-6 transition-all duration-300 group hover:-translate-y-1 shadow-lg hover:shadow-cyan-500/10"
+            className="relative flex flex-col bg-[#0C0E12] border border-white/[0.12] hover:border-white/25 rounded-[24px] p-6 transition-all duration-300 group hover:-translate-y-1 shadow-[0_4px_24px_rgba(0,0,0,0.5)]"
         >
             <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
-                    {p.stat}
+                <span className="text-[11px] font-mono px-3 py-1 rounded-full bg-[#6366F1]/10 text-[#6366F1] border border-[#6366F1]/30 font-semibold">
+                    {p.badge}
                 </span>
-                <span className="text-xs text-gray-500 font-mono">
-                    PROD-SYSTEM-0{index + 1}
+                <span className="text-[10px] text-[#6B7280] font-mono">
+                    SYS-0{index + 1}
                 </span>
             </div>
 
-            <div className="h-44 w-full bg-black/50 border border-white/5 rounded-xl mb-5 flex items-center justify-center p-3 overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="h-40 w-full bg-black/50 border border-white/[0.06] rounded-[18px] mb-5 flex items-center justify-center p-3 overflow-hidden relative">
                 <img
                     src={p.img}
                     alt={p.title}
@@ -183,18 +216,21 @@ function ProductCard({ product: p, index }) {
                 />
             </div>
 
-            <h2 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+            <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider mb-1 block">
+                {p.clientBadge}
+            </span>
+            <h2 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
                 {p.title}
             </h2>
-            <p className="text-xs text-gray-400 font-mono mt-1 mb-4">
+            <p className="text-xs text-[#94A3B8] font-mono mt-1 mb-4">
                 {p.tagline}
             </p>
 
-            <div className="space-y-2 mt-auto pt-4 border-t border-white/10 text-xs text-gray-300">
-                {Object.entries(p.desc).slice(0, 2).map(([key, val], idx) => (
+            <div className="space-y-2 mt-auto pt-4 border-t border-white/[0.08] text-xs text-[#94A3B8]">
+                {Object.entries(p.desc).map(([key, val], idx) => (
                     <div key={idx} className="flex flex-col">
-                        <span className="text-gray-500 font-mono text-[10px] uppercase tracking-wider">{key}</span>
-                        <span className="text-gray-300 mt-0.5 leading-relaxed">{val[0]}</span>
+                        <span className="text-[#6B7280] font-mono text-[9px] uppercase tracking-wider">{key}</span>
+                        <span className="text-gray-200 mt-0.5 leading-relaxed text-[11px] font-light">{val[0]}</span>
                     </div>
                 ))}
             </div>

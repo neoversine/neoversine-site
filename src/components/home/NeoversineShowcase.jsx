@@ -1,95 +1,91 @@
-// NeoversineShowcase.jsx
-import React, { useEffect } from "react";
-import { FaTerminal, FaBolt, FaLayerGroup, FaMobileAlt, FaDatabase, FaBrain } from "react-icons/fa";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from "react";
+import { IconCheck, IconX, IconLayersLinked } from "@tabler/icons-react";
 
-const capabilities = [
-    {
-        title: "Hermes Agent-OS",
-        icon: <FaTerminal />,
-        desc: "Self-improving, long-term memory-enabled gateway orchestrating parallel subagents.",
-    },
-    {
-        title: "vLLM Serving Economics",
-        icon: <FaBolt />,
-        desc: "PagedAttention, KV-cache reuse & speculative decoding to minimize cost-per-token.",
-    },
-    {
-        title: "Multi-Agent Swarms",
-        icon: <FaLayerGroup />,
-        desc: "Parallel specialized agents working concurrently on lead research, drafting & pipelines.",
-    },
-    {
-        title: "Pocket Control Deck",
-        icon: <FaMobileAlt />,
-        desc: "MIT-licensed event-driven surface to watch reasoning in real-time and intervene live.",
-    },
-    {
-        title: "Adaptive Data & NeoCrawl",
-        icon: <FaDatabase />,
-        desc: "Vision-guided crawlers and ScrapeGraphAI that adapt to DOM shifts without brittle selectors.",
-    },
-    {
-        title: "Synthetic Data Engines",
-        icon: <FaBrain />,
-        desc: "D8alytics pipeline: 700 YOLO images/hour with mAP50 0.96 — zero real images needed.",
-    },
-];
-
-const NeoversineShowcase = () => {
-
-    useEffect(() => {
-        AOS.init({ duration: 1000 });
-    }, []);
-
+export default function NeoversineShowcase() {
     return (
-        <div className="bg-[#181818] text-white py-20 max-md:pt-10 px-6 md:px-16 rounded-3xl overflow-hidden">
-            <div
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-bottom"
-                className="text-center pb-12 floating-text"
-            >
-                <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-                    <span className="bg-gradient-to-br from-cyan-400 via-white to-purple-400 bg-clip-text text-transparent">
-                        Foundational Capabilities
-                    </span>
-                </h2>
-                <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">
-                    We don't reskin third-party APIs. We architect the substrate that makes agent swarms economically viable and operationally transparent.
-                </p>
-            </div>
+        <section className="py-[clamp(48px,6vw,120px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto w-full">
+            <div className="rounded-[28px] bg-[#0C0E12] border border-white/[0.12] p-8 md:p-12 relative overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
+                {/* Background Ambient Glow */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-[#6366F1]/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-                {capabilities.map((item, i) => (
-                    <div
-                        key={i}
-                        data-aos="fade-up"
-                        data-aos-delay={`${(i % 3) * 150}`}
-                        data-aos-anchor-placement="center-bottom"
-                        className="relative min-h-[220px] cursor-pointer group"
-                    >
-                        <div className="absolute left-[5px] top-[3px] h-full w-full bg-[#bfbfbf]"
-                            style={{
-                                clipPath: "polygon(30px 0%, calc(100% - 30px) 0%, 100% 30px, 100% 100%, calc(100% - 30px) 100%, 30px 100%, 0px 100%, 0px 0px)",
-                                boxShadow: "white 0px 8px 0px 4px",
-                            }}
-                        />
-                        <div
-                            className="absolute inset-0 bg-gradient-to-br from-[#2e2e2e] to-[#131313] group-hover:from-[#3a3a3a] group-hover:to-[#1a1a1a] transition-all duration-300 py-8 px-7 flex flex-col justify-start"
-                            style={{
-                                clipPath: "polygon(30px 0%, calc(100% - 30px) 0%, 100% 30px, 100% 100%, calc(100% - 30px) 100%, 30px 100%, 0px 100%, 0px 0px)",
-                                boxShadow: "black 0px 8px 0px 4px",
-                            }}>
-                            <div className="text-3xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
-                            <h3 className="text-lg md:text-xl font-semibold mb-2 text-white">{item.title}</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                <div className="max-w-[640px] mb-10">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.1] text-[10px] font-mono text-cyan-400 uppercase tracking-wider mb-4">
+                        <IconLayersLinked className="w-3.5 h-3.5" />
+                        One Stack vs Fragmented SaaS
+                    </div>
+                    <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white mb-3">
+                        The End of Stitching Off-the-Shelf AI Wrappers.
+                    </h2>
+                    <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+                        You think you need Blotato for publishing, Crisp for customer support, and Postproxy for a social API? We build you one system that does all of it — on our own architecture. No stitching, no glue, no third-party subscriptions.
+                    </p>
+                </div>
+
+                {/* Comparison Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* The Old Fragmented Way */}
+                    <div className="rounded-[20px] bg-black/40 border border-white/[0.08] p-6 flex flex-col justify-between">
+                        <div>
+                            <div className="flex items-center gap-2 mb-4 text-rose-400 font-mono text-xs font-semibold uppercase tracking-wider">
+                                <IconX className="w-4 h-4" />
+                                Fragmented Agency Stacking
+                            </div>
+                            <ul className="space-y-3 text-xs text-[#94A3B8]">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-rose-500 font-bold">✕</span>
+                                    <span>Paying 5+ separate SaaS subscriptions (Make.com, Zapier, scraping proxies, vector DBs).</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-rose-500 font-bold">✕</span>
+                                    <span>Brittle prompt wrappers and n8n workflows that break on minor DOM changes.</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-rose-500 font-bold">✕</span>
+                                    <span>GPU memory bloat and massive cost-per-token from unoptimized LLM calls.</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-rose-500 font-bold">✕</span>
+                                    <span>Zero code ownership — locked into third-party closed platforms.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="mt-6 pt-4 border-t border-white/[0.06] text-[11px] font-mono text-[#6B7280]">
+                            Result: High ongoing seat costs &amp; fragile execution
                         </div>
                     </div>
-                ))}
-            </div>
-        </div>
-    );
-};
 
-export default NeoversineShowcase;
+                    {/* The Neoversine Agent-OS Way */}
+                    <div className="rounded-[20px] bg-gradient-to-br from-[#6366F1]/15 via-[#0C0E12] to-cyan-500/10 border border-[#6366F1]/40 p-6 flex flex-col justify-between relative shadow-[0_0_30px_rgba(99,102,241,0.15)]">
+                        <div>
+                            <div className="flex items-center gap-2 mb-4 text-emerald-400 font-mono text-xs font-semibold uppercase tracking-wider">
+                                <IconCheck className="w-4 h-4" />
+                                Neoversine Agent-OS Architecture
+                            </div>
+                            <ul className="space-y-3 text-xs text-white">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-emerald-400 font-bold">✓</span>
+                                    <span><strong className="text-white">100% Architecture Ownership</strong> — We design, ship, and own the full stack end-to-end.</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-emerald-400 font-bold">✓</span>
+                                    <span><strong className="text-white">Hermes Agent-OS</strong> — Self-improving memory, parallel subagent swarms, and runtime skill creation.</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-emerald-400 font-bold">✓</span>
+                                    <span><strong className="text-white">vLLM Inference Economics</strong> — PagedAttention and speculative decoding to slash token serving costs.</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-emerald-400 font-bold">✓</span>
+                                    <span><strong className="text-white">MIT Phone-First Control Deck</strong> — Real-time event streaming and live intervention without vendor lock-in.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="mt-6 pt-4 border-t border-white/[0.1] text-[11px] font-mono text-cyan-300 font-medium">
+                            Result: One suite. One API. One architecture.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}

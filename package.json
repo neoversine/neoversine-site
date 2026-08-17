@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "graphify": "python -m graphify.cli extract . --code-only",
+    "graphify:update": "python -m graphify.cli update .",
+    "graphify:html": "python -m graphify.cli export html"
   },
   "dependencies": {
     "@fontsource/pacifico": "^5.2.5",

@@ -1,16 +1,17 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from 'react'
-import { SiteNavbar } from '../components/basic/SiteNavbar'
-import { ConfettiSideCannons } from '../components/magic-ui/ConfettiSideCannons'
-import { ToastContainer } from 'react-toastify';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { Pointerhighlight } from '../components/accernity/Pointerhighlight';
-import SiteFooter from '../components/basic/SiteFooter'
+import React, { useEffect, useState } from "react";
+import { SiteNavbar } from "../components/basic/SiteNavbar";
+import { ConfettiSideCannons } from "../components/magic-ui/ConfettiSideCannons";
+import { ToastContainer } from "react-toastify";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Pointerhighlight } from "../components/accernity/Pointerhighlight";
+import SiteFooter from "../components/basic/SiteFooter";
+import { IconShieldCheck, IconCpu, IconMail, IconMapPin, IconPhone, IconBrandTelegram } from "@tabler/icons-react";
 
 const ContactPage = () => {
     useEffect(() => {
-        AOS.init({ duration: 500 });
+        AOS.init({ duration: 600 });
     }, []);
 
     const [name, setName] = useState("");
@@ -18,81 +19,136 @@ const ContactPage = () => {
     const [data, setData] = useState("");
 
     return (
-        <div className='bg-primary w-full overflow-hidden'>
-            <div className='w-full bg-gradient-to-r from-[#181818] via-[#181818] to-[#21195675] min-h-screen'>
-                <SiteNavbar />
-                <div className='w-full max-w-5xl mx-auto md:pt-32 pt-28 max-md:px-5'>
-                    <div className='max-w-4xl'>
-                        <h1 className='text-4xl md:text-7xl font-semibold leading-tight text-white'>
-                            Foundational <Pointerhighlight><span className='bg-clip-text text-transparent bg-gradient-to-br from-indigo-300 to-cyan-400'>agent systems</span></Pointerhighlight> for teams that own their stack.
-                        </h1>
+        <main className="bg-[#050505] text-white w-full overflow-hidden min-h-screen">
+            <SiteNavbar />
+
+            <div className="pt-32 pb-20 px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto w-full">
+                {/* Header Title */}
+                <div className="max-w-[800px] mb-14">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0C0E12] border border-white/[0.12] text-xs font-mono text-[#6366F1] uppercase tracking-wider mb-4">
+                        <IconCpu className="w-3.5 h-3.5" />
+                        DIRECT ARCHITECTURE PARTNERSHIP
                     </div>
-
-                    <div className='w-full flex max-md:flex-col mt-20 md:mt-28'>
-                        <div className='md:w-[35%] order-2 md:order-1 max-md:mb-10'>
-                            <div className='flex flex-col gap-3 text-sm text-[#9e9e9e] font-mono'>
-                                <p className='text-white font-semibold text-base'>Neoversine</p>
-                                <p>neoversine@gmail.com</p>
-                                <p>+91 8777293979</p>
-                                <p>257/V, Taki Road, Barasat,<br /> Kolkata, West Bengal, India</p>
-                                <div className='mt-4 pt-4 border-t border-white/10 text-xs text-cyan-400/80'>
-                                    Open to long-term architectural builds &amp; foundational deployments.
-                                </div>
-                            </div>
-                        </div>
-                        <div className='md:w-[60%] w-auto md:ml-auto flex flex-col order-1 md:order-2'>
-                            <p className='text-xl md:text-2xl text-gray-300 font-light leading-relaxed'>
-                                We don't take one-off consulting gigs. We partner on long-term builds where architecture ownership, vLLM inference economics, and Hermes agent-OS runtimes replace human labor at scale.
-                            </p>
-
-                            <div className='grid grid-cols-2 gap-5 mt-14 mb-20'>
-                                <div
-                                    data-aos="fade-up"
-                                    data-aos-anchor-placement="center-bottom"
-                                    className='flex flex-col gap-1'>
-                                    <label htmlFor="query-person-name" className='text-gray-400 text-sm font-mono'>Name <span className='text-red-500'>*</span></label>
-                                    <input type="text" name="query-person-name" id="query-person-name" className='border-b-2 border-gray-600 focus:border-cyan-400 focus:outline-none py-2 text-gray-200 bg-transparent text-sm' required
-                                        onChange={(e) => setName(e.target.value)}
-                                    />
-                                </div>
-                                <div
-                                    data-aos="fade-up"
-                                    data-aos-anchor-placement="center-bottom"
-                                    className='flex flex-col gap-1'>
-                                    <label htmlFor="query-person-email" className='text-gray-400 text-sm font-mono'>Work Email <span className='text-red-500'>*</span></label>
-                                    <input type="email" name="query-person-email" id="query-person-email"
-                                        className='border-b-2 border-gray-600 focus:border-cyan-400 focus:outline-none py-2 text-gray-200 bg-transparent text-sm' required
-                                        onChange={(e) => setEmail(e.target.value)}
-                                    />
-                                </div>
-
-                                <div
-                                    data-aos="fade-up"
-                                    data-aos-anchor-placement="center-bottom"
-                                    className='flex flex-col col-span-2 gap-1 mt-4'>
-                                    <label htmlFor="query-data" className='text-gray-400 text-sm font-mono'>System Requirements / Architecture Scope <span className='text-red-500'>*</span></label>
-                                    <textarea name="query-data" id="query-data" rows={4} className='border-b-2 border-gray-600 focus:border-cyan-400 focus:outline-none py-2 text-gray-200 bg-transparent text-sm' required
-                                        placeholder="Describe the workflow or labor hours you're aiming to replace with agent systems..."
-                                        onChange={(e) => setData(e.target.value)}></textarea>
-                                </div>
-
-                                <div
-                                    data-aos="fade-up"
-                                    data-aos-anchor-placement="center-bottom"
-                                    className='col-span-2'
-                                >
-                                    <ConfettiSideCannons name={name} email={email} data={data} className={`py-3 px-8 border border-white/60 bg-gradient-to-br from-purple-400 via-white to-sky-200 text-black font-semibold rounded-full shadow-lg hover:shadow-cyan-500/20 active:scale-95 transition-all cursor-pointer w-fit mt-5`} />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
+                        Foundational <Pointerhighlight><span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white to-cyan-300">agent systems</span></Pointerhighlight> for teams that own their stack.
+                    </h1>
                 </div>
 
-                <ToastContainer />
-            </div>
-            <SiteFooter />
-        </div>
-    )
-}
+                {/* Two-Column Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                    
+                    {/* Left Column: Direct Builder Info */}
+                    <div className="lg:col-span-4 rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-8 shadow-xl">
+                        <span className="text-[10px] font-mono text-[#6366F1] uppercase tracking-wider font-semibold block mb-2">
+                            THE TWO BUILDERS
+                        </span>
+                        <h3 className="text-xl font-bold text-white mb-4">Arka &amp; Ankon</h3>
+                        
+                        <div className="space-y-4 text-xs text-[#94A3B8] font-mono mb-6">
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[#6366F1]">
+                                    <IconMail className="w-4 h-4" />
+                                </div>
+                                <span>neoversine@gmail.com</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-cyan-400">
+                                    <IconPhone className="w-4 h-4" />
+                                </div>
+                                <span>+91 8777293979</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-purple-400">
+                                    <IconMapPin className="w-4 h-4" />
+                                </div>
+                                <span>Kolkata, West Bengal, India</span>
+                            </div>
+                        </div>
 
-export default ContactPage
+                        <div className="pt-4 border-t border-white/[0.08] text-[11px] text-[#6B7280] font-light leading-relaxed">
+                            We partner on long-term builds where architecture ownership, vLLM inference economics, and Hermes agent-OS runtimes replace human labor at scale.
+                        </div>
+                    </div>
+
+                    {/* Right Column: Build Scope Form */}
+                    <div className="lg:col-span-8 rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-10 shadow-xl">
+                        <div className="mb-8">
+                            <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider font-semibold block mb-1">
+                                SCHEDULE A BUILD REVIEW
+                            </span>
+                            <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                                Describe What Work Needs Replacing
+                            </h2>
+                            <p className="text-xs sm:text-sm text-[#94A3B8] font-light max-w-[640px]">
+                                We review every proposal directly within 24 hours. No sales reps, straight to architectural scoping.
+                            </p>
+                        </div>
+
+                        <div className="space-y-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div className="flex flex-col gap-1.5">
+                                    <label htmlFor="query-person-name" className="text-xs text-[#94A3B8] font-mono">
+                                        Your Name <span className="text-rose-400">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="query-person-name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        className="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-white/[0.1] text-white text-xs font-mono focus:border-[#6366F1] focus:outline-none transition-colors"
+                                        placeholder="Arka Roy"
+                                        required
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-1.5">
+                                    <label htmlFor="query-person-email" className="text-xs text-[#94A3B8] font-mono">
+                                        Work Email <span className="text-rose-400">*</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="query-person-email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        className="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-white/[0.1] text-white text-xs font-mono focus:border-[#6366F1] focus:outline-none transition-colors"
+                                        placeholder="founder@company.com"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col gap-1.5">
+                                <label htmlFor="query-data" className="text-xs text-[#94A3B8] font-mono">
+                                    System Requirements / Architecture Scope <span className="text-rose-400">*</span>
+                                </label>
+                                <textarea
+                                    id="query-data"
+                                    rows={4}
+                                    value={data}
+                                    onChange={(e) => setData(e.target.value)}
+                                    className="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-white/[0.1] text-white text-xs font-mono focus:border-[#6366F1] focus:outline-none transition-colors leading-relaxed"
+                                    placeholder="Describe the workflow or labor hours you're aiming to replace with agent systems..."
+                                    required
+                                />
+                            </div>
+
+                            <div className="pt-2">
+                                <ConfettiSideCannons
+                                    name={name}
+                                    email={email}
+                                    data={data}
+                                    className="py-2.5 px-8 rounded-full bg-white text-black font-semibold text-xs hover:bg-gray-200 active:scale-95 transition-all cursor-pointer shadow-lg"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <ToastContainer />
+            <SiteFooter />
+        </main>
+    );
+};
+
+export default ContactPage;

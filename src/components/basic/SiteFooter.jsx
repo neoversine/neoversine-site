@@ -2,34 +2,22 @@ import React, { useState } from "react";
 import { MoveRight } from "lucide-react";
 import { AnimatedToolTip } from "../accernity/AnimatedToolTip";
 import WaveTop from "../home/WaveTop";
-import { RiTwitterXFill } from "react-icons/ri"
-import { FaInstagram, FaGithub } from "react-icons/fa"
+import { RiTwitterXFill } from "react-icons/ri";
+import { FaInstagram, FaGithub } from "react-icons/fa";
 
 const people = [
     {
         id: 1,
         name: "Arka Probha Roy",
-        designation: "Founder & HARNESS",
+        designation: "Founder · HARNESS · Agent-OS & Inference",
         image: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1752006741/arka-profile_m9eaqd.jpg",
     },
     {
         id: 2,
         name: "Ankon Karak",
-        designation: "Core Engineering",
+        designation: "Co-founder · Engineering & Delivery",
         image: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1752091606/ankon-profile_zgbdjp.jpg",
-    },
-    {
-        id: 3,
-        name: "Ujjwaini Saha",
-        designation: "Agent Cognition",
-        image: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1752091604/ujjwaini-profile_af0swh.jpg",
-    },
-    {
-        id: 4,
-        name: "Jyotirmoy Baidya",
-        designation: "Full-Stack Systems",
-        image: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1751914404/jb-profile3_oq7acj.jpg",
-    },
+    }
 ];
 
 function Developers() {
@@ -71,14 +59,14 @@ const SiteFooter = () => {
     return (
         <>
             <WaveTop />
-            <footer className="py-20 pb-10 text-gray-300 bg-[#000000] backdrop-blur-md">
+            <footer className="py-20 pb-10 text-gray-300 bg-[#050505] border-t border-white/[0.08] backdrop-blur-md">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         <div className="md:col-span-1">
                             <h3 className="text-2xl font-bold text-white mb-2">Neoversine</h3>
                             <p className="text-xs text-cyan-400 font-mono mb-4">AGENT-OPERATING-SYSTEMS &amp; vLLM INFERENCE ECONOMICS</p>
                             <p className="text-sm text-gray-400 mb-6 leading-relaxed">
-                                We build AI systems that replace work. Owned architecture, zero wrapper tax, and real-time control decks.
+                                We build AI systems that replace work. Owned architecture, zero wrapper tax, and real-time control decks. Built and owned end-to-end by Arka &amp; Ankon.
                             </p>
                             <div className="flex space-x-4 text-lg">
                                 <a href="https://x.com/neoversine" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="Neoversine on X">
@@ -147,7 +135,7 @@ const SiteFooter = () => {
 
                     <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
                         <p>
-                            &copy; {new Date().getFullYear()} Neoversine. Architecture-owned agent operating systems.
+                            &copy; {new Date().getFullYear()} Neoversine. Architecture-owned agent operating systems by Arka &amp; Ankon.
                         </p>
                         <div className="mt-4 md:mt-0 flex gap-6">
                             <span>Kolkata, India</span>

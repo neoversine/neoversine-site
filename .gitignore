@@ -23,4 +23,7 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+# Graphify generated artifacts
+graphify-out/
+.graphify_*/
+

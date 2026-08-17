@@ -1,348 +1,256 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react';
-import { SiteNavbar } from '../components/basic/SiteNavbar';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { SiteNavbar } from "../components/basic/SiteNavbar";
 import { HiOutlineArrowTurnRightDown } from "react-icons/hi2";
-import TrueFocus from '../components/accernity/TrueFocus';
-import { BsTwitterX, BsGithub, BsLinkedin } from "react-icons/bs";
+import TrueFocus from "../components/accernity/TrueFocus";
+import { BsTwitterX, BsGithub } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-import SiteFooter from '../components/basic/SiteFooter';
-import { useNavigate } from 'react-router-dom';
+import SiteFooter from "../components/basic/SiteFooter";
+import { useNavigate } from "react-router-dom";
+import { IconShieldCheck, IconCpu, IconBolt, IconArrowUpRight } from "@tabler/icons-react";
 
 const HeroText = ({ value }) => (
-    <span className='bg-clip-text text-transparent bg-gradient-to-br from-indigo-300 to-blue-400'>
+    <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white to-cyan-300">
         {value}
     </span>
-)
+);
 
 const AboutUsPage = () => {
-
     useEffect(() => {
-        AOS.init({ duration: 1000 });
+        AOS.init({ duration: 800 });
     }, []);
 
     const navigate = useNavigate();
 
     return (
-        <main className='flex flex-col relative w-full bg-primary overflow-hidden'>
+        <main className="flex flex-col relative w-full bg-[#050505] text-white overflow-hidden min-h-screen">
             <SiteNavbar />
-            <div className='bg-primary'>
-                <div className='flex justify-center items-center h-[380px] md:h-[400px] sticky top-0 w-full z-0' style={{
-                    backgroundImage: "url('./about-bg2.jpg')",
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center',
-                }}>
-                    <div className='text-white max-md:hidden'>
-                        <TrueFocus
-                            sentence="About Neoversine"
-                            manualMode={true}
-                            blurAmount={4}
-                            borderColor="blue"
-                            animationDuration={0.5}
-                            pauseBetweenAnimations={1}
-                        />
+
+            {/* Hero Header */}
+            <div className="pt-32 pb-16 px-4 md:px-6 max-w-5xl mx-auto text-center">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0C0E12] border border-white/[0.12] text-xs font-mono text-[#6366F1] uppercase tracking-wider mb-6">
+                    <IconShieldCheck className="w-3.5 h-3.5" />
+                    Foundational Ownership
+                </div>
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-4">
+                    About <HeroText value="Neoversine" />
+                </h1>
+                <p className="text-sm md:text-base text-[#94A3B8] max-w-2xl mx-auto font-light">
+                    The agent-operating-system company. We build AI systems that replace work — designed, shipped, and owned end-to-end by two builders.
+                </p>
+            </div>
+
+            {/* Thesis Section */}
+            <div className="w-full pb-20 px-4 md:px-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl gap-8 md:gap-16 mx-auto items-center">
+                    <div className="flex flex-col gap-3">
+                        <div className="flex text-[#94A3B8] items-center gap-2 text-xs font-mono">
+                            <p>OUR POSITIONING THESIS</p>
+                            <HiOutlineArrowTurnRightDown />
+                        </div>
+                        <div className="flex gap-4">
+                            <div className="h-32 bg-gradient-to-b from-[#6366F1] via-cyan-400 to-[#0C0E12] w-1.5 rounded-full mt-1 flex-shrink-0" />
+                            <div>
+                                <p className="text-xl sm:text-2xl font-bold text-white tracking-wide leading-snug">
+                                    We build the <HeroText value="Substrate" />, not the <HeroText value="Souvenir." />
+                                    <br />
+                                    Agent-first. <HeroText value="Architecture-owned." /> Economically grounded.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div className='text-white md:hidden'>
-                        <TrueFocus
-                            sentence="About Neoversine"
-                            manualMode={false}
-                            blurAmount={4}
-                            borderColor="blue"
-                            animationDuration={0.5}
-                            pauseBetweenAnimations={1}
-                        />
+
+                    <div className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 text-xs sm:text-sm text-[#94A3B8] leading-relaxed shadow-lg">
+                        <p className="mb-3 text-white font-medium">
+                            "We don't build AI wrappers. We don't reskin LangChain or bolt together n8n workflows."
+                        </p>
+                        <p>
+                            At Neoversine, the two of us build agent systems on our own architecture. Our foundation is Hermes agent-OS. Beneath it, we've mastered vLLM inference economics — PagedAttention, KV-cache reuse, speculative decoding, and cost-per-token. Every system ships with a live control deck.
+                        </p>
                     </div>
                 </div>
 
-                <div className='w-full bg-primary sticky top-0 pb-20 pt-20 md:pt-28'>
-
-                    <div className='grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl gap-10 md:gap-28 mx-auto'>
-                        <div className='flex flex-col gap-2 max-md:px-4'>
-                            <div className='flex pl-10 text-gray-500 items-center gap-2'>
-                                <p className='font-mono'>OUR THESIS</p>
-                                <HiOutlineArrowTurnRightDown />
+                {/* Verified Production Proof Matrix */}
+                <div className="max-w-5xl mx-auto mt-16">
+                    <div className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-10 shadow-xl">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                            <div>
+                                <span className="text-[10px] font-mono text-[#6366F1] uppercase tracking-wider font-semibold block mb-1">
+                                    VERIFIED PRODUCTION BENCHMARKS
+                                </span>
+                                <h2 className="text-xl sm:text-2xl font-bold text-white">
+                                    Real Results Only. Never Invented.
+                                </h2>
                             </div>
-                            <div className='flex gap-5'>
-                                <div className='h-36 bg-gradient-to-b from-indigo-500 to-[#181818] w-10 mt-[10px]'></div>
-                                <div>
-                                    <p className='text-2xl sm:text-3xl font-bold text-white tracking-wide leading-relaxed'>
-                                        We build the <HeroText value={'Substrate'} />, not the <HeroText value={'Souvenir.'} />
-                                        <br />
-                                        Agent-first. <HeroText value={'Architecture-owned.'} /> Economically grounded.
-                                    </p>
-                                </div>
+                            <span className="text-xs font-mono text-[#94A3B8] bg-white/[0.04] px-3 py-1.5 rounded-full border border-white/[0.08] w-fit">
+                                4 Live Client Deployments
+                            </span>
+                        </div>
+
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                            <div className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center">
+                                <span className="text-2xl sm:text-3xl font-bold font-mono text-[#6366F1]">+40%</span>
+                                <span className="text-[10px] text-[#94A3B8] font-mono block mt-1 uppercase">Lead Conversion</span>
+                                <span className="text-[9px] text-[#6B7280]">ARC Network CRM</span>
+                            </div>
+                            <div className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center">
+                                <span className="text-2xl sm:text-3xl font-bold font-mono text-cyan-400">10x</span>
+                                <span className="text-[10px] text-[#94A3B8] font-mono block mt-1 uppercase">Faster Research</span>
+                                <span className="text-[9px] text-[#6B7280]">Custom RAG Pipelines</span>
+                            </div>
+                            <div className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center">
+                                <span className="text-2xl sm:text-3xl font-bold font-mono text-emerald-400">0.96</span>
+                                <span className="text-[10px] text-[#94A3B8] font-mono block mt-1 uppercase">mAP50 YOLO</span>
+                                <span className="text-[9px] text-[#6B7280]">700 imgs/1h (D8alytics)</span>
+                            </div>
+                            <div className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center">
+                                <span className="text-2xl sm:text-3xl font-bold font-mono text-rose-400">0</span>
+                                <span className="text-[10px] text-[#94A3B8] font-mono block mt-1 uppercase">Vendor Lock-In</span>
+                                <span className="text-[9px] text-[#6B7280]">MIT Control Deck</span>
                             </div>
                         </div>
 
-                        <div className='flex gap-5 max-md:px-4'>
-                            <div className='w-1/2 rounded-xl overflow-hidden my-auto'
-                                data-aos="fade-right"
-                                data-aos-anchor-placement="center-bottom">
-                                <img src="/about/about1.jpg" alt="Neoversine Lab" className='cover object-cover h-full w-full' />
-                            </div>
-                            <div className='w-1/2 rounded-xl overflow-hidden my-auto'
-                                data-aos="fade-left"
-                                data-aos-anchor-placement="center-bottom">
-                                <img src="/about/about2.jpg" alt="Neoversine Engineering" className='cover object-cover h-full w-full' />
-                            </div>
+                        {/* Benchmark Table */}
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left text-xs font-mono border border-white/[0.08] rounded-xl overflow-hidden">
+                                <thead className="bg-white/[0.04] text-gray-300">
+                                    <tr className="border-b border-white/[0.08]">
+                                        <th className="py-2.5 px-3">Metric / Proof Point</th>
+                                        <th className="py-2.5 px-3">System / Architecture</th>
+                                        <th className="py-2.5 px-3">Scope / Dataset</th>
+                                        <th className="py-2.5 px-3">Verification</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-white/[0.04] text-[#94A3B8]">
+                                    <tr className="hover:bg-white/[0.02]">
+                                        <td className="py-2.5 px-3 text-[#6366F1] font-bold">+40% Conversion</td>
+                                        <td className="py-2.5 px-3 text-white">ARC Network CRM</td>
+                                        <td className="py-2.5 px-3">Intent-driven subagent sequencing</td>
+                                        <td className="py-2.5 px-3 text-emerald-400">Live B2B client production</td>
+                                    </tr>
+                                    <tr className="hover:bg-white/[0.02]">
+                                        <td className="py-2.5 px-3 text-cyan-400 font-bold">10x Speedup</td>
+                                        <td className="py-2.5 px-3 text-white">Custom RAG Pipelines</td>
+                                        <td className="py-2.5 px-3">Technical due diligence &amp; market reports</td>
+                                        <td className="py-2.5 px-3 text-emerald-400">Hours reduced to minutes</td>
+                                    </tr>
+                                    <tr className="hover:bg-white/[0.02]">
+                                        <td className="py-2.5 px-3 text-emerald-400 font-bold">mAP50 0.96 Accuracy</td>
+                                        <td className="py-2.5 px-3 text-white">D8alytics Vision Engine</td>
+                                        <td className="py-2.5 px-3">700 YOLO images / hour</td>
+                                        <td className="py-2.5 px-3 text-emerald-400">100% synthetic dataset</td>
+                                    </tr>
+                                    <tr className="hover:bg-white/[0.02]">
+                                        <td className="py-2.5 px-3 text-rose-400 font-bold">Zero Lock-In</td>
+                                        <td className="py-2.5 px-3 text-white">MIT Control Deck</td>
+                                        <td className="py-2.5 px-3">Self-hosted, phone-first runtime</td>
+                                        <td className="py-2.5 px-3 text-emerald-400">Open-source runtime steering</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
 
-                    <div className='max-w-5xl mx-auto mt-16 px-4'>
-                        <div className='bg-[#131313] border border-white/10 rounded-2xl p-8 md:p-12' data-aos="fade-up">
-                            <p className='text-base md:text-lg text-gray-200 leading-relaxed font-normal'>
-                                Neoversine builds agent architectures from first principles on owned codebases rather than stitching together off-the-shelf wrappers like LangChain, Make.com, or n8n. By controlling the runtime via <span className='text-cyan-400 font-medium'>Hermes Agent-OS</span> and reducing token serving costs through custom <span className='text-indigo-400 font-medium'>vLLM deployments</span> (PagedAttention, KV-cache reuse, speculative decoding), Neoversine maintains full stack ownership, zero vendor lock-in, and sustainable inference economics.
-                            </p>
-
-                            {/* Verified Proof Numbers */}
-                            <div className='grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 pt-8 border-t border-white/10'>
-                                <div className='flex flex-col'>
-                                    <p className='text-3xl sm:text-4xl font-bold font-mono text-cyan-400'>+40%</p>
-                                    <p className='text-xs text-gray-400 mt-1 uppercase tracking-wider'>Lead Conversion (ARC)</p>
-                                </div>
-                                <div className='flex flex-col'>
-                                    <p className='text-3xl sm:text-4xl font-bold font-mono text-purple-400'>10x</p>
-                                    <p className='text-xs text-gray-400 mt-1 uppercase tracking-wider'>Research Speedup</p>
-                                </div>
-                                <div className='flex flex-col'>
-                                    <p className='text-3xl sm:text-4xl font-bold font-mono text-emerald-400'>0.96</p>
-                                    <p className='text-xs text-gray-400 mt-1 uppercase tracking-wider'>mAP50 YOLO (D8alytics)</p>
-                                </div>
-                                <div className='flex flex-col'>
-                                    <p className='text-3xl sm:text-4xl font-bold font-mono text-rose-400'>4</p>
-                                    <p className='text-xs text-gray-400 mt-1 uppercase tracking-wider'>Live Deployments</p>
-                                </div>
-                            </div>
-
-                            {/* Structured Verified Proof Matrix for Search & AI Overview Citations */}
-                            <div className="mt-8 pt-6 border-t border-white/10 overflow-x-auto">
-                                <p className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-3">Verified Production Benchmark Matrix</p>
-                                <table className="w-full text-left text-xs font-mono border border-white/10 rounded-lg overflow-hidden">
-                                    <thead className="bg-white/5 text-gray-300">
-                                        <tr className="border-b border-white/10">
-                                            <th className="py-2.5 px-3">Metric / Proof Point</th>
-                                            <th className="py-2.5 px-3">System / Architecture</th>
-                                            <th className="py-2.5 px-3">Scope / Dataset</th>
-                                            <th className="py-2.5 px-3">Production Verification</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-white/5 text-gray-400">
-                                        <tr className="hover:bg-white/[0.02]">
-                                            <td className="py-2.5 px-3 text-cyan-400 font-bold">+40% Lead Conversion</td>
-                                            <td className="py-2.5 px-3 text-gray-200">ARC Network CRM</td>
-                                            <td className="py-2.5 px-3">Intent-driven subagent sequencing</td>
-                                            <td className="py-2.5 px-3 text-emerald-400">Live B2B production client results</td>
-                                        </tr>
-                                        <tr className="hover:bg-white/[0.02]">
-                                            <td className="py-2.5 px-3 text-purple-400 font-bold">10x Research Diligence</td>
-                                            <td className="py-2.5 px-3 text-gray-200">Custom RAG Pipelines</td>
-                                            <td className="py-2.5 px-3">Technical due diligence &amp; market reports</td>
-                                            <td className="py-2.5 px-3 text-emerald-400">Hours reduced to minutes</td>
-                                        </tr>
-                                        <tr className="hover:bg-white/[0.02]">
-                                            <td className="py-2.5 px-3 text-emerald-400 font-bold">mAP50 0.96 Accuracy</td>
-                                            <td className="py-2.5 px-3 text-gray-200">D8alytics Vision Engine</td>
-                                            <td className="py-2.5 px-3">700 YOLO images / hour</td>
-                                            <td className="py-2.5 px-3 text-emerald-400">100% synthetic dataset (zero real photos)</td>
-                                        </tr>
-                                        <tr className="hover:bg-white/[0.02]">
-                                            <td className="py-2.5 px-3 text-blue-400 font-bold">Zero SaaS Subscriptions</td>
-                                            <td className="py-2.5 px-3 text-gray-200">MIT-Licensed Control Deck</td>
-                                            <td className="py-2.5 px-3">Self-hosted, phone-first runtime</td>
-                                            <td className="py-2.5 px-3 text-emerald-400">Open-source operational steering</td>
-                                        </tr>
-                                        <tr className="hover:bg-white/[0.02]">
-                                            <td className="py-2.5 px-3 text-rose-400 font-bold">Memory Optimization</td>
-                                            <td className="py-2.5 px-3 text-gray-200">vLLM PagedAttention Stack</td>
-                                            <td className="py-2.5 px-3">Multi-agent concurrency</td>
-                                            <td className="py-2.5 px-3 text-emerald-400">VRAM reduced from 92GB to &lt;10GB</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <div className='mt-8 pt-4 flex flex-wrap items-center justify-between gap-4'>
-                                <p className='text-xs text-gray-500 font-mono'>Verified Deployments: DGC • Ai agenti • Brunch Italiano • MaisonRoseLifestyle</p>
-                                <button
-                                    className="py-2.5 px-6 border border-white/40 bg-gradient-to-r from-purple-500/30 via-indigo-500/30 to-cyan-500/30 hover:border-white text-white rounded-full font-medium text-sm transition-all"
-                                    onClick={() => navigate('/contact')}
-                                >
-                                    Work With Us
-                                </button>
-                            </div>
+                        <div className="mt-6 pt-4 flex flex-wrap items-center justify-between gap-4 text-xs text-[#6B7280] font-mono">
+                            <span>Clients: DGC • Ai agenti • Brunch Italiano • MaisonRoseLifestyle</span>
+                            <button
+                                onClick={() => navigate("/contact")}
+                                className="px-5 py-2 rounded-full bg-white text-black font-semibold text-xs hover:bg-gray-200 transition-all cursor-pointer"
+                            >
+                                Start a Build ↗
+                            </button>
                         </div>
                     </div>
-
                 </div>
             </div>
 
-            {/* Team Section */}
-            <div className='bg-[#181818] flex flex-col max-w-7xl w-full mx-auto mt-10'>
-                <div className='text-center text-6xl font-bold pb-10 w-full text-white mb-14'
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="center-bottom"
-                >
-                    <div className='text-white max-md:hidden'>
-                        <TrueFocus
-                            sentence="CORE TEAM"
-                            manualMode={true}
-                            blurAmount={4}
-                            borderColor="blue"
-                            animationDuration={0.5}
-                            pauseBetweenAnimations={1}
-                        />
-                    </div>
-                    <div className='text-white md:hidden'>
-                        <TrueFocus
-                            sentence="CORE TEAM"
-                            manualMode={false}
-                            blurAmount={4}
-                            borderColor="blue"
-                            animationDuration={0.5}
-                            pauseBetweenAnimations={1}
-                        />
-                    </div>
+            {/* Core Team (Two People Only: Arka & Ankon) */}
+            <div className="w-full max-w-5xl mx-auto px-4 pb-28">
+                <div className="text-center mb-16">
+                    <span className="text-[10px] font-mono text-[#6366F1] uppercase tracking-wider font-semibold block mb-2">
+                        THE TWO OF US
+                    </span>
+                    <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3">
+                        Core Builders
+                    </h2>
+                    <p className="text-xs sm:text-sm text-[#94A3B8] max-w-md mx-auto">
+                        No middle managers. No invented titles. We built it and we own it end to end.
+                    </p>
                 </div>
 
-                <div className='flex flex-col gap-24 w-full max-w-5xl mb-32 mx-auto px-4'>
-
-                    {/* Arka's Profile  */}
-                    <div className='flex max-md:flex-col gap-6 md:gap-12 items-center'>
-                        <div className='flex flex-col gap-5'>
-                            <div className='h-60 w-60 rounded-full overflow-hidden border-4 border-white/80 p-1'
-                                data-aos="fade-right"
-                                data-aos-anchor-placement="center-bottom">
-                                <img src="https://res.cloudinary.com/dxbszkdhk/image/upload/v1752006741/arka-profile_m9eaqd.jpg" alt="Arka" className='object-cover rounded-full h-full w-full' />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Arka's Card */}
+                    <div className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-8 flex flex-col justify-between shadow-xl">
+                        <div>
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#6366F1] p-0.5 flex-shrink-0">
+                                    <img
+                                        src="https://res.cloudinary.com/dxbszkdhk/image/upload/v1752006741/arka-profile_m9eaqd.jpg"
+                                        alt="Arka"
+                                        className="w-full h-full object-cover rounded-full"
+                                    />
+                                </div>
+                                <div>
+                                    <span className="text-[10px] font-mono text-[#6366F1] uppercase tracking-wider font-semibold block">
+                                        FOUNDER · HARNESS
+                                    </span>
+                                    <h3 className="text-2xl font-bold text-white">Arka</h3>
+                                    <p className="text-xs text-cyan-300 font-mono">Agent-OS Architecture &amp; Inference Economics</p>
+                                </div>
                             </div>
-
-                            <div data-aos="fade-right"
-                                data-aos-anchor-placement="center-bottom"
-                                className='flex gap-4 text-white items-center mx-auto text-xl'>
-                                <a href="https://x.com/neoversine" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors"><BsTwitterX /></a>
-                                <a href="https://github.com/neoversine" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors"><BsGithub /></a>
-                                <a href="mailto:neoversine@gmail.com" className="hover:text-cyan-400 transition-colors"><MdEmail className='text-2xl' /></a>
-                            </div>
-                        </div>
-
-                        <div className='flex flex-col justify-center w-full md:w-[70%]'
-                            data-aos="fade-left"
-                            data-aos-anchor-placement="center-bottom">
-                            <p className='text-gray-400 font-mono text-sm'>Founder &amp; HARNESS</p>
-                            <h1 className='text-white text-4xl sm:text-5xl font-bold mt-1 mb-2'>Arka Probha Roy</h1>
-                            <p className='text-cyan-300 font-mono text-sm mb-4'>
+                            <p className="text-xs italic text-gray-300 font-mono mb-4 bg-white/[0.02] p-3 rounded-xl border border-white/[0.06]">
                                 "We build the substrate, not the souvenir."
                             </p>
-                            <p className='text-gray-300 text-sm md:text-base leading-relaxed text-justify'>
-                                Founded Neoversine in Jan 2024 to build agent operating systems from first principles. Currently serving as CTO at HypeX (Jan 2025–present), owning tech vision, architecture, and AI systems. Previously delivered end-to-end full-stack architectures at Ditinex and directed industrial embedded control systems as Tech Lead at IEI ECE.
-                                <br /><br />
-                                Based in Kolkata. Open to foundational agent systems where architecture ownership matters.
+                            <p className="text-xs text-[#94A3B8] leading-relaxed">
+                                Founded Neoversine in Jan 2024 to build agent operating systems from first principles. Currently serving as CTO at HypeX (Jan 2025–present), owning tech vision, architecture, and AI systems. Previously delivered full-stack architectures at Ditinex and directed industrial embedded control systems as Tech Lead at IEI ECE. Based in Kolkata.
                             </p>
+                        </div>
+                        <div className="flex gap-3 text-white text-base mt-6 pt-4 border-t border-white/[0.08]">
+                            <a href="https://x.com/neoversine" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:text-[#6366F1] hover:border-[#6366F1] transition-colors"><BsTwitterX /></a>
+                            <a href="https://github.com/neoversine" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:text-[#6366F1] hover:border-[#6366F1] transition-colors"><BsGithub /></a>
+                            <a href="mailto:neoversine@gmail.com" className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:text-[#6366F1] hover:border-[#6366F1] transition-colors"><MdEmail /></a>
                         </div>
                     </div>
 
-                    {/* Ankon's Profile */}
-                    <div className='flex max-md:flex-col gap-6 md:gap-12 items-center'>
-                        <div className='flex flex-col justify-center w-full md:w-[70%] order-2 md:order-1'
-                            data-aos="fade-right"
-                            data-aos-anchor-placement="center-bottom">
-                            <p className='text-gray-400 font-mono text-sm'>Core Engineering</p>
-                            <h1 className='text-white text-4xl sm:text-5xl font-bold mt-1 mb-2'>Ankon Karak</h1>
-                            <p className='text-cyan-300 font-mono text-sm mb-4'>
+                    {/* Ankon's Card */}
+                    <div className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-8 flex flex-col justify-between shadow-xl">
+                        <div>
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-cyan-400 p-0.5 flex-shrink-0">
+                                    <img
+                                        src="https://res.cloudinary.com/dxbszkdhk/image/upload/v1752091606/ankon-profile_zgbdjp.jpg"
+                                        alt="Ankon"
+                                        className="w-full h-full object-cover rounded-full"
+                                    />
+                                </div>
+                                <div>
+                                    <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider font-semibold block">
+                                        CO-FOUNDER
+                                    </span>
+                                    <h3 className="text-2xl font-bold text-white">Ankon</h3>
+                                    <p className="text-xs text-indigo-300 font-mono">Engineering &amp; Delivery</p>
+                                </div>
+                            </div>
+                            <p className="text-xs italic text-gray-300 font-mono mb-4 bg-white/[0.02] p-3 rounded-xl border border-white/[0.06]">
                                 "High-throughput runtimes and cross-platform runtime reliability."
                             </p>
-                            <p className='text-gray-300 text-sm md:text-base leading-relaxed text-justify'>
-                                Architects cross-platform runtime interfaces and high-performance client layers for Neoversine's agent systems. Focuses on seamless multi-environment execution spanning desktop, web, and mobile gateways, ensuring responsive state management and low-latency interaction loops.
+                            <p className="text-xs text-[#94A3B8] leading-relaxed">
+                                Leads engineering execution and full-stack systems delivery across Neoversine's agent platforms. Architecting high-concurrency client layers, event dispatchers, real-time control deck synchronization, and scalable deployment pipelines spanning desktop, web, and mobile gateways.
                             </p>
                         </div>
-
-                        <div className='flex flex-col gap-5 order-1 md:order-2'>
-                            <div className='h-60 w-60 rounded-full overflow-hidden border-4 border-white/80 p-1'
-                                data-aos="fade-left"
-                                data-aos-anchor-placement="center-bottom">
-                                <img src="https://res.cloudinary.com/dxbszkdhk/image/upload/v1752091606/ankon-profile_zgbdjp.jpg" alt="Ankon" className='object-cover rounded-full h-full w-full' />
-                            </div>
-                            <div data-aos="fade-left"
-                                data-aos-anchor-placement="center-bottom"
-                                className='flex gap-4 text-white items-center mx-auto text-xl'>
-                                <a href="https://x.com/neoversine" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors"><BsTwitterX /></a>
-                                <a href="https://github.com/neoversine" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors"><BsGithub /></a>
-                                <a href="mailto:neoversine@gmail.com" className="hover:text-cyan-400 transition-colors"><MdEmail className='text-2xl' /></a>
-                            </div>
+                        <div className="flex gap-3 text-white text-base mt-6 pt-4 border-t border-white/[0.08]">
+                            <a href="https://x.com/neoversine" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:text-cyan-400 hover:border-cyan-400 transition-colors"><BsTwitterX /></a>
+                            <a href="https://github.com/neoversine" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:text-cyan-400 hover:border-cyan-400 transition-colors"><BsGithub /></a>
+                            <a href="mailto:neoversine@gmail.com" className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:text-cyan-400 hover:border-cyan-400 transition-colors"><MdEmail /></a>
                         </div>
                     </div>
-
-                    {/* Ujjwaini's Profile  */}
-                    <div className='flex max-md:flex-col gap-6 md:gap-12 items-center'>
-                        <div className='flex flex-col gap-5'>
-                            <div className='h-60 w-60 rounded-full overflow-hidden border-4 border-white/80 p-1'
-                                data-aos="fade-right"
-                                data-aos-anchor-placement="center-bottom">
-                                <img src="https://res.cloudinary.com/dxbszkdhk/image/upload/v1752091604/ujjwaini-profile_af0swh.jpg" alt="Ujjwaini" className='object-cover rounded-full h-full w-full' />
-                            </div>
-
-                            <div data-aos="fade-right"
-                                data-aos-anchor-placement="center-bottom"
-                                className='flex gap-4 text-white items-center mx-auto text-xl'>
-                                <a href="https://x.com/neoversine" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors"><BsTwitterX /></a>
-                                <a href="https://github.com/neoversine" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors"><BsGithub /></a>
-                                <a href="mailto:neoversine@gmail.com" className="hover:text-cyan-400 transition-colors"><MdEmail className='text-2xl' /></a>
-                            </div>
-                        </div>
-
-                        <div className='flex flex-col justify-center w-full md:w-[70%]'
-                            data-aos="fade-left"
-                            data-aos-anchor-placement="center-bottom">
-                            <p className='text-gray-400 font-mono text-sm'>Agent Cognition</p>
-                            <h1 className='text-white text-4xl sm:text-5xl font-bold mt-1 mb-2'>Ujjwaini Saha</h1>
-                            <p className='text-purple-300 font-mono text-sm mb-4'>
-                                "Engineering precise reasoning chains and structured context distillation."
-                            </p>
-                            <p className='text-gray-300 text-sm md:text-base leading-relaxed text-justify'>
-                                Leads prompt architecture, cognitive routing, and multi-turn persona alignment. Specializes in transforming fuzzy operational requirements into deterministic agent decision trees, anti-hallucination guardrails, and automated evaluation benchmarks.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Jyotirmoy's Profile */}
-                    <div className='flex max-md:flex-col gap-6 md:gap-12 items-center'>
-                        <div className='flex flex-col justify-center w-full md:w-[70%] order-2 md:order-1'
-                            data-aos="fade-right"
-                            data-aos-anchor-placement="center-bottom">
-                            <p className='text-gray-400 font-mono text-sm'>Full-Stack &amp; Infrastructure</p>
-                            <h1 className='text-white text-4xl sm:text-5xl font-bold mt-1 mb-2'>Jyotirmoy Baidya</h1>
-                            <p className='text-cyan-300 font-mono text-sm mb-4'>
-                                "Robust backend architecture, real-time sync, and scalable event loops."
-                            </p>
-                            <p className='text-gray-300 text-sm md:text-base leading-relaxed text-justify'>
-                                Builds resilient backend infrastructure, event-driven data streaming layers, and high-concurrency API integrations powering Neoversine's control decks and scraping engines. Specializes in full-stack performance and real-time operational visibility.
-                            </p>
-                        </div>
-
-                        <div className='flex flex-col gap-5 order-1 md:order-2'>
-                            <div className='h-60 w-60 rounded-full overflow-hidden border-4 border-white/80 p-1'
-                                data-aos="fade-left"
-                                data-aos-anchor-placement="center-bottom">
-                                <img src="https://res.cloudinary.com/dxbszkdhk/image/upload/v1751914404/jb-profile3_oq7acj.jpg" alt="Jyotirmoy" className='object-cover rounded-full h-full w-full' />
-                            </div>
-                            <div data-aos="fade-left"
-                                data-aos-anchor-placement="center-bottom"
-                                className='flex gap-4 text-white items-center mx-auto text-xl'>
-                                <a href="https://x.com/neoversine" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors"><BsTwitterX /></a>
-                                <a href="https://github.com/neoversine" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors"><BsGithub /></a>
-                                <a href="mailto:neoversine@gmail.com" className="hover:text-cyan-400 transition-colors"><MdEmail className='text-2xl' /></a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-
             </div>
+
             <SiteFooter />
         </main>
-    )
-}
+    );
+};
 
-export default AboutUsPage
+export default AboutUsPage;

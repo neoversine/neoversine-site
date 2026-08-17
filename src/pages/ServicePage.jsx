@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { SiteNavbar } from '../components/basic/SiteNavbar';
-import SiteFooter from '../components/basic/SiteFooter';
-import TrueFocus from '../components/accernity/TrueFocus';
-import AOS from 'aos';
-import { services } from '../constants/services';
-import ServiceTechStack from '../components/service-details/ServiceTechStack';
-import serviceTechStacks from '../constants/serviceTechStacks.json';
+import React, { useEffect, useState } from "react";
+import { SiteNavbar } from "../components/basic/SiteNavbar";
+import SiteFooter from "../components/basic/SiteFooter";
+import AOS from "aos";
+import { services } from "../constants/services";
+import ServiceTechStack from "../components/service-details/ServiceTechStack";
+import serviceTechStacks from "../constants/serviceTechStacks.json";
 import {
     IconCpu,
     IconBolt,
@@ -18,22 +17,23 @@ import {
     IconWorldWww,
     IconTransform,
     IconBrain,
-    IconCodeDots
-} from '@tabler/icons-react';
+    IconCodeDots,
+    IconArrowUpRight
+} from "@tabler/icons-react";
 
 const iconMap = {
-    'agentic-era-operations': IconCpu,
-    'inference-economics-engine': IconBolt,
-    'digital-twin-simulators': IconBuildingFactory2,
-    'b2b-work-replacement': IconBriefcase,
-    'rss-to-revenue': IconRss,
-    'agentic-arc-generalization': IconBinaryTree,
-    'agentic-crm': IconUsersGroup,
-    'saas-ownership-stack': IconShieldLock,
-    'scraping-at-scale': IconWorldWww,
-    'digital-transformation-agents': IconTransform,
-    'long-term-memory-fabric': IconBrain,
-    'skill-creation-loops': IconCodeDots
+    "agentic-era-operations": IconCpu,
+    "inference-economics-engine": IconBolt,
+    "digital-twin-simulators": IconBuildingFactory2,
+    "b2b-work-replacement": IconBriefcase,
+    "rss-to-revenue": IconRss,
+    "agentic-arc-generalization": IconBinaryTree,
+    "agentic-crm": IconUsersGroup,
+    "saas-ownership-stack": IconShieldLock,
+    "scraping-at-scale": IconWorldWww,
+    "digital-transformation-agents": IconTransform,
+    "long-term-memory-fabric": IconBrain,
+    "skill-creation-loops": IconCodeDots
 };
 
 const servicesWithIcons = services.map(service => ({
@@ -48,156 +48,138 @@ const ServicePage = () => {
     useEffect(() => {
         AOS.init({
             duration: 800,
-            easing: 'ease-in-out',
+            easing: "ease-in-out",
             once: false,
         });
-        AOS.refresh();
     }, []);
 
     return (
-        <main className="relative w-full min-h-screen bg-primary overflow-hidden">
-            {/* Background gradient mesh */}
-            <div className="fixed inset-0 pointer-events-none z-0">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-                <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
-            </div>
-
+        <main className="relative w-full min-h-screen bg-[#050505] text-white overflow-hidden">
             <SiteNavbar />
 
-            {/* TrueFocus Hero Section */}
-            <div className='flex justify-center items-center h-[380px] md:h-[400px] sticky top-0 w-full z-10' style={{
-                backgroundImage: "linear-gradient(135deg, rgba(15, 20, 25, 0.9) 0%, rgba(26, 31, 46, 0.9) 50%, rgba(13, 17, 23, 0.9) 100%)",
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-            }}>
-                <div className='text-white max-md:hidden'>
-                    <TrueFocus
-                        sentence="Systems That Replace Work"
-                        manualMode={true}
-                        blurAmount={4}
-                        borderColor="cyan"
-                        animationDuration={0.5}
-                        pauseBetweenAnimations={1}
-                    />
+            {/* Hero Header */}
+            <div className="pt-32 pb-12 px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto text-center">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0C0E12] border border-white/[0.12] text-xs font-mono text-[#6366F1] uppercase tracking-wider mb-4">
+                    <IconCpu className="w-3.5 h-3.5" />
+                    FOUNDATIONAL ARCHITECTURE
                 </div>
-                <div className='text-white md:hidden'>
-                    <TrueFocus
-                        sentence="Systems"
-                        manualMode={false}
-                        blurAmount={4}
-                        borderColor="cyan"
-                        animationDuration={0.5}
-                        pauseBetweenAnimations={1}
-                    />
-                </div>
+                <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+                    Systems That{" "}
+                    <span className="bg-gradient-to-r from-indigo-300 via-white to-cyan-300 bg-clip-text text-transparent">
+                        Replace Work.
+                    </span>
+                </h1>
+                <p className="text-sm md:text-base text-[#94A3B8] max-w-[640px] mx-auto font-light leading-relaxed">
+                    12 foundational systems designed, shipped, and owned end-to-end on Hermes agent-OS and custom vLLM inference economics.
+                </p>
             </div>
 
-            <div className="relative z-10">
-                {/* Two Column Layout - Systems List + Architecture Details */}
-                <section className="py-8 md:py-12 px-4 md:px-8 max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                        {/* Left Side - Systems List */}
-                        <div className="lg:col-span-4 space-y-2">
-                            <h3 className="text-xl font-bold text-white mb-4 px-4 font-mono text-cyan-400">
-                                12 Foundational Systems
-                            </h3>
-                            <div className="space-y-2 max-h-[750px] overflow-y-auto pr-1">
-                                {servicesWithIcons.map((service) => (
+            {/* Interactive System Explorer */}
+            <div className="px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto pb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    
+                    {/* Left Column: 12 System Selector List */}
+                    <div className="lg:col-span-4 rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-4 shadow-xl">
+                        <span className="text-[10px] font-mono text-[#6366F1] uppercase tracking-wider font-semibold px-3 pt-2 pb-3 block">
+                            12 ARCHITECTURAL SYSTEMS
+                        </span>
+                        <div className="space-y-1.5 max-h-[640px] overflow-y-auto pr-1">
+                            {servicesWithIcons.map((service) => {
+                                const isSelected = selectedService.id === service.id;
+                                return (
                                     <button
                                         key={service.id}
                                         onClick={() => setSelectedService(service)}
-                                        className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-300 flex items-center gap-3 group cursor-pointer ${
-                                            selectedService.id === service.id
-                                                ? 'bg-cyan-500/20 border border-cyan-500/60 text-white shadow-lg shadow-cyan-500/10'
-                                                : 'bg-slate-900/40 border border-slate-800/60 text-slate-400 hover:bg-slate-800/60 hover:text-white'
+                                        className={`w-full text-left px-3.5 py-3 rounded-xl transition-all duration-200 flex items-center gap-3 cursor-pointer ${
+                                            isSelected
+                                                ? "bg-white/[0.08] border border-white/20 text-white shadow-md"
+                                                : "bg-transparent border border-transparent text-[#94A3B8] hover:text-white hover:bg-white/[0.03]"
                                         }`}
                                     >
-                                        <span className={`${
-                                            selectedService.id === service.id ? 'text-cyan-400' : 'text-slate-500 group-hover:text-cyan-400'
-                                        } transition-colors flex-shrink-0`}>
-                                            {service.icon && React.createElement(service.icon, { className: "w-5 h-5" })}
+                                        <span className={`p-1.5 rounded-lg ${isSelected ? "bg-[#6366F1] text-white" : "bg-white/[0.04] text-[#6B7280]"}`}>
+                                            {service.icon && React.createElement(service.icon, { className: "w-4 h-4" })}
                                         </span>
-                                        <span className="text-sm font-medium leading-tight">{service.title}</span>
+                                        <span className="text-xs font-medium leading-snug">{service.title}</span>
                                     </button>
-                                ))}
-                            </div>
+                                );
+                            })}
                         </div>
+                    </div>
 
-                        {/* Right Side - System Details & Architecture Stack */}
-                        <div className="lg:col-span-8">
-                            {selectedService && (
-                                <div className="bg-[#111] border border-white/10 rounded-2xl p-6 md:p-8 mb-6" data-aos="fade-up">
-                                    <div className="flex items-center gap-3 mb-5">
-                                        <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
-                                            {React.createElement(selectedService.icon, { className: "w-6 h-6" })}
-                                        </div>
-                                        <div>
-                                            <h2 className="text-2xl font-bold text-white">{selectedService.title}</h2>
-                                            <p className="text-xs text-cyan-400/80 font-mono">OWNED ARCHITECTURE SPECIFICATION</p>
-                                        </div>
+                    {/* Right Column: Active System Details */}
+                    <div className="lg:col-span-8 flex flex-col gap-6">
+                        {selectedService && (
+                            <div className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-8 shadow-xl">
+                                <div className="flex items-center gap-3.5 mb-6 pb-4 border-b border-white/[0.08]">
+                                    <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.1] text-[#6366F1]">
+                                        {React.createElement(selectedService.icon, { className: "w-6 h-6" })}
                                     </div>
-
-                                    {/* Direct Answer Block */}
-                                    <div className="bg-slate-900/60 border border-cyan-500/20 rounded-xl p-4 mb-4">
-                                        <p className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">Direct Answer</p>
-                                        <p className="text-gray-200 text-sm md:text-base leading-relaxed">
-                                            {selectedService.directAnswer || selectedService.description}
+                                    <div>
+                                        <h2 className="text-xl sm:text-2xl font-bold text-white">{selectedService.title}</h2>
+                                        <p className="text-[10px] text-[#6366F1] font-mono uppercase tracking-wider">
+                                            Hermes Agent-OS Substrate Specification
                                         </p>
                                     </div>
+                                </div>
 
-                                    {/* Engineering & Proof Block */}
-                                    {selectedService.engineeringProof && (
-                                        <div className="bg-black/50 border border-white/10 rounded-xl p-4 mb-6">
-                                            <p className="text-xs font-mono text-purple-400 uppercase tracking-wider mb-1">Engineering &amp; Outcome Proof</p>
-                                            <p className="text-gray-300 text-sm leading-relaxed font-light">
-                                                {selectedService.engineeringProof}
-                                            </p>
-                                        </div>
-                                    )}
+                                {/* Direct Answer */}
+                                <div className="rounded-xl bg-black/40 border border-white/[0.06] p-4 mb-4">
+                                    <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider font-semibold block mb-1">
+                                        Architectural Purpose
+                                    </span>
+                                    <p className="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                                        {selectedService.directAnswer || selectedService.description}
+                                    </p>
+                                </div>
 
-                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-white/10">
-                                        {selectedService.benefits.map((benefit, idx) => (
-                                            <div key={idx} className="bg-black/40 border border-white/5 rounded-lg p-3 text-xs text-gray-300">
-                                                <span className="text-cyan-400 mr-1.5 font-bold">✓</span> {benefit}
-                                            </div>
-                                        ))}
+                                {/* Engineering Proof */}
+                                {selectedService.engineeringProof && (
+                                    <div className="rounded-xl bg-black/40 border border-white/[0.06] p-4 mb-5">
+                                        <span className="text-[10px] font-mono text-[#6366F1] uppercase tracking-wider font-semibold block mb-1">
+                                            Engineering &amp; Outcome Proof
+                                        </span>
+                                        <p className="text-xs text-[#94A3B8] leading-relaxed font-light">
+                                            {selectedService.engineeringProof}
+                                        </p>
                                     </div>
-                                </div>
-                            )}
+                                )}
 
-                            {selectedServiceDetail && (
-                                <div data-aos="fade-up">
-                                    <ServiceTechStack techStack={selectedServiceDetail} />
+                                {/* Key Deliverables */}
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
+                                    {selectedService.benefits.map((benefit, idx) => (
+                                        <div key={idx} className="rounded-xl bg-white/[0.02] border border-white/[0.06] p-3 text-[11px] text-gray-300">
+                                            <span className="text-emerald-400 font-bold mr-1">✓</span> {benefit}
+                                        </div>
+                                    ))}
                                 </div>
-                            )}
-                        </div>
+                            </div>
+                        )}
+
+                        {selectedServiceDetail && (
+                            <ServiceTechStack techStack={selectedServiceDetail} />
+                        )}
                     </div>
-                </section>
 
-                {/* CTA Section */}
-                <section className="py-16 md:py-24 px-4 md:px-8 max-w-7xl mx-auto">
-                    <div 
-                        className="relative rounded-3xl bg-gradient-to-r from-slate-900/80 via-slate-950/80 to-black/80 border border-white/10 p-10 md:p-16 text-center overflow-hidden"
-                        data-aos="fade-up"
+                </div>
+            </div>
+
+            {/* Bottom CTA Section */}
+            <div className="py-12 px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto">
+                <div className="rounded-[28px] bg-[#0C0E12] border border-white/[0.12] p-8 md:p-12 text-center flex flex-col items-center shadow-2xl">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                        Ready to Deploy Your Owned AI Substrate?
+                    </h2>
+                    <p className="text-xs sm:text-sm text-[#94A3B8] max-w-[640px] mx-auto mb-6 font-light leading-relaxed">
+                        No ongoing SaaS seat taxes. No fragile wrappers. Build agent systems directly on your owned infrastructure.
+                    </p>
+                    <a
+                        href="/contact"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs hover:bg-gray-200 transition-all shadow-lg"
                     >
-                        <div className="relative z-10 space-y-6">
-                            <h2 className="text-3xl md:text-4xl font-bold text-white">
-                                Ready to Own Your AI Substrate?
-                            </h2>
-                            <p className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-                                No SaaS seat taxes. No fragile wrappers. Build agent systems directly on your owned infrastructure.
-                            </p>
-                            <a 
-                                href="/contact"
-                                className="inline-block px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-300 hover:-translate-y-0.5 text-sm"
-                            >
-                                Schedule Architecture Review
-                            </a>
-                        </div>
-                    </div>
-                </section>
+                        <span>Schedule Architecture Review</span>
+                        <IconArrowUpRight className="w-4 h-4" />
+                    </a>
+                </div>
             </div>
 
             <SiteFooter />

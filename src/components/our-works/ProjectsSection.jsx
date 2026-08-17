@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductShowcase from './ProductShowcase'
+import PortfolioSection from './PortfolioSection'
 
 const ProjectsSection = () => {
     return (
@@ -21,6 +22,7 @@ const ProjectsSection = () => {
                     </div>
 
                     <ProductShowcase />
+                    {/* <BentoGrid /> */}
                 </div>
             </div>
         </div>

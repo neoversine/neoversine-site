@@ -251,7 +251,7 @@ export default function TopProducts() {
                                             style={{ height: `${height}%` }}
                                             className={`w-1.5 rounded-full ${
                                                 bIdx === item.bars.length - 1
-                                                    ? "bg-[#6366F1] shadow-[0_0_8px_#6366F1]"
+                                                    ? "bg-[#6366F1]"
                                                     : "bg-white/10"
                                             }`}
                                         />

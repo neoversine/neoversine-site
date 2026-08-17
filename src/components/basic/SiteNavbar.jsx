@@ -22,7 +22,7 @@ export function SiteNavbar() {
                 {/* Left Brand & Subdomain */}
                 <div className="flex items-center gap-3">
                     <NavLink to="/" className="flex items-center gap-2.5 group">
-                        <div className="w-8 h-8 rounded-full bg-[#141824] border border-white/20 p-1 flex items-center justify-center shadow-[0_0_12px_rgba(99,102,241,0.3)]">
+                        <div className="w-8 h-8 rounded-full bg-[#0C0E12] border border-white/20 p-1 flex items-center justify-center">
                             <img src="/logo.png" alt="Neoversine" className="w-full h-full object-contain rounded-full" />
                         </div>
                         <span className="font-bold text-sm md:text-base tracking-tight text-white group-hover:text-cyan-300 transition-colors">
@@ -35,16 +35,16 @@ export function SiteNavbar() {
                 </div>
 
                 {/* Center Segmented Capsule Navigation */}
-                <nav className="hidden md:flex items-center p-1 rounded-full bg-[#0C0E12]/95 border border-white/[0.12] backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
+                <nav className="hidden md:flex items-center p-1 rounded-full bg-[#0C0E12] border border-white/[0.12]">
                     {navItems.map((item, idx) => {
                         const isActive = location.pathname === item.link;
                         return (
                             <NavLink
                                 key={idx}
                                 to={item.link}
-                                className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-300 ${
+                                className={`px-4 py-1.5 rounded-full text-xs font-mono transition-colors ${
                                     isActive
-                                        ? "bg-white text-black font-bold shadow-[0_2px_12px_rgba(255,255,255,0.4)]"
+                                        ? "bg-white text-black font-bold"
                                         : "text-[#94A3B8] hover:text-white hover:bg-white/[0.04]"
                                 }`}
                             >
@@ -63,10 +63,10 @@ export function SiteNavbar() {
                     </div>
                     <NavLink
                         to="/contact"
-                        className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0C0E12] border border-white/[0.15] hover:border-[#6366F1] text-white text-xs font-mono font-medium shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_25px_rgba(99,102,241,0.4)] transition-all group"
+                        className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0C0E12] border border-white/[0.15] hover:border-[#6366F1] text-white text-xs font-mono font-medium transition-colors group"
                     >
                         <span>Start a build</span>
-                        <div className="w-5 h-5 rounded-full bg-[#6366F1] flex items-center justify-center text-white text-xs shadow-[0_0_8px_#6366F1]">
+                        <div className="w-5 h-5 rounded-full bg-[#6366F1] flex items-center justify-center text-white text-xs">
                             <IconArrowUpRight className="w-3.5 h-3.5 group-hover:rotate-45 transition-transform" />
                         </div>
                     </NavLink>
@@ -93,7 +93,7 @@ export function SiteNavbar() {
 
             {/* Mobile Dropdown Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden mt-2 p-4 rounded-[20px] bg-[#0C0E12]/95 border border-white/[0.12] backdrop-blur-2xl pointer-events-auto flex flex-col gap-2 shadow-2xl">
+                <div className="md:hidden mt-2 p-4 rounded-[20px] bg-[#0C0E12] border border-white/[0.12] pointer-events-auto flex flex-col gap-2">
                     {navItems.map((item, idx) => (
                         <NavLink
                             key={idx}

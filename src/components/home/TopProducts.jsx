@@ -205,21 +205,19 @@ export default function TopProducts() {
                 <div className="inline-flex p-1 rounded-full bg-[#0C0E12] border border-white/[0.12]">
                     <button
                         onClick={() => setActiveTab("native")}
-                        className={`px-5 py-2 rounded-full text-xs font-mono transition-all cursor-pointer ${
-                            activeTab === "native"
+                        className={`px-5 py-2 rounded-full text-xs font-mono transition-all cursor-pointer ${activeTab === "native"
                                 ? "bg-white text-black font-semibold shadow"
                                 : "text-[#94A3B8] hover:text-white"
-                        }`}
+                            }`}
                     >
                         Native Businesses (10 Systems)
                     </button>
                     <button
                         onClick={() => setActiveTab("reference")}
-                        className={`px-5 py-2 rounded-full text-xs font-mono transition-all cursor-pointer ${
-                            activeTab === "reference"
+                        className={`px-5 py-2 rounded-full text-xs font-mono transition-all cursor-pointer ${activeTab === "reference"
                                 ? "bg-white text-black font-semibold shadow"
                                 : "text-[#94A3B8] hover:text-white"
-                        }`}
+                            }`}
                     >
                         Reference Solutions (Blotato · Crisp · Postproxy)
                     </button>
@@ -272,11 +270,10 @@ export default function TopProducts() {
                                         <div
                                             key={bIdx}
                                             style={{ height: `${height}%` }}
-                                            className={`w-1.5 rounded-full ${
-                                                bIdx === item.bars.length - 1
+                                            className={`w-1.5 rounded-full ${bIdx === item.bars.length - 1
                                                     ? "bg-[#6366F1]"
                                                     : "bg-white/10"
-                                            }`}
+                                                }`}
                                         />
                                     ))}
                                 </div>

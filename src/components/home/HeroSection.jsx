@@ -14,13 +14,13 @@ export default function HeroSection() {
 
     return (
         <section className="relative w-full min-h-[90vh] min-h-[700px] bg-[#050505] text-white pt-28 pb-16 px-[clamp(20px,4vw,64px)] overflow-hidden flex flex-col justify-center">
-            
+
             {/* Main Spatial Grid Container (Max 1280px cap) */}
             <div className="max-w-[1280px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch relative z-10">
-                
+
                 {/* ================= LEFT COLUMN: 3 STACKED MATTE GLASS CARDS ================= */}
                 <div className="lg:col-span-3 flex flex-col gap-4 justify-between">
-                    
+
                     {/* Card 1: ARC Network Lead Conversion (+40%) */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
@@ -82,11 +82,10 @@ export default function HeroSection() {
                                 <div key={i} className="flex-1 flex flex-col items-center gap-1 h-full justify-end">
                                     <div
                                         style={{ height: `${h}%` }}
-                                        className={`w-full rounded-full transition-all duration-300 ${
-                                            i === 6
+                                        className={`w-full rounded-full transition-all duration-300 ${i === 6
                                                 ? "bg-[#6366F1]"
                                                 : "bg-white/10 group-hover:bg-white/20"
-                                        }`}
+                                            }`}
                                     />
                                 </div>
                             ))}
@@ -115,7 +114,7 @@ export default function HeroSection() {
 
                 {/* ================= CENTER COLUMN: 3D CRISP LIQUID GLASS SPHERE ================= */}
                 <div className="lg:col-span-6 flex flex-col items-center justify-center relative min-h-[480px] text-center p-2">
-                    
+
                     <LiquidGlassSphere />
 
                     {/* Bottom Subtitle / Thesis Note */}
@@ -131,7 +130,7 @@ export default function HeroSection() {
 
                 {/* ================= RIGHT COLUMN: 2 STACKED MATTE GLASS CARDS ================= */}
                 <div className="lg:col-span-3 flex flex-col gap-4 justify-between">
-                    
+
                     {/* Card 1: D8alytics Synthetic Vision (mAP50 0.96) */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}

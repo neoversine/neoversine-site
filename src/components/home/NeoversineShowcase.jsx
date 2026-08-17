@@ -37,7 +37,7 @@ export default function NeoversineShowcase() {
             className="py-[clamp(48px,6vw,120px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto w-full"
         >
             <div className="rounded-[32px] bg-[#0A0C10] border border-white/[0.12] p-6 sm:p-8 md:p-12 relative overflow-hidden">
-                
+
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 25 }}
@@ -63,7 +63,7 @@ export default function NeoversineShowcase() {
 
                 {/* Side-by-Side Comparison Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-                    
+
                     {/* ================= LEFT CARD: THE FRAGMENTED STACK (DEPRECATED) ================= */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -100,7 +100,7 @@ export default function NeoversineShowcase() {
                                         ● Packet Loss: 42%
                                     </span>
                                 </div>
-                                
+
                                 <svg viewBox="0 0 320 90" className="w-full h-20">
                                     {/* Tangled Animated Dashed Spaghetti Wires */}
                                     <motion.path
@@ -136,7 +136,7 @@ export default function NeoversineShowcase() {
 
                                     {/* Failing / Blinking Nodes */}
                                     <circle cx="20" cy="45" r="5" fill="#ef4444" />
-                                    
+
                                     <motion.circle
                                         cx="95"
                                         cy="28"
@@ -264,7 +264,7 @@ export default function NeoversineShowcase() {
                                             <stop offset="100%" stopColor="#34D399" />
                                         </linearGradient>
                                     </defs>
-                                    
+
                                     {/* Static Guide Rail Lines */}
                                     <path d="M 30 40 L 140 40 Q 180 40 210 20 L 330 20" fill="none" stroke="#1E293B" strokeWidth="2" />
                                     <path d="M 140 40 L 330 40" fill="none" stroke="#1E293B" strokeWidth="2" />

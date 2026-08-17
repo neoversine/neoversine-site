@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
     IconArrowUpRight,
     IconTerminal2,
@@ -163,26 +164,44 @@ export default function TopProducts() {
     ];
 
     return (
-        <section className="py-[clamp(64px,8vw,140px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto">
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="py-[clamp(64px,8vw,140px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto"
+        >
             {/* Section Header */}
-            <div className="text-center max-w-[640px] mx-auto mb-12">
+            <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="text-center max-w-[640px] mx-auto mb-12"
+            >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0C0E12] border border-white/[0.12] text-xs font-mono text-[#6366F1] uppercase tracking-wider mb-4">
                     <IconCircleDot className="w-3.5 h-3.5" />
                     The Combined Framework — "We Provide ALL Of It"
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
                     Neoversine Native Products &amp;{" "}
-                    <span className="bg-gradient-to-r from-cyan-400 via-white to-[#6366F1] bg-clip-text text-transparent">
+                    <span className="text-cyan-300">
                         Architecture.
                     </span>
                 </h2>
                 <p className="text-sm md:text-base text-[#94A3B8] leading-relaxed">
                     Neoversine is not one product. It is one architecture (agent-OS) that ships every business the reference sites sell — plus our own native stack. Two people, one substrate, everything on it.
                 </p>
-            </div>
+            </motion.div>
 
             {/* Toggle Tabs */}
-            <div className="flex justify-center mb-10">
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.4 }}
+                className="flex justify-center mb-10"
+            >
                 <div className="inline-flex p-1 rounded-full bg-[#0C0E12] border border-white/[0.12]">
                     <button
                         onClick={() => setActiveTab("native")}
@@ -205,15 +224,19 @@ export default function TopProducts() {
                         Reference Solutions (Blotato · Crisp · Postproxy)
                     </button>
                 </div>
-            </div>
+            </motion.div>
 
             {activeTab === "native" ? (
                 /* Native Businesses Bento Grid */
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5">
                     {nativeBusinesses.map((item, idx) => (
-                        <div
+                        <motion.div
                             key={idx}
-                            className={`${item.colSpan} rounded-[24px] bg-[#0C0E12] border border-white/[0.12] hover:border-white/25 p-6 md:p-7 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-0.5 relative overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.5)]`}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: false, amount: 0.15 }}
+                            transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
+                            className={`${item.colSpan} rounded-[24px] bg-[#0C0E12] border border-white/[0.12] hover:border-white/25 p-6 md:p-7 flex flex-col justify-between transition-colors group relative overflow-hidden`}
                         >
                             <div className="flex items-center justify-between gap-2 mb-4">
                                 <div className="flex items-center gap-3">
@@ -258,12 +281,18 @@ export default function TopProducts() {
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             ) : (
                 /* Reference Comparison Matrix */
-                <div className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-10 shadow-xl">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.5 }}
+                    className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-10 shadow-xl"
+                >
                     <div className="mb-8">
                         <span className="text-[10px] font-mono text-[#6366F1] uppercase tracking-wider font-semibold block mb-1">
                             REFERENCE EQUIVALENCE
@@ -298,11 +327,17 @@ export default function TopProducts() {
                             </div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
             )}
 
             {/* Bottom Section Callout */}
-            <div className="mt-10 p-6 md:p-8 rounded-[24px] bg-[#0C0E12] border border-white/[0.12] text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+            <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+                className="mt-10 p-6 md:p-8 rounded-[24px] bg-[#0C0E12] border border-white/[0.12] text-center flex flex-col sm:flex-row items-center justify-between gap-4"
+            >
                 <div className="text-left">
                     <p className="text-sm md:text-base text-white font-medium">
                         "You think you need Blotato for publishing, Crisp for support, and Postproxy for a social API?"
@@ -317,7 +352,7 @@ export default function TopProducts() {
                 >
                     Start a Build ↗
                 </button>
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     );
 }

@@ -1,10 +1,7 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
+import { motion } from "framer-motion";
 import { SiteNavbar } from "../components/basic/SiteNavbar";
 import { HiOutlineArrowTurnRightDown } from "react-icons/hi2";
-import TrueFocus from "../components/accernity/TrueFocus";
 import { BsTwitterX, BsGithub } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import SiteFooter from "../components/basic/SiteFooter";
@@ -18,10 +15,6 @@ const HeroText = ({ value }) => (
 );
 
 const AboutUsPage = () => {
-    useEffect(() => {
-        AOS.init({ duration: 800 });
-    }, []);
-
     const navigate = useNavigate();
 
     return (
@@ -29,7 +22,13 @@ const AboutUsPage = () => {
             <SiteNavbar />
 
             {/* Hero Header */}
-            <div className="pt-32 pb-16 px-4 md:px-6 max-w-5xl mx-auto text-center">
+            <motion.div
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="pt-32 pb-16 px-4 md:px-6 max-w-5xl mx-auto text-center"
+            >
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0C0E12] border border-white/[0.12] text-xs font-mono text-[#6366F1] uppercase tracking-wider mb-6">
                     <IconShieldCheck className="w-3.5 h-3.5" />
                     Foundational Ownership
@@ -40,11 +39,17 @@ const AboutUsPage = () => {
                 <p className="text-sm md:text-base text-[#94A3B8] max-w-2xl mx-auto font-light">
                     The agent-operating-system company. We build AI systems that replace work — designed, shipped, and owned end-to-end by two builders.
                 </p>
-            </div>
+            </motion.div>
 
             {/* Thesis Section */}
             <div className="w-full pb-20 px-4 md:px-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl gap-8 md:gap-16 mx-auto items-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl gap-8 md:gap-16 mx-auto items-center"
+                >
                     <div className="flex flex-col gap-3">
                         <div className="flex text-[#94A3B8] items-center gap-2 text-xs font-mono">
                             <p>OUR POSITIONING THESIS</p>
@@ -70,10 +75,16 @@ const AboutUsPage = () => {
                             At Neoversine, the two of us build agent systems on our own architecture. Our foundation is Hermes agent-OS. Beneath it, we've mastered vLLM inference economics — PagedAttention, KV-cache reuse, speculative decoding, and cost-per-token. Every system ships with a live control deck.
                         </p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Verified Production Proof Matrix */}
-                <div className="max-w-5xl mx-auto mt-16">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.15 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className="max-w-5xl mx-auto mt-16"
+                >
                     <div className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-10 shadow-xl">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                             <div>
@@ -90,26 +101,50 @@ const AboutUsPage = () => {
                         </div>
 
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                            <div className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: false }}
+                                transition={{ duration: 0.4, delay: 0.05 }}
+                                className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center"
+                            >
                                 <span className="text-2xl sm:text-3xl font-bold font-mono text-[#6366F1]">+40%</span>
                                 <span className="text-[10px] text-[#94A3B8] font-mono block mt-1 uppercase">Lead Conversion</span>
                                 <span className="text-[9px] text-[#6B7280]">ARC Network CRM</span>
-                            </div>
-                            <div className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center">
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: false }}
+                                transition={{ duration: 0.4, delay: 0.1 }}
+                                className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center"
+                            >
                                 <span className="text-2xl sm:text-3xl font-bold font-mono text-cyan-400">10x</span>
                                 <span className="text-[10px] text-[#94A3B8] font-mono block mt-1 uppercase">Faster Research</span>
                                 <span className="text-[9px] text-[#6B7280]">Custom RAG Pipelines</span>
-                            </div>
-                            <div className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center">
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: false }}
+                                transition={{ duration: 0.4, delay: 0.15 }}
+                                className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center"
+                            >
                                 <span className="text-2xl sm:text-3xl font-bold font-mono text-emerald-400">0.96</span>
                                 <span className="text-[10px] text-[#94A3B8] font-mono block mt-1 uppercase">mAP50 YOLO</span>
                                 <span className="text-[9px] text-[#6B7280]">700 imgs/1h (D8alytics)</span>
-                            </div>
-                            <div className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center">
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: false }}
+                                transition={{ duration: 0.4, delay: 0.2 }}
+                                className="p-4 rounded-[18px] bg-black/40 border border-white/[0.08] text-center"
+                            >
                                 <span className="text-2xl sm:text-3xl font-bold font-mono text-rose-400">0</span>
                                 <span className="text-[10px] text-[#94A3B8] font-mono block mt-1 uppercase">Vendor Lock-In</span>
                                 <span className="text-[9px] text-[#6B7280]">MIT Control Deck</span>
-                            </div>
+                            </motion.div>
                         </div>
 
                         {/* Benchmark Table */}
@@ -162,11 +197,17 @@ const AboutUsPage = () => {
                             </button>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
             {/* Core Team (Two People Only: Arka & Ankon) */}
-            <div className="w-full max-w-5xl mx-auto px-4 pb-28">
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.15 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="w-full max-w-5xl mx-auto px-4 pb-28"
+            >
                 <div className="text-center mb-16">
                     <span className="text-[10px] font-mono text-[#6366F1] uppercase tracking-wider font-semibold block mb-2">
                         THE TWO OF US
@@ -181,7 +222,13 @@ const AboutUsPage = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Arka's Card */}
-                    <div className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-8 flex flex-col justify-between shadow-xl">
+                    <motion.div
+                        initial={{ opacity: 0, x: -25 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.5 }}
+                        className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-8 flex flex-col justify-between shadow-xl"
+                    >
                         <div>
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#6366F1] p-0.5 flex-shrink-0">
@@ -211,10 +258,16 @@ const AboutUsPage = () => {
                             <a href="https://github.com/neoversine" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:text-[#6366F1] hover:border-[#6366F1] transition-colors"><BsGithub /></a>
                             <a href="mailto:neoversine@gmail.com" className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:text-[#6366F1] hover:border-[#6366F1] transition-colors"><MdEmail /></a>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Ankon's Card */}
-                    <div className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-8 flex flex-col justify-between shadow-xl">
+                    <motion.div
+                        initial={{ opacity: 0, x: 25 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.5 }}
+                        className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-8 flex flex-col justify-between shadow-xl"
+                    >
                         <div>
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-cyan-400 p-0.5 flex-shrink-0">
@@ -244,9 +297,9 @@ const AboutUsPage = () => {
                             <a href="https://github.com/neoversine" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:text-cyan-400 hover:border-cyan-400 transition-colors"><BsGithub /></a>
                             <a href="mailto:neoversine@gmail.com" className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center hover:text-cyan-400 hover:border-cyan-400 transition-colors"><MdEmail /></a>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
-            </div>
+            </motion.div>
 
             <SiteFooter />
         </main>

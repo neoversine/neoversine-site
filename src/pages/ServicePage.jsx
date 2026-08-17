@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { SiteNavbar } from "../components/basic/SiteNavbar";
 import SiteFooter from "../components/basic/SiteFooter";
-import AOS from "aos";
 import { services } from "../constants/services";
 import ServiceTechStack from "../components/service-details/ServiceTechStack";
 import serviceTechStacks from "../constants/serviceTechStacks.json";
@@ -45,20 +45,18 @@ const ServicePage = () => {
     const [selectedService, setSelectedService] = useState(servicesWithIcons[0]);
     const selectedServiceDetail = serviceTechStacks[selectedService.id];
 
-    useEffect(() => {
-        AOS.init({
-            duration: 800,
-            easing: "ease-in-out",
-            once: false,
-        });
-    }, []);
-
     return (
         <main className="relative w-full min-h-screen bg-[#050505] text-white overflow-hidden">
             <SiteNavbar />
 
             {/* Hero Header */}
-            <div className="pt-32 pb-12 px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto text-center">
+            <motion.div
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="pt-32 pb-12 px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto text-center"
+            >
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0C0E12] border border-white/[0.12] text-xs font-mono text-[#6366F1] uppercase tracking-wider mb-4">
                     <IconCpu className="w-3.5 h-3.5" />
                     FOUNDATIONAL ARCHITECTURE
@@ -72,14 +70,20 @@ const ServicePage = () => {
                 <p className="text-sm md:text-base text-[#94A3B8] max-w-[640px] mx-auto font-light leading-relaxed">
                     12 foundational systems designed, shipped, and owned end-to-end on Hermes agent-OS and custom vLLM inference economics.
                 </p>
-            </div>
+            </motion.div>
 
             {/* Interactive System Explorer */}
             <div className="px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto pb-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                     
                     {/* Left Column: 12 System Selector List */}
-                    <div className="lg:col-span-4 rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-4 shadow-xl">
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="lg:col-span-4 rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-4 shadow-xl"
+                    >
                         <span className="text-[10px] font-mono text-[#6366F1] uppercase tracking-wider font-semibold px-3 pt-2 pb-3 block">
                             12 ARCHITECTURAL SYSTEMS
                         </span>
@@ -104,10 +108,16 @@ const ServicePage = () => {
                                 );
                             })}
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Right Column: Active System Details */}
-                    <div className="lg:col-span-8 flex flex-col gap-6">
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="lg:col-span-8 flex flex-col gap-6"
+                    >
                         {selectedService && (
                             <div className="rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-8 shadow-xl">
                                 <div className="flex items-center gap-3.5 mb-6 pb-4 border-b border-white/[0.08]">
@@ -158,13 +168,19 @@ const ServicePage = () => {
                         {selectedServiceDetail && (
                             <ServiceTechStack techStack={selectedServiceDetail} />
                         )}
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>
 
             {/* Bottom CTA Section */}
-            <div className="py-12 px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto">
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="py-12 px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto"
+            >
                 <div className="rounded-[28px] bg-[#0C0E12] border border-white/[0.12] p-8 md:p-12 text-center flex flex-col items-center shadow-2xl">
                     <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
                         Ready to Deploy Your Owned AI Substrate?
@@ -180,7 +196,7 @@ const ServicePage = () => {
                         <IconArrowUpRight className="w-4 h-4" />
                     </a>
                 </div>
-            </div>
+            </motion.div>
 
             <SiteFooter />
         </main>

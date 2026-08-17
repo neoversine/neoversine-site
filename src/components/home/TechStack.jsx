@@ -1,12 +1,7 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
+import { motion } from "framer-motion";
 
 const TechStack = () => {
-    useEffect(() => {
-        AOS.init({ duration: 800 });
-    }, []);
-
     const architectureStack = [
         "Hermes Agent-OS",
         "vLLM PagedAttention",
@@ -18,26 +13,37 @@ const TechStack = () => {
     ];
 
     return (
-        <section className="py-[clamp(48px,6vw,96px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto text-center">
-            <p
+        <motion.section
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="py-[clamp(48px,6vw,96px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto text-center"
+        >
+            <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
                 className="text-[11px] text-[#6366F1] font-mono uppercase tracking-widest font-semibold mb-6"
-                data-aos="zoom-in"
             >
                 FOUNDATIONAL ARCHITECTURE STACK
-            </p>
+            </motion.p>
             <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 max-w-4xl mx-auto">
                 {architectureStack.map((tech, i) => (
-                    <span
+                    <motion.span
                         key={tech}
-                        data-aos="fade-up"
-                        data-aos-delay={i * 80}
-                        className="inline-flex items-center text-sm sm:text-base md:text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-white to-purple-400 px-3 py-1.5 rounded-full bg-white/[0.02] border border-white/[0.06]"
+                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.4, delay: i * 0.08 }}
+                        className="inline-flex items-center text-sm sm:text-base md:text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-white to-purple-400 px-4 py-2 rounded-full bg-white/[0.02] border border-white/[0.08]"
                     >
                         {tech}
-                    </span>
+                    </motion.span>
                 ))}
             </div>
-        </section>
+        </motion.section>
     );
 };
 

@@ -29,11 +29,23 @@ export default function NeoversineShowcase() {
     }, []);
 
     return (
-        <section className="py-[clamp(48px,6vw,120px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto w-full">
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.15 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="py-[clamp(48px,6vw,120px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto w-full"
+        >
             <div className="rounded-[32px] bg-[#0A0C10] border border-white/[0.12] p-6 sm:p-8 md:p-12 relative overflow-hidden">
                 
                 {/* Section Header */}
-                <div className="max-w-[720px] mb-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="max-w-[720px] mb-12"
+                >
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.1] text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-4">
                         <IconLayersLinked className="w-3.5 h-3.5" />
                         ONE STACK VS FRAGMENTED SAAS
@@ -47,14 +59,19 @@ export default function NeoversineShowcase() {
                     <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed max-w-[640px]">
                         You think you need Blotato for publishing, Crisp for customer support, and Postproxy for a social API? We build you one system that does all of it — on our own architecture. No stitching, no glue, no third-party subscriptions.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Side-by-Side Comparison Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                     
                     {/* ================= LEFT CARD: THE FRAGMENTED STACK (DEPRECATED) ================= */}
-                    <div className="lg:col-span-5 rounded-[24px] bg-[#0D0F14] border border-dashed border-rose-500/30 p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
-                        
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="lg:col-span-5 rounded-[24px] bg-[#0D0F14] border border-dashed border-rose-500/30 p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden opacity-90 hover:opacity-100 transition-opacity"
+                    >
                         <div>
                             {/* Card Status Pill */}
                             <div className="flex items-center justify-between gap-2 mb-6">
@@ -197,11 +214,16 @@ export default function NeoversineShowcase() {
                             <span className="text-[#6B7280]">Total Annual Drain:</span>
                             <span className="text-rose-400 line-through font-semibold">$33,600+ / yr</span>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* ================= RIGHT CARD: NEOVERSINE AGENT-OS (RUNNING LIVE FLOW) ================= */}
-                    <div className="lg:col-span-7 rounded-[28px] bg-[#0C101A] border border-[#6366F1]/50 relative p-7 sm:p-8 flex flex-col justify-between transition-colors overflow-hidden">
-                        
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="lg:col-span-7 rounded-[28px] bg-[#0C101A] border border-[#6366F1]/50 relative p-7 sm:p-8 flex flex-col justify-between transition-colors overflow-hidden"
+                    >
                         <div>
                             {/* Card Status & Health Pill */}
                             <div className="flex items-center justify-between gap-2 mb-6">
@@ -386,12 +408,11 @@ export default function NeoversineShowcase() {
                                 <IconArrowUpRight className="w-3.5 h-3.5" />
                             </button>
                         </div>
-
-                    </div>
+                    </motion.div>
 
                 </div>
 
             </div>
-        </section>
+        </motion.section>
     );
 }

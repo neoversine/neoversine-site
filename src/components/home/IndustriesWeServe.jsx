@@ -8,20 +8,29 @@ import {
     IconArrowUpRight,
     IconCircleDot,
     IconTerminal2,
-    IconActivity,
     IconScan
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 
 export function IndustriesWeServe() {
     const navigate = useNavigate();
-    const [activeSwarmNode, setActiveNode] = useState(1);
 
     return (
-        <section className="py-[clamp(48px,6vw,120px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto w-full">
-            
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.15 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="py-[clamp(48px,6vw,120px)] px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto w-full"
+        >
             {/* Section Header */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
+            >
                 <div className="max-w-[680px]">
                     <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0C0E12] border border-white/[0.12] text-xs font-mono text-[#6366F1] uppercase tracking-wider mb-4">
                         <IconCircleDot className="w-3.5 h-3.5" />
@@ -45,13 +54,19 @@ export function IndustriesWeServe() {
                     <span>View All 12 Systems Specs</span>
                     <IconArrowUpRight className="w-4 h-4 text-cyan-400" />
                 </button>
-            </div>
+            </motion.div>
 
             {/* ================= 4 HIGH-IMPACT VISUAL SYSTEM SHOWCASE PANELS ================= */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                 
                 {/* 1. Autonomous Multi-Agent Swarms (Interactive Visual Swarm) */}
-                <div className="rounded-[28px] bg-[#0C0E12] border border-white/[0.12] hover:border-white/25 p-7 flex flex-col justify-between transition-colors group">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="rounded-[28px] bg-[#0C0E12] border border-white/[0.12] hover:border-white/25 p-7 flex flex-col justify-between transition-colors group"
+                >
                     <div>
                         <div className="flex items-center justify-between mb-4">
                             <div className="flex items-center gap-3">
@@ -84,22 +99,12 @@ export function IndustriesWeServe() {
                             </div>
 
                             <svg viewBox="0 0 340 100" className="w-full h-24">
-                                <defs>
-                                    <linearGradient id="swarmLine" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stopColor="#0D2B60" />
-                                        <stop offset="50%" stopColor="#38BDF8" />
-                                        <stop offset="100%" stopColor="#6366F1" />
-                                    </linearGradient>
-                                </defs>
-                                
-                                {/* Connecting Neural Lines */}
                                 <line x1="40" y1="50" x2="140" y2="25" stroke="#1E293B" strokeWidth="1.5" />
                                 <line x1="40" y1="50" x2="140" y2="75" stroke="#1E293B" strokeWidth="1.5" />
                                 <line x1="140" y1="25" x2="260" y2="25" stroke="#1E293B" strokeWidth="1.5" />
                                 <line x1="140" y1="75" x2="260" y2="75" stroke="#1E293B" strokeWidth="1.5" />
                                 <line x1="140" y1="25" x2="260" y2="75" stroke="#1E293B" strokeWidth="1" strokeDasharray="3 3" />
 
-                                {/* Moving Data Pulses */}
                                 <motion.circle
                                     r="3"
                                     fill="#38BDF8"
@@ -113,7 +118,6 @@ export function IndustriesWeServe() {
                                     transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                                 />
 
-                                {/* Swarm Nodes */}
                                 <circle cx="40" cy="50" r="10" fill="#0C0E12" stroke="#38BDF8" strokeWidth="2" />
                                 <text x="40" y="53" textAnchor="middle" fill="#fff" fontSize="8" fontFamily="monospace">OS</text>
 
@@ -136,10 +140,16 @@ export function IndustriesWeServe() {
                         <span className="text-[#6B7280]">Key Outcome:</span>
                         <span className="text-cyan-300 font-semibold">100% Headcount Replaced</span>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* 2. vLLM Inference Economics (Live Latency & Token Economics) */}
-                <div className="rounded-[28px] bg-[#0C0E12] border border-white/[0.12] hover:border-white/25 p-7 flex flex-col justify-between transition-colors group">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="rounded-[28px] bg-[#0C0E12] border border-white/[0.12] hover:border-white/25 p-7 flex flex-col justify-between transition-colors group"
+                >
                     <div>
                         <div className="flex items-center justify-between mb-4">
                             <div className="flex items-center gap-3">
@@ -164,14 +174,12 @@ export function IndustriesWeServe() {
                             PagedAttention, continuous batching, and KV-cache reuse deployed on bare-metal clusters, dropping serving latency from 120ms to 18ms without third-party API rate limits.
                         </p>
 
-                        {/* Interactive Latency & Memory Reduction Visual */}
                         <div className="rounded-2xl bg-black/70 border border-white/[0.06] p-4">
                             <div className="flex items-center justify-between text-[10px] font-mono text-[#6B7280] mb-3">
                                 <span>PAGED_ATTENTION // VRAM EFFICIENCY</span>
                                 <span className="text-emerald-400 font-semibold">92GB → &lt;10GB</span>
                             </div>
 
-                            {/* Comparison Progress Bars */}
                             <div className="space-y-3">
                                 <div>
                                     <div className="flex justify-between text-[9px] font-mono text-[#6B7280] mb-1">
@@ -199,10 +207,16 @@ export function IndustriesWeServe() {
                         <span className="text-[#6B7280]">Serving Speed:</span>
                         <span className="text-emerald-400 font-semibold">18ms Latency Lock</span>
                     </div>
-                </div>
+                </motion.div>
 
-                {/* 3. D8alytics Synthetic Vision (Live YOLO Bounding Box Generator) */}
-                <div className="rounded-[28px] bg-[#0C0E12] border border-white/[0.12] hover:border-white/25 p-7 flex flex-col justify-between transition-colors group">
+                {/* 3. D8alytics Synthetic Vision */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="rounded-[28px] bg-[#0C0E12] border border-white/[0.12] hover:border-white/25 p-7 flex flex-col justify-between transition-colors group"
+                >
                     <div>
                         <div className="flex items-center justify-between mb-4">
                             <div className="flex items-center gap-3">
@@ -227,13 +241,11 @@ export function IndustriesWeServe() {
                             Generating 700 YOLO-annotated computer vision training images per hour with zero real-world photo collection, achieving production accuracy on complex object detection.
                         </p>
 
-                        {/* Synthetic Vision Frame Artifact */}
                         <div className="rounded-2xl bg-black/70 border border-white/[0.06] p-4 relative overflow-hidden h-28 flex items-center justify-center">
                             <div className="absolute top-2 left-3 text-[9px] font-mono text-[#6B7280]">
                                 SYNTH_VISION_FEED // YOLOv8_PREVIEW
                             </div>
                             
-                            {/* Simulated Bounding Boxes */}
                             <div className="relative w-48 h-16 border border-dashed border-emerald-400/50 rounded-lg flex items-center justify-center">
                                 <span className="absolute -top-2.5 left-2 px-1.5 py-0.2 rounded bg-emerald-500 text-[8px] font-mono text-black font-bold">
                                     OBJECT_DETECT: 96.4%
@@ -249,10 +261,16 @@ export function IndustriesWeServe() {
                         <span className="text-[#6B7280]">Verification:</span>
                         <span className="text-emerald-400 font-semibold">mAP50 0.96 Benchmark</span>
                     </div>
-                </div>
+                </motion.div>
 
-                {/* 4. Adaptive NeoCrawl (Selectorless Vision Web Scraper) */}
-                <div className="rounded-[28px] bg-[#0C0E12] border border-white/[0.12] hover:border-white/25 p-7 flex flex-col justify-between transition-colors group">
+                {/* 4. Adaptive NeoCrawl */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="rounded-[28px] bg-[#0C0E12] border border-white/[0.12] hover:border-white/25 p-7 flex flex-col justify-between transition-colors group"
+                >
                     <div>
                         <div className="flex items-center justify-between mb-4">
                             <div className="flex items-center gap-3">
@@ -277,7 +295,6 @@ export function IndustriesWeServe() {
                             Vision-guided scrapers and ScrapeGraphAI pipelines that adapt autonomously to site structure changes without brittle CSS selectors, CAPTCHA blockades, or paid third-party proxies.
                         </p>
 
-                        {/* Live Scraper Visual Box */}
                         <div className="rounded-2xl bg-black/70 border border-white/[0.06] p-4 font-mono text-[11px] space-y-1.5">
                             <div className="flex items-center justify-between text-[9px] text-[#6B7280] pb-1 border-b border-white/[0.06]">
                                 <span>NEOCRAWL_AUTONOMOUS_PARSER</span>
@@ -298,11 +315,11 @@ export function IndustriesWeServe() {
                         <span className="text-[#6B7280]">Proxy Tax:</span>
                         <span className="text-amber-400 font-semibold">$0 / month</span>
                     </div>
-                </div>
+                </motion.div>
 
             </div>
 
-        </section>
+        </motion.section>
     );
 }
 

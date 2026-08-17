@@ -1,19 +1,13 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { SiteNavbar } from "../components/basic/SiteNavbar";
 import { ConfettiSideCannons } from "../components/magic-ui/ConfettiSideCannons";
 import { ToastContainer } from "react-toastify";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { Pointerhighlight } from "../components/accernity/Pointerhighlight";
 import SiteFooter from "../components/basic/SiteFooter";
-import { IconShieldCheck, IconCpu, IconMail, IconMapPin, IconPhone, IconBrandTelegram } from "@tabler/icons-react";
+import { IconShieldCheck, IconCpu, IconMail, IconMapPin, IconPhone } from "@tabler/icons-react";
 
 const ContactPage = () => {
-    useEffect(() => {
-        AOS.init({ duration: 600 });
-    }, []);
-
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [data, setData] = useState("");
@@ -23,8 +17,15 @@ const ContactPage = () => {
             <SiteNavbar />
 
             <div className="pt-32 pb-20 px-[clamp(20px,4vw,64px)] max-w-[1280px] mx-auto w-full">
+                
                 {/* Header Title */}
-                <div className="max-w-[800px] mb-14">
+                <motion.div
+                    initial={{ opacity: 0, y: 35 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className="max-w-[800px] mb-14"
+                >
                     <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0C0E12] border border-white/[0.12] text-xs font-mono text-[#6366F1] uppercase tracking-wider mb-4">
                         <IconCpu className="w-3.5 h-3.5" />
                         DIRECT ARCHITECTURE PARTNERSHIP
@@ -32,13 +33,19 @@ const ContactPage = () => {
                     <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
                         Foundational <Pointerhighlight><span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white to-cyan-300">agent systems</span></Pointerhighlight> for teams that own their stack.
                     </h1>
-                </div>
+                </motion.div>
 
                 {/* Two-Column Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                     
                     {/* Left Column: Direct Builder Info */}
-                    <div className="lg:col-span-4 rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-8 shadow-xl">
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="lg:col-span-4 rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-8 shadow-xl"
+                    >
                         <span className="text-[10px] font-mono text-[#6366F1] uppercase tracking-wider font-semibold block mb-2">
                             THE TWO BUILDERS
                         </span>
@@ -68,10 +75,16 @@ const ContactPage = () => {
                         <div className="pt-4 border-t border-white/[0.08] text-[11px] text-[#6B7280] font-light leading-relaxed">
                             We partner on long-term builds where architecture ownership, vLLM inference economics, and Hermes agent-OS runtimes replace human labor at scale.
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Right Column: Build Scope Form */}
-                    <div className="lg:col-span-8 rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-10 shadow-xl">
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="lg:col-span-8 rounded-[24px] bg-[#0C0E12] border border-white/[0.12] p-6 md:p-10 shadow-xl"
+                    >
                         <div className="mb-8">
                             <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider font-semibold block mb-1">
                                 SCHEDULE A BUILD REVIEW
@@ -140,7 +153,7 @@ const ContactPage = () => {
                                 />
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>

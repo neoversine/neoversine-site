@@ -1,45 +1,153 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const products = [
     {
-        title: "NeoGen",
+        title: "ARC Network",
+        tagline: "Lead CRM + Outreach Engine with Collaboration Intelligence",
+        stat: "+40% Conversion",
         desc: {
-            features: [
-                "AI-powered poster generation tailored to your business niche."
+            "Core Capability": [
+                "Agents dynamically adjust sequencing based on real-time engagement signals and intent data."
             ],
-            "time Saved": [
-                "Cuts design time by over 80% — what used to take hours now takes seconds."
+            "Human Handoff": [
+                "Triggers sales follow-ups only when meaningful buyer engagement occurs."
             ],
-            "usability": [
-                "Simple prompt-based interface — just describe what you need."
+            "Data Hygiene": [
+                "Zero manual updates: records enrich autonomously from public signals."
             ],
-            "thoughts Behind": [
-                "Created with the vision to make , not just professionals."
+            "Architecture": [
+                "Hermes Agent-OS parallel delegation with intent-scoring decision trees."
             ]
         },
-        img: "/works-grid/neopost2.png",
+        img: "/works/neobot.png",
+        gradient: "from-cyan-500 via-indigo-500 to-purple-500",
+        imagesDesc: [
+            { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" },
+        ]
+    },
+    {
+        title: "NeoCrawl Scraping API",
+        tagline: "Adaptive Vision-Guided Web Scraping Layer",
+        stat: "Zero Brittle Selectors",
+        desc: {
+            "Core Capability": [
+                "Vision-guided scrapers that adapt dynamically to DOM shifts, anti-bot walls, and dynamic SPAs."
+            ],
+            "Reliability": [
+                "Eliminates dependency on third-party proxy subscriptions and brittle CSS selectors."
+            ],
+            "Output": [
+                "Streams clean, validated JSON schemas straight into downstream agent loops."
+            ],
+            "Architecture": [
+                "ScrapeGraphAI foundation with dynamic skill creation for unexpected layouts."
+            ]
+        },
+        img: "/works/neocrawl.png",
         gradient: "from-purple-500 via-pink-400 to-red-400",
         imagesDesc: [
-            { url: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1757709634/tjxoaplb4jlxnbpvxvjj.png" },
-            { url: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1757581907/brmtqmgrcou2rxh8gbig.png" },
-            { url: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1757708334/b3pjbl74hzjht8w3rjje.png" },
-            { url: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1757689895/o2arvskwacl1kufcr53t.png" },
+            { url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80" },
+        ]
+    },
+    {
+        title: "Pocket Control Deck",
+        tagline: "MIT-Licensed Phone-First AI Runtime Surface",
+        stat: "100% Self-Hosted",
+        desc: {
+            "Core Capability": [
+                "Real-time event streaming allowing operators to watch agents reason and step through tasks."
+            ],
+            "Intervention": [
+                "Inject live steering prompts and modify runtime hyperparameters without redeploying."
+            ],
+            "Licensing": [
+                "MIT-licensed open core — no SaaS seat tax, no vendor telemetry lock-in."
+            ],
+            "Architecture": [
+                "WebSocket event dispatcher with responsive mobile-optimized UI."
+            ]
+        },
+        img: "/works/neopost2.png",
+        gradient: "from-blue-500 via-cyan-400 to-teal-400",
+        imagesDesc: [
+            { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" },
+        ]
+    },
+    {
+        title: "D8alytics Synthetic Vision",
+        tagline: "Computer Vision Domain Randomization Pipeline",
+        stat: "mAP50 0.96",
+        desc: {
+            "Core Capability": [
+                "Generates 700 YOLO-formatted images in <1 hour for custom detection tasks."
+            ],
+            "Performance": [
+                "Achieves mAP50 0.96 trained entirely on synthetic data with zero real images required."
+            ],
+            "Speed": [
+                "Reduces dataset preparation from weeks of manual labeling to under 60 minutes."
+            ],
+            "Architecture": [
+                "Generative 3D domain randomization + automated bounding box synthesis."
+            ]
+        },
+        img: "/works/neogeo.png",
+        gradient: "from-amber-500 via-orange-400 to-rose-400",
+        imagesDesc: [
+            { url: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80" },
+        ]
+    },
+    {
+        title: "NeopostGen SaaS",
+        tagline: "Automated Multi-Format Creative Generation Engine",
+        stat: "10x Faster Creation",
+        desc: {
+            "Core Capability": [
+                "Transforms brief inputs into brand-consistent social posts, ad creatives, and layouts."
+            ],
+            "Automation": [
+                "Eliminates manual Figma/Photoshop overhead for high-velocity growth teams."
+            ],
+            "Consistency": [
+                "Enforces typography, color tokens, and messaging constraints deterministically."
+            ],
+            "Architecture": [
+                "Multi-agent layout planner with vector asset composition."
+            ]
+        },
+        img: "/works/neocontent.png",
+        gradient: "from-emerald-500 via-teal-400 to-cyan-400",
+        imagesDesc: [
+            { url: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80" },
+            { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80" },
         ]
     }
 ];
 
 export default function ProductShowcase() {
     return (
-        <section className="py-20">
-            <div className="max-w-[330px] md:max-w-lg mx-auto px-6">
-                <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
+        <section className="py-12">
+            <div className="max-w-6xl mx-auto px-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {products.map((p, i) => {
-                        const isEven = i % 2 === 0;
-
                         return (
-                            <HoverCard key={i} product={p} isEven={isEven} index={i} />
+                            <ProductCard key={i} product={p} index={i} />
                         );
                     })}
                 </div>
@@ -48,308 +156,48 @@ export default function ProductShowcase() {
     );
 }
 
-function HoverCard({ product: p, isEven, index }) {
-    const [hovered, setHovered] = useState(false);
-
-
-
+function ProductCard({ product: p, index }) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.15 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            className={`relative group cursor-pointer ${isEven ? "origin-left" : "origin-right"}`}
+            className="relative flex flex-col bg-[#131313] border border-white/10 hover:border-cyan-500/50 rounded-2xl p-6 transition-all duration-300 group hover:-translate-y-1 shadow-lg hover:shadow-cyan-500/10"
         >
-            <div className="relative shadow-2xl flex flex-col h-full transition-transform duration-500">
-                <div className="relative bg-white/10 border border-white/10 backdrop-blur-sm p-4 md:p-6 rounded-3xl group-hover:shadow-[0_0_25px_rgba(99,102,241,0.5)] z-10">
-                    {/* Glow behind image */}
-                    <div className="absolute -inset-2 bg-gradient-to-r from-indigo-500/30 via-purple-500/30 to-sky-500/30 opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500"></div>
-
-                    {/* Image */}
-                    <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-b from-gray-300 via-gray-900 to-gray-950 overflow-hidden z-10 rounded-2xl">
-                        <div className="absolute w-32 h-32 bg-gradient-to-tr from-indigo-500 via-purple-500 to-sky-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-                        <img
-                            src={p.img}
-                            alt={p.title}
-                            className="relative object-contain h-full transition-transform duration-700 "
-                        />
-                    </div>
-
-                </div>
-
-
-                <div className="text-white text-center font-bold text-3xl mt-4 ">
-                    {p.title}
-                </div>
-
-                {/* Floating Info Boxes */}
-                {/* Floating Info Boxes */}
-                {/* <AnimatePresence>
-                    {hovered && (
-                        <>
-
-                            Left side (first 2)
-                            <div className="absolute top-1/2 left-1 flex flex-col gap-3 -translate-y-1/2 z-0">
-                                {Object.entries(p.desc)
-                                    .slice(0, 2)
-                                    .map(([key, value], idx) => {
-                                        const colors = [
-                                            "bg-orange-400", // TIME
-                                            "bg-green-300",  // STREAK
-                                            "bg-purple-300", // LEVEL
-                                            "bg-blue-300"    // BADGES
-                                        ];
-                                        return (
-                                            <motion.div
-                                                key={idx}
-                                                custom={idx}
-                                                variants={{
-                                                    hidden: (i) => ({
-                                                        opacity: 0,
-                                                        x: -50,
-                                                        y: 0,
-                                                        rotate: -90,
-                                                        transition: { duration: 0.4, delay: i * 0.1 }
-                                                    }),
-                                                    visible: (i) => ({
-                                                        opacity: 1,
-                                                        x: -180,
-                                                        y: idx == 0 ? -60 : +60,
-                                                        rotate: idx == 0 ? 10 : -10,
-                                                        transition: { duration: 0.6, delay: i * 0.15 }
-                                                    }),
-                                                    exit: (i) => ({
-                                                        opacity: 0,
-                                                        x: -50,
-                                                        y: 0,
-                                                        rotate: -90,
-                                                        transition: { duration: 0.4, delay: i * 0.05 }
-                                                    })
-                                                }}
-                                                initial="hidden"
-                                                animate="visible"
-                                                exit="exit"
-                                                className="h-40 w-40 p-3 bg-white/10 rounded-3xl"
-                                            >
-                                                <div className={`px-4 py-2 h-full w-full rounded-2xl p-4 flex flex-col justify-between ${colors[idx]} 
-            shadow-[0_0_3px_rgba(99,102,241,0.8),0_0_6px_rgba(99,102,241,0.6),0_0_12px_rgba(99,102,241,0.4),0_0_24px_rgba(99,102,241,0.2)]`}>
-                                                    <div className="flex flex-col justify-evenly h-full ">
-                                                        <div className="flex justify-between items-start">
-                                                            <span className="text-sm font-bold text-black uppercase">
-                                                                {key}
-                                                            </span>
-                                                        </div>
-                                                        <div>
-                                                            <p className="text-xs text-black/80">{value[0]}</p>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </motion.div>
-                                        );
-                                    })}
-                            </div>
-
-                            Right side (last 2)
-                            <div className="absolute top-1/2 right-0 flex flex-col gap-3 -translate-y-1/2 z-0">
-                                {Object.entries(p.desc)
-                                    .slice(2)
-                                    .map(([key, value], idx) => {
-                                        const colors = [
-                                            "bg-orange-400",
-                                            "bg-green-300",
-                                            "bg-purple-300",
-                                            "bg-blue-300"
-                                        ];
-                                        return (
-                                            <motion.div
-                                                key={idx}
-                                                custom={idx}
-                                                variants={{
-                                                    hidden: (i) => ({
-                                                        opacity: 0,
-                                                        x: 50,
-                                                        y: 0,
-                                                        rotate: 90,
-                                                        transition: { duration: 0.4, delay: i * 0.1 }
-                                                    }),
-                                                    visible: (i) => ({
-                                                        opacity: 1,
-                                                        x: 180,
-                                                        y: idx == 0 ? -60 : +60,
-                                                        rotate: idx == 0 ? -10 : 10,
-                                                        transition: { duration: 0.6, delay: i * 0.15 }
-                                                    }),
-                                                    exit: (i) => ({
-                                                        opacity: 0,
-                                                        x: 50,
-                                                        y: 0,
-                                                        rotate: 90,
-                                                        transition: { duration: 0.4, delay: i * 0.05 }
-                                                    })
-                                                }}
-                                                initial="hidden"
-                                                animate="visible"
-                                                exit="exit"
-                                                className="h-40 w-40 p-3 bg-white/10 rounded-3xl"
-                                            >
-                                                <div className={`px-4 py-2 h-full w-full rounded-2xl p-4 flex flex-col justify-between ${colors[idx + 2]} 
-            shadow-[0_0_3px_rgba(99,102,241,0.8),0_0_6px_rgba(99,102,241,0.6),0_0_12px_rgba(99,102,241,0.4),0_0_24px_rgba(99,102,241,0.2)]`}>
-                                                    <div className="flex flex-col justify-evenly h-full">
-                                                        <div className="flex justify-between items-start">
-                                                            <span className="text-sm font-bold text-black uppercase">
-                                                                {key}
-                                                            </span>
-                                                        </div>
-                                                        <div className="mt-auto">
-                                                            <p className="text-xs text-black/80 mt-2">{value[0]}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </motion.div>
-                                        );
-                                    })}
-                            </div>
-                        </>
-                    )}
-                </AnimatePresence> */}
-
-                <div className="max-md:hidden">
-                    <AnimatePresence>
-                        {hovered && (
-                            <>
-                                {p.imagesDesc.map((ele, i) => {
-                                    // Decide side & direction based on index
-                                    const positions = [
-                                        { side: "left-0", y: -140, x: -180 },  // top-left
-                                        { side: "left-0", y: 100, x: -180 },  // bottom-left
-                                        { side: "right-0", y: -140, x: 180 },  // top-right
-                                        { side: "right-0", y: 100, x: 180 },  // bottom-right
-                                    ];
-                                    const pos = positions[i] || positions[0]; // fallback
-
-                                    return (
-                                        <div
-                                            key={i}
-                                            className={`absolute top-1/2 ${pos.side} flex flex-col gap-3 -translate-y-1/2 z-0`}
-                                        >
-                                            <motion.div
-                                                custom={i}
-                                                variants={{
-                                                    hidden: {
-                                                        opacity: 0,
-                                                        x: 0,
-                                                        y: 0,
-                                                        rotate: 90,
-                                                    },
-                                                    visible: {
-                                                        opacity: 1,
-                                                        x: pos.x,
-                                                        y: pos.y,
-                                                        rotate: i == 0 || i == 3 ? 10 : -10,
-                                                        transition: { duration: 0.6, delay: 0.15 }
-                                                    },
-                                                    exit: {
-                                                        opacity: 0,
-                                                        x: 0,
-                                                        y: 0,
-                                                        rotate: -90,
-                                                        transition: { duration: 0.4, delay: i * 0.05 }
-                                                    }
-                                                }}
-                                                initial="hidden"
-                                                animate="visible"
-                                                exit="exit"
-                                                className="h-40 w-40 p-3 bg-white/10 rounded-3xl
-                                            shadow-[0_0_3px_rgba(99,102,241,0.4),0_0_6px_rgba(99,102,241,0.3),0_0_12px_rgba(99,102,241,0.2),0_0_24px_rgba(99,102,241,0.1)]
-                                            "
-                                            >
-                                                <div className="h-full w-full rounded-2xl flex flex-col justify-between
-              ">
-                                                    <div className="flex flex-col justify-evenly h-full rounded-2xl">
-                                                        <img src={ele.url} alt="" className="rounded-2xl object-cover" />
-                                                    </div>
-                                                </div>
-                                            </motion.div>
-                                        </div>
-                                    );
-                                })}
-                            </>
-                        )}
-
-                    </AnimatePresence>
-                </div>
-
-                <div className="md:hidden">
-                    <AnimatePresence>
-                        {hovered && (
-                            <>
-                                {p.imagesDesc.map((ele, i) => {
-                                    // Decide side & direction based on index
-                                    const positions = [
-                                        { side: "left-0", y: -100, x: -70 },  // top-left
-                                        { side: "left-0", y: 50, x: -70 },  // bottom-left
-                                        { side: "right-0", y: -100, x: 70 },  // top-right
-                                        { side: "right-0", y: 50, x: 70 },  // bottom-right
-                                    ];
-                                    const pos = positions[i] || positions[0]; // fallback
-
-                                    return (
-                                        <div
-                                            key={i}
-                                            className={`absolute top-1/2 ${pos.side} flex flex-col gap-3 -translate-y-1/2 z-0`}
-                                        >
-                                            <motion.div
-                                                custom={i}
-                                                variants={{
-                                                    hidden: {
-                                                        opacity: 0,
-                                                        x: 0,
-                                                        y: 0,
-                                                        rotate: 90,
-                                                    },
-                                                    visible: {
-                                                        opacity: 1,
-                                                        x: pos.x,
-                                                        y: pos.y,
-                                                        rotate: i == 0 || i == 3 ? 10 : -10,
-                                                        transition: { duration: 0.6, delay: 0.15 }
-                                                    },
-                                                    exit: {
-                                                        opacity: 0,
-                                                        x: 0,
-                                                        y: 0,
-                                                        rotate: -90,
-                                                        transition: { duration: 0.4, delay: i * 0.05 }
-                                                    }
-                                                }}
-                                                initial="hidden"
-                                                animate="visible"
-                                                exit="exit"
-                                                className="h-20 w-20 p-[6px] bg-white/10 rounded-3xl
-                                            shadow-[0_0_3px_rgba(99,102,241,0.4),0_0_6px_rgba(99,102,241,0.3),0_0_12px_rgba(99,102,241,0.2),0_0_24px_rgba(99,102,241,0.1)]
-                                            "
-                                            >
-                                                <div className="h-full w-full rounded-2xl flex flex-col justify-between
-              ">
-                                                    <div className="flex flex-col justify-evenly h-full rounded-2xl">
-                                                        <img src={ele.url} alt="" className="rounded-2xl object-cover" />
-                                                    </div>
-                                                </div>
-                                            </motion.div>
-                                        </div>
-                                    );
-                                })}
-                            </>
-                        )}
-
-                    </AnimatePresence>
-                </div>
-
+            <div className="flex items-center justify-between mb-4">
+                <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                    {p.stat}
+                </span>
+                <span className="text-xs text-gray-500 font-mono">
+                    PROD-SYSTEM-0{index + 1}
+                </span>
             </div>
-        </motion.div >
+
+            <div className="h-44 w-full bg-black/50 border border-white/5 rounded-xl mb-5 flex items-center justify-center p-3 overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <img
+                    src={p.img}
+                    alt={p.title}
+                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                />
+            </div>
+
+            <h2 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                {p.title}
+            </h2>
+            <p className="text-xs text-gray-400 font-mono mt-1 mb-4">
+                {p.tagline}
+            </p>
+
+            <div className="space-y-2 mt-auto pt-4 border-t border-white/10 text-xs text-gray-300">
+                {Object.entries(p.desc).slice(0, 2).map(([key, val], idx) => (
+                    <div key={idx} className="flex flex-col">
+                        <span className="text-gray-500 font-mono text-[10px] uppercase tracking-wider">{key}</span>
+                        <span className="text-gray-300 mt-0.5 leading-relaxed">{val[0]}</span>
+                    </div>
+                ))}
+            </div>
+        </motion.div>
     );
 }

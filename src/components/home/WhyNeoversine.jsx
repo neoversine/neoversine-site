@@ -1,73 +1,65 @@
 import { cn } from "@/lib/utils";
 import {
-    IconAdjustmentsBolt,
-    IconArrowsShuffle,
+    IconCpu,
+    IconBolt,
     IconBrain,
-    IconCloud,
-    IconCurrencyDollar,
     IconDeviceDesktopAnalytics,
-    IconEaseInOut,
-    IconHeart,
-    IconHelp,
-    IconRocket,
-    IconRouteAltLeft,
-    IconSettingsAutomation,
-    IconStackPush,
+    IconShieldCheck,
     IconTerminal2,
-    IconUsersGroup,
-    IconAtom
+    IconBinaryTree,
+    IconTransform
 } from "@tabler/icons-react";
 
 export function WhyNeoversine() {
 
     const whyNeoversine = [
         {
-            title: "End-to-End Automation",
+            title: "Hermes Agent-OS Substrate",
             description:
-                "From content to customer support, we automate everything so you don’t have to juggle tools.",
-            icon: <IconDeviceDesktopAnalytics />,
+                "Self-improving, memory-enabled, multi-platform gateway orchestrating parallel subagent swarms across environments.",
+            icon: <IconCpu className="w-8 h-8 text-cyan-400" />,
         },
         {
-            title: "AI + No-Code Power",
+            title: "vLLM Inference Economics",
             description:
-                "We combine cutting-edge AI like GPT-4 with no-code tools like Make, Notion, and Airtable.",
-            icon: <IconAtom />,
+                "PagedAttention, KV-cache reuse, and speculative decoding to slash compute costs and make swarms viable at scale.",
+            icon: <IconBolt className="w-8 h-8 text-indigo-400" />,
         },
         {
-            title: "Tailored Workflows",
+            title: "Parallel Subagent Swarms",
             description:
-                "Every workflow is customized to your business logic — no cookie-cutter automations here.",
-            icon: <IconSettingsAutomation />,
+                "Orchestrating dozens of specialized agents executing concurrently on lead enrichment, data synthesis, and workflows.",
+            icon: <IconBinaryTree className="w-8 h-8 text-purple-400" />,
         },
         {
-            title: "Faster Time to Value",
+            title: "Live Event-Driven Control Deck",
             description:
-                "We ship working systems fast so you start seeing ROI in days, not months.",
-            icon: <IconRocket />,
+                "Phone-first MIT-licensed control surface: watch reasoning in real-time, intervene instantly, tweak without redeploying.",
+            icon: <IconDeviceDesktopAnalytics className="w-8 h-8 text-rose-400" />,
         },
         {
-            title: "Cross-Platform Sync",
+            title: "Adaptive Data & NeoCrawl",
             description:
-                "Sync data across WhatsApp, Shopify, Google Sheets, WordPress, and more without effort.",
-            icon: <IconArrowsShuffle />,
+                "Vision-guided scrapers and ScrapeGraphAI pipelines that adapt to site changes without brittle selectors or SaaS fees.",
+            icon: <IconTerminal2 className="w-8 h-8 text-amber-400" />,
         },
         {
-            title: "Scalable & Modular",
+            title: "D8alytics Synthetic Data",
             description:
-                "Start small and scale up anytime. Our automation grows with your business.",
-            icon: <IconStackPush />,
+                "Computer vision pipelines generating 700 YOLO-formatted images in <1h achieving mAP50 0.96 with zero real images.",
+            icon: <IconTransform className="w-8 h-8 text-emerald-400" />,
         },
         {
-            title: "Transparent Collaboration",
+            title: "Persistent Memory Fabric",
             description:
-                "We build in public, collaborate in Notion, and keep you in the loop at every step.",
-            icon: <IconUsersGroup />,
+                "Cross-task knowledge graphs so agents recall past runs, avoid repeated mistakes, and compound organizational intelligence.",
+            icon: <IconBrain className="w-8 h-8 text-blue-400" />,
         },
         {
-            title: "Human + AI Synergy",
+            title: "Architecture Ownership",
             description:
-                "We don't replace humans — we empower them with AI so your team can do 10x more.",
-            icon: <IconBrain />,
+                "No wrappers, no reskinned LangChain, zero vendor lock-in. We build the foundational substrate you own end-to-end.",
+            icon: <IconShieldCheck className="w-8 h-8 text-teal-400" />,
         },
     ];
 
@@ -77,11 +69,11 @@ export function WhyNeoversine() {
                 <div className="mb-2 md:mb-8 text-center">
                     <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
                         <span className='bg-gradient-to-br from-cyan-400 via-white to-purple-400 bg-clip-text text-transparent'>
-                            Why Neoversine
+                            We Build With Our Own Architecture
                         </span>
                     </h2>
                     <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                        We provide innovative solutions that drive business growth and digital transformation
+                        The era of AI agencies stitching off-the-shelf tools is over. We build the substrate, not the souvenir.
                     </p>
 
                 </div>
@@ -111,21 +103,21 @@ const Feature = ({
             )}
         >
             {index < 4 && (
-                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100/5 dark:from-neutral-800/40 to-transparent pointer-events-none" />
             )}
             {index >= 4 && (
-                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100/5 dark:from-neutral-800/40 to-transparent pointer-events-none" />
             )}
-            <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
+            <div className="mb-4 relative z-10 px-10">
                 {icon}
             </div>
             <div className="text-lg font-bold mb-2 relative z-10 px-10">
-                <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
+                <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-cyan-400 transition-all duration-200 origin-center" />
                 <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
                     {title}
                 </span>
             </div>
-            <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
+            <p className="text-sm text-neutral-400 max-w-xs relative z-10 px-10 leading-relaxed">
                 {description}
             </p>
         </div>

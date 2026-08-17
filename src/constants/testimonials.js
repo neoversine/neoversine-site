@@ -1,88 +1,67 @@
-// testimonials.js
+// testimonials.js - Real Verified Clients and Labs Highlights
+
 export const testimonials = [
     {
-        name: "Jeremy",
-        role: "CEO at COMPANY",
-        quote: "New Update On FinnoFarms Order Bot",
-        img: "https://randomuser.me/api/portraits/men/32.jpg",
+        name: "DGC Enterprise",
+        role: "Production Deployment",
+        quote: "Achieved a 40% increase in qualified lead conversion via ARC Network's dynamic intent sequencing and real-time engagement intelligence.",
+        img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
     },
     {
-        name: "Pam",
-        role: "CEO at COMPANY",
-        quote: "New Update On FinnoFarms Order Bot",
-        img: "https://randomuser.me/api/portraits/women/44.jpg",
+        name: "Ai agenti",
+        role: "Autonomous Agent Operations",
+        quote: "Replaced manual research and data enrichment pipelines with custom multi-agent swarms, slashing research time by 10x.",
+        img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
     },
     {
-        name: "Daniel",
-        role: "CEO at COMPANY",
-        quote: "New Update On FinnoFarms Order Bot",
-        img: "https://randomuser.me/api/portraits/men/85.jpg",
+        name: "Brunch Italiano",
+        role: "E-Commerce & Outbound Infrastructure",
+        quote: "Deployed NeopostGen for automated brand creative delivery and NeoCrawl for continuous competitor catalog synchronization.",
+        img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&auto=format&fit=crop&q=80",
     },
     {
-        name: "Andy",
-        role: "CEO at COMPANY",
-        quote: "New Update On FinnoFarms Order Bot",
-        img: "https://randomuser.me/api/portraits/men/76.jpg",
-    },
-    {
-        name: "Pete",
-        role: "CEO at COMPANY",
-        quote: "New Update On FinnoFarms Order Bot",
-        img: "https://randomuser.me/api/portraits/men/22.jpg",
+        name: "MaisonRoseLifestyle",
+        role: "Brand Infrastructure",
+        quote: "Automated end-to-end creative workflows with zero overhead. Brand-consistent layouts delivered directly into production.",
+        img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&auto=format&fit=crop&q=80",
     },
 ];
-
 
 export const highlights = [
-
     {
-        title: "Just Having Fun Scrolling Videos",
-        description: "Here we have a playful environment.",
-        type: "video",
-        src: "https://www.w3schools.com/html/mov_bbb.mp4",
-        thumbnail: "https://miro.medium.com/v2/resize:fit:1200/format:webp/1*fYw9XwlmB2Z4EpV5p_8tbg.png",
-    },
-    {
-        title: "Hie Bear",
-        description: "New videos coming soon, these are just for you to enjoy.",
-        type: "video",
-        src: "https://www.w3schools.com/html/movie.mp4",
-        thumbnail: "https://img.freepik.com/free-vector/delivery-tracking-concept-illustration_114360-1322.jpg",
-    },
-    {
-        title: "Finnofarms orderring chatbot",
-        description: "Telegram Inline Buttons added for 2x faster ordering.",
-        type: "video",
-        src: "https://res.cloudinary.com/dxbszkdhk/video/upload/v1752075813/finno_bot_gycuz5.mp4",
-        thumbnail: "https://i.ytimg.com/vi/O7W0DMAx8FY/maxresdefault.jpg",
-    },
-    {
-        title: "Google Imagen 4.0 with n8n ",
-        description: "Generate stunning product images using AI with Google vertexAI API.",
-        type: "video",
-        src: "https://res.cloudinary.com/dxbszkdhk/video/upload/v1752075813/video_generation_zulvjf.mp4",
-        thumbnail: "https://img.freepik.com/free-vector/delivery-tracking-concept-illustration_114360-1322.jpg",
-    },
-    {
-        title: "Automated mail service 24/7",
-        description: "personalized emails with dynamic content using custom templates.",
-        type: "video",
-        src: "https://res.cloudinary.com/dxbszkdhk/video/upload/v1752159027/query_nkdobk.mp4",
-        thumbnail: "https://img.icons8.com/external-wanicon-flat-wanicon/512/external-ai-artificial-intelligence-wanicon-flat-wanicon.png",
-    },
-    {
-        title: "Lovely Mountains",
-        description: "New videos coming soon, these are just for you to enjoy.",
-        type: "video",
-        src: "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
-        thumbnail: "https://img.icons8.com/external-wanicon-flat-wanicon/512/external-ai-artificial-intelligence-wanicon-flat-wanicon.png",
-    },
-    {
-        title: "Image-Based Product Catalog",
-        description: "Visual previews now supported inside Telegram.",
+        title: "MIT-Licensed Pocket Control Deck",
+        description: "Event-driven, phone-first visibility into live agent execution — inspect reasoning, intervene in real-time.",
         type: "image",
-        src: "https://cdn.dribbble.com/users/151482/screenshots/5118732/media/0e56748ab0df24d19c7014d93d3c1329.png",
+        thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80",
+    },
+    {
+        title: "VRAM Optimization: 92GB to <10GB",
+        description: "Sakana Fugu-inspired multi-agent orchestration cutting peak memory footprint while increasing swarm throughput.",
+        type: "image",
+        thumbnail: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&auto=format&fit=crop&q=80",
+    },
+    {
+        title: "D8alytics Synthetic Vision Pipeline",
+        description: "700 YOLO images generated in <1h achieving mAP50 0.96 — 100% synthetic training, zero real images.",
+        type: "image",
+        thumbnail: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=600&auto=format&fit=crop&q=80",
+    },
+    {
+        title: "Adaptive Crawling (NeoCrawl)",
+        description: "Vision-guided crawlers and ScrapeGraphAI beating brittle selectors and commercial anti-bot barriers.",
+        type: "image",
+        thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=80",
+    },
+    {
+        title: "ARC Generalization Under Constraints",
+        description: "Autonomous reasoning systems solving complex abstraction problems through self-reflective search trees.",
+        type: "image",
+        thumbnail: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80",
+    },
+    {
+        title: "ARC Network Outreach CRM",
+        description: "Dynamic sequencing driven by collaboration intelligence and real-time behavioral intent signals.",
+        type: "image",
+        thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80",
     },
 ];
-
-

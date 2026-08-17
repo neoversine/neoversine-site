@@ -1,0 +1,37 @@
+# Neoversine Comprehensive Knowledge Graph
+
+## 1. Thesis & Strategic Vision
+"We build the substrate, not the souvenir. Agent-first. Architecture-owned. Economically grounded."
+The era of AI agencies wrapping OpenAI APIs with Make.com or n8n is over. Neoversine builds agent systems on its own architecture — delivering long-term memory, parallel delegation, high-density vLLM inference, and full ownership without SaaS seat taxes.
+
+## 2. Core Architecture
+- **Hermes Agent-OS**: Gateway operating system featuring persistent long-term memory, parallel subagent delegation, and dynamic skill generation.
+- **Inference Economics Engine**: Powered by vLLM, PagedAttention, KV-cache reuse across multi-turn sessions, and speculative decoding to achieve maximum token throughput at lowest hardware cost.
+- **Pocket Control Deck**: MIT-licensed, phone-first WebSocket control deck allowing operators to inspect agent reasoning trees and inject steering prompts in real time.
+- **NeoCrawl API**: Vision-guided web scraper using ScrapeGraphAI principles to parse complex DOMs without brittle CSS selectors.
+- **D8alytics**: Synthetic data generation pipeline for computer vision domain randomization.
+
+## 3. The 12 Systems That Replace Work
+1. **Agentic Era Operations**: Autonomous execution of enterprise workflows.
+2. **Inference Economics Engine**: Token optimization and high-density serving.
+3. **Digital Twin Simulators**: Discrete-event business simulation using SimPy.
+4. **B2B Work Replacement & Outreach**: Intelligent outbound pipeline automation.
+5. **RSS-to-Revenue Content Engine**: Automated ingestion, distillation, and distribution.
+6. **Agentic ARC Generalization**: Abstract reasoning benchmark solvers.
+7. **Agentic CRM**: Intent-scored automated customer relation management (+40% conversion).
+8. **SaaS Ownership Stack**: Self-hosted private AI deployments.
+9. **Scraping at Scale**: Vision-guided web extraction.
+10. **Digital Transformation Agents**: Legacy software replacement.
+11. **Long-Term Memory Fabric**: Graph RAG & persistent vector stores (Neo4j, Qdrant).
+12. **Skill Creation Loops**: Dynamic code synthesis in Wasm and Docker sandboxes.
+
+## 4. Verified Client Deployments
+- **DGC**: Enterprise agent automation and workflow replacement.
+- **Ai agenti**: Intelligent agent runtime and knowledge systems.
+- **Brunch Italiano**: Automated ordering, CRM, and customer engagement.
+- **MaisonRoseLifestyle**: Multi-channel marketing and inventory agent pipelines.
+
+## 5. Leadership & Core Team
+- **Arka Probha Roy** (Founder & HARNESS): CTO at HypeX (Jan 2025–present), Founder Neoversine (Jan 2024–present), Ditinex, IEI ECE Tech Lead.
+- **Ankon Karak** (Core Engineering): Cross-platform systems and client runtime interfaces.
+

@@ -65,9 +65,7 @@ function ElegantShape({
 }
 
 export default function HeroSection({
-    badge = "Innovation. Automation. Growth.",
-    title1 = "Empowering Startups with",
-    title2 = "AI-Driven Automation",
+    badge = "Hermes Agent-OS • vLLM Inference • Architecture-Owned",
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -140,10 +138,10 @@ export default function HeroSection({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-1"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-4"
                     >
                         <Circle className="h-2 w-2 fill-rose-500/80" />
-                        <span className="text-sm text-white/60 tracking-wide">
+                        <span className="text-xs md:text-sm text-white/70 tracking-wide font-mono">
                             {badge}
                         </span>
                     </motion.div>
@@ -154,37 +152,10 @@ export default function HeroSection({
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 md:mb-8 tracking-tight text-white">
-                            {/* <ColourfulTextDemo /> */}
-                            Revolutionizing Startup Growth <br />with AI Agents by <span className="bg-clip-text text-transparent bg-gradient-to-br from-indigo-600 via-sky-200 to-rose-300">
-                                Neoversine
+                        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 tracking-tight text-white max-w-5xl mx-auto leading-[1.1]">
+                            We build AI systems that <span className="bg-clip-text text-transparent bg-gradient-to-br from-indigo-400 via-sky-200 to-rose-300">
+                                replace work.
                             </span>
-                            {/* <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                                <DecryptedText
-                                    text={title1}
-                                    animateOn="view"
-                                    revealDirection="center"
-                                    speed={50}
-                                    maxIterations={15}
-                                    sequential={true}
-                                    className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80"
-                                    encryptedClassName="bg-clip-text text-transparent bg-gradient-to-b from-white/60 to-white/40"
-                                />
-                            </span>
-                            <br />
-                            <span className={cn("bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300")}>
-                                <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300">Empowering Startups with AI Automation</h1>
-                                <DecryptedText
-                                    text={title2}
-                                    animateOn="view"
-                                    revealDirection="center"
-                                    speed={50}
-                                    maxIterations={15}
-                                    sequential={true}
-                                    className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300"
-                                    encryptedClassName="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300/60 via-white/50 to-rose-300/60"
-                                />
-                            </span> */}
                         </h1>
                     </motion.div>
 
@@ -194,18 +165,24 @@ export default function HeroSection({
                         initial="hidden"
                         animate="visible"
                     >
-                        <p className="text-base sm:text-lg md:text-lg text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
-                            Crafting exceptional digital experiences through innovative design and cutting-edge technology.
+                        <p className="text-base sm:text-lg md:text-xl text-white/70 mb-10 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-4">
+                            We replace manual business operations with autonomous agent architectures built on <span className="text-white font-medium">Hermes Agent-OS</span>, custom <span className="text-white font-medium">vLLM inference optimization</span>, concurrent subagent swarms, and open-source, phone-first control decks.
                         </p>
                     </motion.div>
 
                     <motion.div
-                        custom={2}
+                        custom={3}
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-4"
                     >
-                        <button className="py-2 px-5 border-4 border-white bg-gradient-to-br from-purple-300 via-white to-sky-200 rounded-full shadow-inner hover:shadow-none active:shadow-inner shadow-gray-400 cursor-pointer" onClick={() => navigate('/contact')}>Book a call</button>
+                        <button className="py-3 px-8 border-2 border-white/80 bg-gradient-to-br from-purple-400 via-white to-sky-200 text-black font-semibold rounded-full shadow-lg hover:shadow-cyan-500/20 active:scale-95 transition-all cursor-pointer" onClick={() => navigate('/contact')}>
+                            Build Your Stack
+                        </button>
+                        <button className="py-3 px-8 border border-white/20 bg-white/[0.05] hover:bg-white/[0.1] text-white font-medium rounded-full backdrop-blur-sm active:scale-95 transition-all cursor-pointer" onClick={() => navigate('/our-works')}>
+                            Explore Systems ↗
+                        </button>
                     </motion.div>
                 </div>
             </div>

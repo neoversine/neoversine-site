@@ -1,37 +1,41 @@
 // NeoversineShowcase.jsx
 import React, { useEffect } from "react";
-import { FaRobot, FaBolt, FaCogs, FaGlobe, FaComments } from "react-icons/fa";
+import { FaTerminal, FaBolt, FaLayerGroup, FaMobileAlt, FaDatabase, FaBrain } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const services = [
+const capabilities = [
     {
-        title: "AI-Powered Content",
-        icon: <FaRobot />,
-        desc: "Auto-generate blogs, SEO, and meta tags using GPT-4 & Perplexity.",
+        title: "Hermes Agent-OS",
+        icon: <FaTerminal />,
+        desc: "Self-improving, long-term memory-enabled gateway orchestrating parallel subagents.",
     },
     {
-        title: "Social Automation",
+        title: "vLLM Serving Economics",
         icon: <FaBolt />,
-        desc: "Schedule personalized posts & automate WhatsApp follow-ups.",
+        desc: "PagedAttention, KV-cache reuse & speculative decoding to minimize cost-per-token.",
     },
     {
-        title: "Ecommerce Ops",
-        icon: <FaCogs />,
-        desc: "Sync orders, manage inventory, and fulfill faster via automation.",
+        title: "Multi-Agent Swarms",
+        icon: <FaLayerGroup />,
+        desc: "Parallel specialized agents working concurrently on lead research, drafting & pipelines.",
     },
     {
-        title: "Smart CRM & Leads",
-        icon: <FaComments />,
-        desc: "Scrape, enrich & convert leads with AI-powered flows.",
+        title: "Pocket Control Deck",
+        icon: <FaMobileAlt />,
+        desc: "MIT-licensed event-driven surface to watch reasoning in real-time and intervene live.",
     },
     {
-        title: "Visual Dashboards",
-        icon: <FaGlobe />,
-        desc: "Real-time sync to Airtable, Notion, Google Sheets & Data Studio.",
+        title: "Adaptive Data & NeoCrawl",
+        icon: <FaDatabase />,
+        desc: "Vision-guided crawlers and ScrapeGraphAI that adapt to DOM shifts without brittle selectors.",
+    },
+    {
+        title: "Synthetic Data Engines",
+        icon: <FaBrain />,
+        desc: "D8alytics pipeline: 700 YOLO images/hour with mAP50 0.96 — zero real images needed.",
     },
 ];
-
 
 const NeoversineShowcase = () => {
 
@@ -44,85 +48,46 @@ const NeoversineShowcase = () => {
             <div
                 data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom"
-                className="text-center pb-12  floating-text"
+                className="text-center pb-12 floating-text"
             >
                 <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
                     <span className="bg-gradient-to-br from-cyan-400 via-white to-purple-400 bg-clip-text text-transparent">
-                        Automate Everything. Grow Faster.
+                        Foundational Capabilities
                     </span>
                 </h2>
                 <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">
-                    At Neoversine, we craft intelligent automation flows — so your content, leads,
-                    support, and sales run on autopilot.
+                    We don't reskin third-party APIs. We architect the substrate that makes agent swarms economically viable and operationally transparent.
                 </p>
             </div>
 
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-                {services.map((service, i) => (
-                    <React.Fragment
-                        key={i}>
+                {capabilities.map((item, i) => (
+                    <div
+                        key={i}
+                        data-aos="fade-up"
+                        data-aos-delay={`${(i % 3) * 150}`}
+                        data-aos-anchor-placement="center-bottom"
+                        className="relative min-h-[220px] cursor-pointer group"
+                    >
+                        <div className="absolute left-[5px] top-[3px] h-full w-full bg-[#bfbfbf]"
+                            style={{
+                                clipPath: "polygon(30px 0%, calc(100% - 30px) 0%, 100% 30px, 100% 100%, calc(100% - 30px) 100%, 30px 100%, 0px 100%, 0px 0px)",
+                                boxShadow: "white 0px 8px 0px 4px",
+                            }}
+                        />
                         <div
-                            data-aos="fade-up"
-                            data-aos-delay={`${(i % 3) * 150}`}
-                            data-aos-anchor-placement="center-bottom"
-                            className="max-md:hidden relative h-[218px] cursor-pointer"
-
-                        >
-                            <div className="absolute left-[5px] top-[3px] h-full w-full bg-[#bfbfbf]"
-                                style={{
-                                    clipPath: window.innerWidth < 640
-                                        ? "polygon(30px 0%, calc(100% - 30px) 0%, 100% 30px, 100% 100%, calc(100% - 30px) 100%, 30px 100%, 0px 100%, 0px 0px)"
-                                        : "polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0px 100%, 0px 0px)",
-                                    boxShadow: "white 0px 8px 0px 4px",
-                                }}
-                            >
-                            </div>
-                            <div
-                                className="absolute top-0 active:top-0 hover:-top-[2px] left-0 active:left-0 hover:-left-[2px] bg-gradient-to-br from-[#2e2e2e] to-[#131313]  hover:bg-[#343434] py-10 px-8"
-                                style={{
-                                    clipPath: window.innerWidth < 640
-                                        ? "polygon(30px 0%, calc(100% - 30px) 0%, 100% 30px, 100% 100%, calc(100% - 30px) 100%, 30px 100%, 0px 100%, 0px 0px)"
-                                        : "polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0px 100%, 0px 0px)",
-                                    boxShadow: "black 0px 8px 0px 4px",
-                                }}>
-                                <div className="text-4xl text-purple-400 mb-4">{service.icon}</div>
-                                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                                <p className="text-gray-400">{service.desc}</p>
-                            </div>
+                            className="absolute inset-0 bg-gradient-to-br from-[#2e2e2e] to-[#131313] group-hover:from-[#3a3a3a] group-hover:to-[#1a1a1a] transition-all duration-300 py-8 px-7 flex flex-col justify-start"
+                            style={{
+                                clipPath: "polygon(30px 0%, calc(100% - 30px) 0%, 100% 30px, 100% 100%, calc(100% - 30px) 100%, 30px 100%, 0px 100%, 0px 0px)",
+                                boxShadow: "black 0px 8px 0px 4px",
+                            }}>
+                            <div className="text-3xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
+                            <h3 className="text-lg md:text-xl font-semibold mb-2 text-white">{item.title}</h3>
+                            <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
                         </div>
-                        <div
-                            data-aos="fade-up"
-                            data-aos-anchor-placement="center-bottom"
-                            className="md:hidden relative h-[218px] cursor-pointer"
-
-                        >
-                            <div className="absolute left-[5px] top-[3px] h-full w-full bg-[#bfbfbf]"
-                                style={{
-                                    clipPath: window.innerWidth < 640
-                                        ? "polygon(30px 0%, calc(100% - 30px) 0%, 100% 30px, 100% 100%, calc(100% - 30px) 100%, 30px 100%, 0px 100%, 0px 0px)"
-                                        : "polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0px 100%, 0px 0px)",
-                                    boxShadow: "white 0px 8px 0px 4px",
-                                }}
-                            >
-                            </div>
-                            <div
-                                className="absolute top-0 active:top-0 hover:-top-[2px] left-0 active:left-0 hover:-left-[2px] bg-gradient-to-br from-[#2e2e2e] to-[#131313]  hover:bg-[#343434] py-10 px-8"
-                                style={{
-                                    clipPath: window.innerWidth < 640
-                                        ? "polygon(30px 0%, calc(100% - 30px) 0%, 100% 30px, 100% 100%, calc(100% - 30px) 100%, 30px 100%, 0px 100%, 0px 0px)"
-                                        : "polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0px 100%, 0px 0px)",
-                                    boxShadow: "black 0px 8px 0px 4px",
-                                }}>
-                                <div className="text-4xl text-purple-400 mb-4">{service.icon}</div>
-                                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                                <p className="text-gray-400">{service.desc}</p>
-                            </div>
-                        </div>
-                    </React.Fragment>
+                    </div>
                 ))}
             </div>
-
-
         </div>
     );
 };

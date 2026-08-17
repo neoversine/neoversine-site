@@ -4,113 +4,41 @@ import SiteFooter from '../components/basic/SiteFooter';
 import TrueFocus from '../components/accernity/TrueFocus';
 import AOS from 'aos';
 import { services } from '../constants/services';
-
-// Import service detail components
 import ServiceTechStack from '../components/service-details/ServiceTechStack';
-
-// Import tech stack data
 import serviceTechStacks from '../constants/serviceTechStacks.json';
+import {
+    IconCpu,
+    IconBolt,
+    IconBuildingFactory2,
+    IconBriefcase,
+    IconRss,
+    IconBinaryTree,
+    IconUsersGroup,
+    IconShieldLock,
+    IconWorldWww,
+    IconTransform,
+    IconBrain,
+    IconCodeDots
+} from '@tabler/icons-react';
 
-// SVG Icons - Neon line style
-const WebsiteIcon = () => (
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <path d="M2 9h20" />
-        <path d="M6 19h12" />
-        <circle cx="9" cy="19" r="1" />
-        <circle cx="15" cy="19" r="1" />
-    </svg>
-);
-
-const MobileIcon = () => (
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="5" y="2" width="14" height="20" rx="2" />
-        <path d="M12 19h.01" />
-        <line x1="5" y1="5" x2="19" y2="5" />
-    </svg>
-);
-
-const DesignIcon = () => (
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="1" />
-        <path d="M9 2h6v6h-6V2z" />
-        <path d="M2 9v6h6V9H2z" />
-        <path d="M16 9v6h6V9h-6z" />
-        <path d="M9 16v6h6v-6H9z" />
-    </svg>
-);
-
-const ChatbotIcon = () => (
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-        <circle cx="9" cy="10" r="1" />
-        <circle cx="12" cy="10" r="1" />
-        <circle cx="15" cy="10" r="1" />
-    </svg>
-);
-
-const AutomationIcon = () => (
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="1" />
-        <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
-    </svg>
-);
-
-const AIIcon = () => (
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 2L2 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
-        <path d="M12 9v6M9 12h6" />
-    </svg>
-);
-
-const EcommerceIcon = () => (
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="9" cy="21" r="1" />
-        <circle cx="20" cy="21" r="1" />
-        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-    </svg>
-);
-
-const SaaSIcon = () => (
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="3" y="3" width="7" height="7" />
-        <rect x="14" y="3" width="7" height="7" />
-        <rect x="14" y="14" width="7" height="7" />
-        <rect x="3" y="14" width="7" height="7" />
-    </svg>
-);
-
-const MarketingIcon = () => (
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M3 11l18-5v12L3 14v-3z" />
-        <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
-    </svg>
-);
-
-const CloudIcon = () => (
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-    </svg>
-);
-
-// Icon mapping for services (icons can't be stored in JSON)
 const iconMap = {
-    'website-development': WebsiteIcon,
-    'app-development': MobileIcon,
-    'branding-design': DesignIcon,
-    'chatbots-ai-assistants': ChatbotIcon,
-    'ai-automation': AutomationIcon,
-    'ai-integrated-software': AIIcon,
-    'ecommerce-solutions': EcommerceIcon,
-    'saas-product-development': SaaSIcon,
-    'digital-marketing-automation': MarketingIcon,
-    'cloud-infrastructure': CloudIcon
+    'agentic-era-operations': IconCpu,
+    'inference-economics-engine': IconBolt,
+    'digital-twin-simulators': IconBuildingFactory2,
+    'b2b-work-replacement': IconBriefcase,
+    'rss-to-revenue': IconRss,
+    'agentic-arc-generalization': IconBinaryTree,
+    'agentic-crm': IconUsersGroup,
+    'saas-ownership-stack': IconShieldLock,
+    'scraping-at-scale': IconWorldWww,
+    'digital-transformation-agents': IconTransform,
+    'long-term-memory-fabric': IconBrain,
+    'skill-creation-loops': IconCodeDots
 };
 
-// Merge icon components with service data
 const servicesWithIcons = services.map(service => ({
     ...service,
-    icon: iconMap[service.id]
+    icon: iconMap[service.id] || IconCpu
 }));
 
 const ServicePage = () => {
@@ -146,7 +74,7 @@ const ServicePage = () => {
             }}>
                 <div className='text-white max-md:hidden'>
                     <TrueFocus
-                        sentence="Neoversine Services"
+                        sentence="Systems That Replace Work"
                         manualMode={true}
                         blurAmount={4}
                         borderColor="cyan"
@@ -156,7 +84,7 @@ const ServicePage = () => {
                 </div>
                 <div className='text-white md:hidden'>
                     <TrueFocus
-                        sentence="Services"
+                        sentence="Systems"
                         manualMode={false}
                         blurAmount={4}
                         borderColor="cyan"
@@ -167,35 +95,78 @@ const ServicePage = () => {
             </div>
 
             <div className="relative z-10">
-                {/* Two Column Layout - Categories + Service Details */}
+                {/* Two Column Layout - Systems List + Architecture Details */}
                 <section className="py-8 md:py-12 px-4 md:px-8 max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                        {/* Left Side - Categories List */}
-                        <div className="lg:col-span-3 space-y-2">
-                            <h3 className="text-xl font-bold text-white mb-4 px-4">Categories</h3>
-                            {servicesWithIcons.map((service) => (
-                                <button
-                                    key={service.id}
-                                    onClick={() => setSelectedService(service)}
-                                    className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-300 flex items-center gap-3 group ${
-                                        selectedService.id === service.id
-                                            ? 'bg-cyan-500/20 border border-cyan-500/50 text-white'
-                                            : 'bg-slate-900/30 border border-slate-800/50 text-slate-300 hover:bg-slate-800/50 hover:border-slate-700'
-                                    }`}
-                                    data-aos="fade-right"
-                                >
-                                    <span className={`${
-                                        selectedService.id === service.id ? 'text-cyan-400' : 'text-slate-400 group-hover:text-cyan-400'
-                                    } transition-colors`}>
-                                        {service.icon && React.createElement(service.icon)}
-                                    </span>
-                                    <span className="text-sm font-medium">{service.title}</span>
-                                </button>
-                            ))}
+                        {/* Left Side - Systems List */}
+                        <div className="lg:col-span-4 space-y-2">
+                            <h3 className="text-xl font-bold text-white mb-4 px-4 font-mono text-cyan-400">
+                                12 Foundational Systems
+                            </h3>
+                            <div className="space-y-2 max-h-[750px] overflow-y-auto pr-1">
+                                {servicesWithIcons.map((service) => (
+                                    <button
+                                        key={service.id}
+                                        onClick={() => setSelectedService(service)}
+                                        className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-300 flex items-center gap-3 group cursor-pointer ${
+                                            selectedService.id === service.id
+                                                ? 'bg-cyan-500/20 border border-cyan-500/60 text-white shadow-lg shadow-cyan-500/10'
+                                                : 'bg-slate-900/40 border border-slate-800/60 text-slate-400 hover:bg-slate-800/60 hover:text-white'
+                                        }`}
+                                    >
+                                        <span className={`${
+                                            selectedService.id === service.id ? 'text-cyan-400' : 'text-slate-500 group-hover:text-cyan-400'
+                                        } transition-colors flex-shrink-0`}>
+                                            {service.icon && React.createElement(service.icon, { className: "w-5 h-5" })}
+                                        </span>
+                                        <span className="text-sm font-medium leading-tight">{service.title}</span>
+                                    </button>
+                                ))}
+                            </div>
                         </div>
 
-                        {/* Right Side - Service Detail Components */}
-                        <div className="lg:col-span-9">
+                        {/* Right Side - System Details & Architecture Stack */}
+                        <div className="lg:col-span-8">
+                            {selectedService && (
+                                <div className="bg-[#111] border border-white/10 rounded-2xl p-6 md:p-8 mb-6" data-aos="fade-up">
+                                    <div className="flex items-center gap-3 mb-5">
+                                        <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                                            {React.createElement(selectedService.icon, { className: "w-6 h-6" })}
+                                        </div>
+                                        <div>
+                                            <h2 className="text-2xl font-bold text-white">{selectedService.title}</h2>
+                                            <p className="text-xs text-cyan-400/80 font-mono">OWNED ARCHITECTURE SPECIFICATION</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Direct Answer Block */}
+                                    <div className="bg-slate-900/60 border border-cyan-500/20 rounded-xl p-4 mb-4">
+                                        <p className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">Direct Answer</p>
+                                        <p className="text-gray-200 text-sm md:text-base leading-relaxed">
+                                            {selectedService.directAnswer || selectedService.description}
+                                        </p>
+                                    </div>
+
+                                    {/* Engineering & Proof Block */}
+                                    {selectedService.engineeringProof && (
+                                        <div className="bg-black/50 border border-white/10 rounded-xl p-4 mb-6">
+                                            <p className="text-xs font-mono text-purple-400 uppercase tracking-wider mb-1">Engineering &amp; Outcome Proof</p>
+                                            <p className="text-gray-300 text-sm leading-relaxed font-light">
+                                                {selectedService.engineeringProof}
+                                            </p>
+                                        </div>
+                                    )}
+
+                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-white/10">
+                                        {selectedService.benefits.map((benefit, idx) => (
+                                            <div key={idx} className="bg-black/40 border border-white/5 rounded-lg p-3 text-xs text-gray-300">
+                                                <span className="text-cyan-400 mr-1.5 font-bold">✓</span> {benefit}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
                             {selectedServiceDetail && (
                                 <div data-aos="fade-up">
                                     <ServiceTechStack techStack={selectedServiceDetail} />
@@ -205,28 +176,24 @@ const ServicePage = () => {
                     </div>
                 </section>
 
-
                 {/* CTA Section */}
                 <section className="py-16 md:py-24 px-4 md:px-8 max-w-7xl mx-auto">
                     <div 
-                        className="relative rounded-3xl bg-gradient-to-r from-slate-900/60 via-slate-950/60 to-black/60 border border-white/10 p-12 md:p-16 text-center overflow-hidden"
+                        className="relative rounded-3xl bg-gradient-to-r from-slate-900/80 via-slate-950/80 to-black/80 border border-white/10 p-10 md:p-16 text-center overflow-hidden"
                         data-aos="fade-up"
                     >
-                        {/* Background gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-transparent to-violet-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-
                         <div className="relative z-10 space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-white">
-                                Ready to Transform Your Business?
+                                Ready to Own Your AI Substrate?
                             </h2>
-                            <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-                                Join hundreds of companies leveraging Neoversine to automate, innovate, and scale.
+                            <p className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                                No SaaS seat taxes. No fragile wrappers. Build agent systems directly on your owned infrastructure.
                             </p>
                             <a 
                                 href="/contact"
-                                className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300 hover:-translate-y-1"
+                                className="inline-block px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-300 hover:-translate-y-0.5 text-sm"
                             >
-                                Get Started Today
+                                Schedule Architecture Review
                             </a>
                         </div>
                     </div>

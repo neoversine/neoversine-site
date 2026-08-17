@@ -1,56 +1,48 @@
-
 import React, { useState } from "react";
 import { MoveRight } from "lucide-react";
 import { AnimatedToolTip } from "../accernity/AnimatedToolTip";
 import WaveTop from "../home/WaveTop";
-import { IconBrandTwitter } from "@tabler/icons-react";
 import { RiTwitterXFill } from "react-icons/ri"
-import { FaInstagram } from "react-icons/fa"
-const people = [
+import { FaInstagram, FaGithub } from "react-icons/fa"
 
+const people = [
+    {
+        id: 1,
+        name: "Arka Probha Roy",
+        designation: "Founder & HARNESS",
+        image: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1752006741/arka-profile_m9eaqd.jpg",
+    },
     {
         id: 2,
-        name: "Arka Probha Roy",
-        designation: "AI Expert",
-        image:
-            "https://res.cloudinary.com/dxbszkdhk/image/upload/v1752006741/arka-profile_m9eaqd.jpg",
+        name: "Ankon Karak",
+        designation: "Core Engineering",
+        image: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1752091606/ankon-profile_zgbdjp.jpg",
     },
     {
         id: 3,
-        name: "Ankon Karak",
-        designation: "App Developer",
-        image:
-            "https://res.cloudinary.com/dxbszkdhk/image/upload/v1752163440/ankon-profile2_f6lned.jpg",
+        name: "Ujjwaini Saha",
+        designation: "Agent Cognition",
+        image: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1752091604/ujjwaini-profile_af0swh.jpg",
     },
     {
         id: 4,
-        name: "Ujjwaini Saha",
-        designation: "Promt Engineer",
-        image:
-            "https://res.cloudinary.com/dxbszkdhk/image/upload/v1752163664/ujjwaini-profile2_mg1w0n.jpg",
-    },
-    {
-        id: 1,
         name: "Jyotirmoy Baidya",
-        designation: "Web Developer",
-        image:
-            "https://res.cloudinary.com/dxbszkdhk/image/upload/v1751610621/jb-profile2_hbjx1s.jpg",
+        designation: "Full-Stack Systems",
+        image: "https://res.cloudinary.com/dxbszkdhk/image/upload/v1751914404/jb-profile3_oq7acj.jpg",
     },
 ];
 
 function Developers() {
     return (
-        <div className="flex flex-row items-center max-lg:ml-4 mb-10 w-full">
+        <div className="flex flex-row items-center max-lg:ml-4 mb-6 w-full">
             <AnimatedToolTip items={people} />
         </div>
     );
 }
 
-
-
 const SiteFooter = () => {
     const [email, setEmail] = useState("");
-    const [status, setStatus] = useState(null); // success | error | null
+    const [status, setStatus] = useState(null);
 
     const handleSubscribe = async () => {
         if (!email || !email.includes("@")) {
@@ -83,88 +75,84 @@ const SiteFooter = () => {
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         <div className="md:col-span-1">
-                            <h3 className="text-2xl font-bold text-white mb-4">Neoversine</h3>
-                            <p className="text-sm text-gray-400 mb-6">
-                                Empowering businesses with innovative AI solutions for growth and efficiency.
+                            <h3 className="text-2xl font-bold text-white mb-2">Neoversine</h3>
+                            <p className="text-xs text-cyan-400 font-mono mb-4">AGENT-OPERATING-SYSTEMS &amp; vLLM INFERENCE ECONOMICS</p>
+                            <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+                                We build AI systems that replace work. Owned architecture, zero wrapper tax, and real-time control decks.
                             </p>
-                            <div className="flex space-x-4">
-
-                                <a href="https://x.com/neoversine" target="_blank" className="hover:text-white transition-colors">
+                            <div className="flex space-x-4 text-lg">
+                                <a href="https://x.com/neoversine" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="Neoversine on X">
                                     <RiTwitterXFill />
                                 </a>
-                                <a href="https://www.instagram.com/neoversine/" className="hover:text-white transition-colors">
+                                <a href="https://github.com/neoversine" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="Neoversine on GitHub">
+                                    <FaGithub />
+                                </a>
+                                <a href="https://www.instagram.com/neoversine/" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="Neoversine on Instagram">
                                     <FaInstagram />
                                 </a>
-                                {/* <a href="" className="hover:text-white transition-colors">
-                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                                    </svg>
-                                </a> */}
                             </div>
                         </div>
 
                         <div>
-                            <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
-                            <ul className="space-y-2">
-                                <li><a href="/our-works" className="hover:text-white transition-colors">AI Development</a></li>
-                                <li><a href="/coming-soon" className="hover:text-white transition-colors">Web Development</a></li>
-                                <li><a href="/coming-soon" className="hover:text-white transition-colors">Mobile Apps</a></li>
-                                <li><a href="/coming-soon" className="hover:text-white transition-colors">UI/UX Design</a></li>
-                                <li><a href="/coming-soon" className="hover:text-white transition-colors">Data Analytics</a></li>
+                            <h4 className="text-base font-semibold text-white mb-4 font-mono">Foundational Systems</h4>
+                            <ul className="space-y-2 text-sm text-gray-400">
+                                <li><a href="/services" className="hover:text-cyan-400 transition-colors">Hermes Agent-OS</a></li>
+                                <li><a href="/services" className="hover:text-cyan-400 transition-colors">Inference Economics</a></li>
+                                <li><a href="/services" className="hover:text-cyan-400 transition-colors">ARC Network CRM</a></li>
+                                <li><a href="/services" className="hover:text-cyan-400 transition-colors">NeoCrawl API</a></li>
+                                <li><a href="/services" className="hover:text-cyan-400 transition-colors">Pocket Control Deck</a></li>
                             </ul>
                         </div>
 
                         <div>
-                            <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
-                            <ul className="space-y-2">
-                                <li><a aria-label="To go to About us" href="/about-us" className="hover:text-white transition-colors">About Us</a></li>
-                                <li><a aria-label="To go to Labs Section" href="/labs" className="hover:text-white transition-colors">Labs</a></li>
-                                {/* <li><a href="/coming" className="hover:text-white transition-colors">Privacy Policy</a></li> */}
-                                {/* <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li> */}
+                            <h4 className="text-base font-semibold text-white mb-4 font-mono">Company</h4>
+                            <ul className="space-y-2 text-sm text-gray-400">
+                                <li><a aria-label="To go to About us" href="/about-us" className="hover:text-cyan-400 transition-colors">About Us &amp; Thesis</a></li>
+                                <li><a aria-label="To go to Labs Section" href="/labs" className="hover:text-cyan-400 transition-colors">Labs &amp; Open Source</a></li>
+                                <li><a aria-label="To go to Works Section" href="/our-works" className="hover:text-cyan-400 transition-colors">Production Systems</a></li>
+                                <li><a aria-label="To go to Contact" href="/contact" className="hover:text-cyan-400 transition-colors">Schedule Build Review</a></li>
                             </ul>
                         </div>
 
                         <div className="flex flex-col">
                             <Developers />
-                            <h4 className="text-lg font-semibold text-white mb-4">Subscribe</h4>
-                            <p className="text-sm text-gray-400 mb-4">
-                                Subscribe to our newsletter for the latest updates and insights.
+                            <h4 className="text-base font-semibold text-white mb-2 font-mono">Research Dispatch</h4>
+                            <p className="text-xs text-gray-400 mb-4 leading-relaxed">
+                                Get our latest architectural breakthroughs on vLLM optimization and agent orchestration.
                             </p>
                             <div className="flex w-full">
                                 <input
                                     type="email"
-                                    placeholder="Your email"
+                                    placeholder="Work email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="bg-[#151515] text-white px-4 py-2 rounded-l-md border border-white/10 focus:outline-none focus:border-neoversine-purple w-full"
+                                    className="bg-[#151515] text-white text-xs px-4 py-2.5 rounded-l-md border border-white/10 focus:outline-none focus:border-cyan-500 w-full"
                                 />
                                 <button
                                     onClick={handleSubscribe}
-                                    className="bg-neoversine-purple px-4 rounded-r-md text-white hover:bg-purple-700 transition-colors"
+                                    className="bg-cyan-600 px-4 rounded-r-md text-white hover:bg-cyan-500 transition-colors cursor-pointer"
                                     aria-label="Subscribe"
                                 >
-                                    <MoveRight className="h-5 w-5" />
+                                    <MoveRight className="h-4 w-4" />
                                 </button>
                             </div>
                             {status === "success" && (
-                                <p className="text-sm text-green-400 mt-2">Subscribed successfully!</p>
+                                <p className="text-xs text-green-400 mt-2">Subscribed to research dispatches.</p>
                             )}
                             {status === "error" && (
-                                <p className="text-sm text-red-400 mt-2">Failed to subscribe. Try again.</p>
+                                <p className="text-xs text-red-400 mt-2">Failed to subscribe. Try again.</p>
                             )}
                         </div>
                     </div>
 
-                    <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                        <p className="text-sm text-gray-400">
-                            &copy; {new Date().getFullYear()} Neoversine. All rights reserved.
+                    <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                        <p>
+                            &copy; {new Date().getFullYear()} Neoversine. Architecture-owned agent operating systems.
                         </p>
-                        <div className="mt-4 md:mt-0">
-                            <ul className="flex space-x-6 text-sm">
-                                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
-                                <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
-                                <li><a href="#" className="hover:text-white transition-colors">Cookies</a></li>
-                            </ul>
+                        <div className="mt-4 md:mt-0 flex gap-6">
+                            <span>Kolkata, India</span>
+                            <span>•</span>
+                            <span>MIT-Licensed Open Core</span>
                         </div>
                     </div>
                 </div>

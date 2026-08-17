@@ -1,0 +1,22 @@
+# Neoversine
+
+> We build AI systems that replace work.
+> Operating systems for agents, inference economics that scale, and the architectural ownership to run them.
+
+## About Neoversine
+Neoversine is an Agent-Operating-System and vLLM Inference Economics company founded in January 2024 by Arka Probha Roy, based in Kolkata, India. Rather than building fragile AI wrappers with n8n or off-the-shelf SaaS, Neoversine engineers foundational agent substrates built on Hermes agent-OS and self-hosted vLLM inference infrastructure.
+
+## Core Capabilities & Proof Metrics
+- **+40% Lead Conversion**: Delivered through ARC Network CRM with real-time collaboration intelligence.
+- **10x Research Speedup**: Custom RAG & Graph-Memory agent pipelines.
+- **0.96 mAP50 on YOLO Detection**: D8alytics synthetic data pipeline generating 700 YOLO images in <1 hour with zero real images.
+- **VRAM Reduction from 92GB to <10GB**: Sakana Fugu-inspired multi-agent orchestration and dynamic model offloading.
+- **Open-Source MIT Control Deck**: Event-driven runtime monitoring surface for live agent steering.
+
+## Key Links
+- [Homepage](https://neoversine.in/)
+- [12 Systems That Replace Work](https://neoversine.in/services)
+- [Production Systems](https://neoversine.in/our-works)
+- [Labs & Open Source](https://neoversine.in/labs)
+- [About & Team](https://neoversine.in/about-us)
+- [Full LLM Knowledge File](https://neoversine.in/llms-full.txt)

@@ -1,57 +1,62 @@
 {
-  "website-development": {
-    "Frontend": ["React", "Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-    "Backend": ["Node.js", "Express", "MongoDB", "PostgreSQL", "GraphQL"],
-    "Tools": ["Vercel", "Docker", "GitHub", "Figma", "Google Analytics", "Lighthouse"]
+  "agentic-era-operations": {
+    "Architecture": ["Hermes Agent-OS", "Parallel Subagents", "Multi-Agent Swarms"],
+    "Inference": ["vLLM", "PagedAttention", "Speculative Decoding"],
+    "Runtime": ["FastAPI", "Docker", "Redis", "WebSockets"]
   },
-  "app-development": {
-    "Frontend": ["React Native", "Flutter", "Expo", "Tailwind CSS"],
-    "Backend": ["Node.js", "NestJS", "Express", "MongoDB", "PostgreSQL"],
-    "Tools": ["GitHub", "Docker", "Firebase", "Supabase", "Figma", "Jest"]
+  "inference-economics-engine": {
+    "Engine": ["vLLM", "PagedAttention", "KV-Cache Reuse", "Continuous Batching"],
+    "Acceleration": ["CUDA", "TensorRT-LLM", "PyTorch", "Triton"],
+    "Deployment": ["Kubernetes", "Docker", "Prometheus", "Grafana"]
   },
-  "branding-design": {
-    "DesignTools": ["Figma", "Adobe XD", "Photoshop", "Illustrator"],
-    "AI_Tools": ["Midjourney", "ChatGPT", "Canva AI"],
-    "WorkflowTools": ["Notion", "Miro", "Slack"]
+  "digital-twin-simulators": {
+    "Modeling": ["Agent-Based Simulation", "Discrete Event Simulators", "SimPy"],
+    "Compute": ["PyTorch", "Ray Cluster", "NumPy"],
+    "Visualization": ["Three.js", "WebGL", "Framer Motion"]
   },
-  "chatbots-ai-assistants": {
-    "Frameworks": ["LangChain", "OpenAI API", "Dialogflow", "Rasa"],
-    "Integration": ["Telegram", "WhatsApp", "Web Widgets", "Slack"],
-    "Tools": ["Node.js", "Supabase", "n8n", "Docker", "Figma"]
+  "b2b-work-replacement": {
+    "Agents": ["Hermes OS Workflows", "Document Cognition", "Deterministic Validation"],
+    "Integration": ["REST APIs", "Webhooks", "PostgreSQL", "Supabase"],
+    "Monitoring": ["Live Control Deck", "Audit Logs", "Sentry"]
   },
-  "ai-automation": {
-    "Automation": ["n8n", "Zapier", "Make.com", "LangChain"],
-    "Backend": ["Node.js", "Python", "Supabase", "MongoDB"],
-    "Tools": ["Docker", "GitHub", "Google Workspace", "Slack", "Figma"]
+  "rss-to-revenue": {
+    "Ingestion": ["RSS Parsers", "NeoCrawl", "Adaptive Headless Scrapers"],
+    "Synthesis": ["Hermes Multi-Agent Summarizers", "Fact Verification Loops"],
+    "Publishing": ["Markdown Engine", "Headless CMS", "Social Distribution APIs"]
   },
-  "ai-integrated-software": {
-    "AI": ["OpenAI API", "Gemini", "LangChain", "PyTorch", "TensorFlow"],
-    "Backend": ["Node.js", "Python", "Django", "Supabase", "MongoDB"],
-    "Frontend": ["React", "Next.js", "Tailwind CSS"],
-    "Tools": ["Docker", "GitHub", "Figma", "Postman", "n8n"]
+  "agentic-arc-generalization": {
+    "Reasoning": ["Constraint-Satisfaction Solvers", "ARC DSL", "Search Tree Heuristics"],
+    "Foundation": ["Hermes Kernel", "PyTorch", "Self-Reflection Loops"],
+    "Evaluation": ["Automated Benchmark Suite", "Generalization Trackers"]
   },
-  "ecommerce-solutions": {
-    "Frontend": ["React", "Next.js", "Tailwind CSS", "Redux"],
-    "Backend": ["Node.js", "Express", "MongoDB", "PostgreSQL"],
-    "Platforms": ["Shopify", "WooCommerce", "Magento", "Snipcart"],
-    "Tools": ["Docker", "GitHub", "Stripe API", "Figma", "Vercel"]
+  "agentic-crm": {
+    "Engine": ["ARC Network CRM", "Collaboration Intelligence", "Intent Scoring"],
+    "Data": ["Dynamic Lead Enrichment", "PostgreSQL", "Vector Memory"],
+    "Outreach": ["Adaptive Sequencing", "Human Handoff Webhooks"]
   },
-  "saas-product-development": {
-    "Frontend": ["React", "Next.js", "Tailwind CSS", "TypeScript"],
-    "Backend": ["Node.js", "NestJS", "PostgreSQL", "Redis"],
-    "Infrastructure": ["Docker", "Kubernetes", "AWS", "GCP", "Supabase"],
-    "Tools": ["GitHub", "Figma", "Postman", "Jira"]
+  "saas-ownership-stack": {
+    "ControlSurface": ["MIT Pocket Control Deck", "WebSockets", "Phone-First UI"],
+    "Infrastructure": ["Self-Hosted vLLM", "Docker Swarm", "Bare-Metal GPU"],
+    "Security": ["Zero-Trust Auth", "End-to-End Encryption", "Local Vector Store"]
   },
-  "digital-marketing-automation": {
-    "Automation": ["n8n", "Zapier", "Make.com"],
-    "MarketingTools": ["HubSpot", "Mailchimp", "Google Ads", "Meta Ads Manager"],
-    "AI": ["OpenAI API", "LangChain", "GPT models"],
-    "Analytics": ["Google Analytics", "Hotjar", "Mixpanel"]
+  "scraping-at-scale": {
+    "Core": ["NeoCrawl API", "ScrapeGraphAI", "Vision-Guided Crawlers"],
+    "Bypass": ["Dynamic CAPTCHA Resolver", "Browser Automation", "Residential Mesh"],
+    "Output": ["JSON Streaming", "Schema Enforcers", "Cloud Storage"]
   },
-  "cloud-infrastructure": {
-    "Cloud": ["AWS", "GCP", "Azure", "Supabase", "Vercel"],
-    "DevOps": ["Docker", "Kubernetes", "Terraform", "GitHub Actions", "CI/CD Pipelines"],
-    "Monitoring": ["Prometheus", "Grafana", "New Relic"],
-    "Security": ["OWASP best practices", "SSL/TLS", "IAM Policies"]
+  "digital-transformation-agents": {
+    "Refactoring": ["AST Parsers", "Code Generation Swarms", "Automated Test Synthesis"],
+    "DevOps": ["CI/CD Pipelines", "Docker", "Terraform", "GitHub Actions"],
+    "Security": ["Static Analysis", "Dependency Auditing"]
+  },
+  "long-term-memory-fabric": {
+    "KnowledgeGraph": ["Graph RAG", "Neo4j", "Persistent Vector Stores"],
+    "Embedding": ["Custom Embedding Models", "Qdrant", "ChromaDB"],
+    "Recall": ["Cross-Session Entity Linking", "Temporal Memory Windows"]
+  },
+  "skill-creation-loops": {
+    "Inference": ["Demonstration Parsing", "Action Graph Synthesis"],
+    "Execution": ["Dynamic Python Sandboxing", "Wasm Runtime", "Hermes Skill Registry"],
+    "Validation": ["Unit Test Generation", "Automated Execution Verification"]
   }
 }
